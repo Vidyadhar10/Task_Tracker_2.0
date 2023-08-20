@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="chatbot.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #section {
+            display: none;
+            background-color: #e6e6e6;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e6e6e6;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s ease-in-out;
+        }
+
+        #popup.active {
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+    <section class="msger chatbot d-none" id="Chatbot-section">
+        <header class="msger-header">
+            <div class="msger-header-title">
+                <img src="../assets/img/BOT.png" alt="" srcset="">
+                <p class=" p-0 m-0">ChatBot</p>
+            </div>
+        </header>
+        <main class="msger-chat">
+            <div class="msg left-msg">
+                <div class="msg-img" style="background-image: url(../assets/img/BOT.png)"></div>
+                <div class="msg-bubble">
+                    <div class="msg-info">
+                        <div class="msg-info-name">BOT</div>
+                        <div class="msg-info-time">12:45</div>
+                    </div>
+                    <div class="msg-text">Hi, welcome to Coderider ChatBot!! Go ahead and send me a message. ©</div>
+                </div>
+            </div>
+            <div class="msg right-msg">
+                <div class="msg-img" style="background-image: url(../assets/img/USER.png)"></div>
+                <div class="msg-bubble">
+                    <div class="msg-info">
+                        <div class="msg-info-name">Coderider</div>
+                        <div class="msg-info-time">12:46</div>
+                    </div>
+                    <div class="msg-text">You can change your name in JS section!</div>
+                </div>
+            </div>
+            <div class="msg left-msg">
+                <div class="msg-img" style="background-image: url(../assets/img/BOT.png)"></div>
+                <div class="msg-bubble">
+                    <div class="msg-info">
+                        <div class="msg-info-name">BOT</div>
+                        <div class="msg-info-time">12:47</div>
+                    </div>
+                    <div class="msg-text">Ok I will change it.</div>
+                </div>
+            </div>
+        </main>
+        <form class="msger-inputarea d-flex">
+            <input type="text" id="textboxID" class="msger-input" tabindex="1" placeholder="Enter your message..." />
+            <button type="submit" class="msger-send-btn">
+                <i class="bi bi-send "></i>
+            </button>
+            <script>
+                $("#textboxID").focus();
+            </script>
+        </form>
+    </section>
+
+    <button class="btn btn-primary" id="chatbot-button">CHAT</button>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#chatbot-button').click(function () {
+                if (!$('#Chatbot-section').hasClass('hide')) {
+                    $('#Chatbot-section').toggle($('.chatbot').removeClass('show').removeClass('d-none').addClass('hide'));
+                } else {
+                    $('#Chatbot-section').toggle($('.chatbot').removeClass('hide').removeClass('d-none').addClass('show'));
+                }
+            });
+
+            $('#chatbot-close').click(function () {
+                $('#Chatbot-section').hide();
+            });
+
+        });
+        // document.querySelector('.chatbot').classList.add('hide');
+        $('.chatbot').addClass('hide');
+
+    </script>
+</body>
+
+</html>

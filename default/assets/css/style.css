@@ -1,0 +1,11 @@
+.LogoTaskTracker {
+    font-size: x-large;
+    color: white;
+    font-weight: bold;
+}
+
+.requiredField::after {
+    content: "*";
+    color: red;
+    font-size: 13px;
+}
