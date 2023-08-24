@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
-    data-sidebar-image="none" data-preloader="disable">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 <head>
 
@@ -55,9 +54,7 @@
                             </a>
                         </div>
 
-                        <button type="button"
-                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
-                            id="topnav-hamburger-icon">
+                        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
                             <span class="hamburger-icon">
                                 <span></span>
                                 <span></span>
@@ -68,11 +65,9 @@
                         <!-- App Search-->
                         <form class="app-search d-none d-md-block">
                             <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search..." autocomplete="off"
-                                    id="search-options" value="">
+                                <input type="text" class="form-control" placeholder="Search..." autocomplete="off" id="search-options" value="">
                                 <span class="mdi mdi-magnify search-widget-icon"></span>
-                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
-                                    id="search-close-options"></span>
+                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
                             </div>
                             <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown">
                                 <div data-simplebar style="max-height: 320px;">
@@ -82,10 +77,8 @@
                                     </div>
 
                                     <div class="dropdown-item bg-transparent text-wrap">
-                                        <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">how to
-                                            setup <i class="mdi mdi-magnify ms-1"></i></a>
-                                        <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">buttons
-                                            <i class="mdi mdi-magnify ms-1"></i></a>
+                                        <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">how to setup <i class="mdi mdi-magnify ms-1"></i></a>
+                                        <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">buttons <i class="mdi mdi-magnify ms-1"></i></a>
                                     </div>
                                     <!-- item-->
                                     <div class="dropdown-header mt-2">
@@ -119,8 +112,7 @@
                                         <!-- item -->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                             <div class="d-flex">
-                                                <img src="assets/images/users/avatar-2.jpg"
-                                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                <img src="assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="m-0">Angela Bernier</h6>
                                                     <span class="fs-11 mb-0 text-muted">Manager</span>
@@ -130,8 +122,7 @@
                                         <!-- item -->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                             <div class="d-flex">
-                                                <img src="assets/images/users/avatar-3.jpg"
-                                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="m-0">David Grasso</h6>
                                                     <span class="fs-11 mb-0 text-muted">Web Designer</span>
@@ -141,8 +132,7 @@
                                         <!-- item -->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                             <div class="d-flex">
-                                                <img src="assets/images/users/avatar-5.jpg"
-                                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                <img src="assets/images/users/avatar-5.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="m-0">Mike Bunch</h6>
                                                     <span class="fs-11 mb-0 text-muted">React Developer</span>
@@ -153,8 +143,7 @@
                                 </div>
 
                                 <div class="text-center pt-3 pb-1">
-                                    <a href="pages-search-results.html" class="btn btn-primary btn-sm">View All Results
-                                        <i class="ri-arrow-right-line ms-1"></i></a>
+                                    <a href="pages-search-results.html" class="btn btn-primary btn-sm">View All Results <i class="ri-arrow-right-line ms-1"></i></a>
                                 </div>
                             </div>
                         </form>
@@ -163,20 +152,15 @@
                     <div class="d-flex align-items-center">
 
                         <div class="dropdown d-md-none topbar-head-dropdown header-item">
-                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="bx bx-search fs-22"></i>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                                aria-labelledby="page-header-search-dropdown">
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
                                 <form class="p-3">
                                     <div class="form-group m-0">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ..."
-                                                aria-label="Recipient's username">
-                                            <button class="btn btn-primary" type="submit"><i
-                                                    class="mdi mdi-magnify"></i></button>
+                                            <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
                                         </div>
                                     </div>
                                 </form>
@@ -184,81 +168,62 @@
                         </div>
 
                         <div class="dropdown ms-1 topbar-head-dropdown header-item">
-                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language"
-                                    height="20" class="rounded">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20" class="rounded">
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language py-2"
-                                    data-lang="en" title="English">
-                                    <img src="assets/images/flags/us.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language py-2" data-lang="en" title="English">
+                                    <img src="assets/images/flags/us.svg" alt="user-image" class="me-2 rounded" height="18">
                                     <span class="align-middle">English</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp"
-                                    title="Spanish">
-                                    <img src="assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp" title="Spanish">
+                                    <img src="assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded" height="18">
                                     <span class="align-middle">Española</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr"
-                                    title="German">
-                                    <img src="assets/images/flags/germany.svg" alt="user-image" class="me-2 rounded"
-                                        height="18"> <span class="align-middle">Deutsche</span>
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr" title="German">
+                                    <img src="assets/images/flags/germany.svg" alt="user-image" class="me-2 rounded" height="18"> <span class="align-middle">Deutsche</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it"
-                                    title="Italian">
-                                    <img src="assets/images/flags/italy.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it" title="Italian">
+                                    <img src="assets/images/flags/italy.svg" alt="user-image" class="me-2 rounded" height="18">
                                     <span class="align-middle">Italiana</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru"
-                                    title="Russian">
-                                    <img src="assets/images/flags/russia.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru" title="Russian">
+                                    <img src="assets/images/flags/russia.svg" alt="user-image" class="me-2 rounded" height="18">
                                     <span class="align-middle">русский</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ch"
-                                    title="Chinese">
-                                    <img src="assets/images/flags/china.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ch" title="Chinese">
+                                    <img src="assets/images/flags/china.svg" alt="user-image" class="me-2 rounded" height="18">
                                     <span class="align-middle">中国人</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="fr"
-                                    title="French">
-                                    <img src="assets/images/flags/french.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="fr" title="French">
+                                    <img src="assets/images/flags/french.svg" alt="user-image" class="me-2 rounded" height="18">
                                     <span class="align-middle">français</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ar"
-                                    title="Arabic">
-                                    <img src="assets/images/flags/ae.svg" alt="user-image" class="me-2 rounded"
-                                        height="18">
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ar" title="Arabic">
+                                    <img src="assets/images/flags/ae.svg" alt="user-image" class="me-2 rounded" height="18">
                                     <span class="align-middle">Arabic</span>
                                 </a>
                             </div>
                         </div>
 
                         <div class="dropdown topbar-head-dropdown ms-1 header-item">
-                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class='bx bx-category-alt fs-22'></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg p-0 dropdown-menu-end">
@@ -321,23 +286,18 @@
                         </div>
 
                         <div class="dropdown topbar-head-dropdown ms-1 header-item">
-                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                id="page-header-cart-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                                aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-cart-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                 <i class='bx bx-shopping-bag fs-22'></i>
-                                <span
-                                    class="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-info">5</span>
+                                <span class="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-info">5</span>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-xl dropdown-menu-end p-0 dropdown-menu-cart"
-                                aria-labelledby="page-header-cart-dropdown">
+                            <div class="dropdown-menu dropdown-menu-xl dropdown-menu-end p-0 dropdown-menu-cart" aria-labelledby="page-header-cart-dropdown">
                                 <div class="p-3 border-top-0 border-start-0 border-end-0 border-dashed border">
                                     <div class="row align-items-center">
                                         <div class="col">
                                             <h6 class="m-0 fs-16 fw-semibold"> My Cart</h6>
                                         </div>
                                         <div class="col-auto">
-                                            <span class="badge badge-soft-warning fs-13"><span
-                                                    class="cartitem-badge">7</span>
+                                            <span class="badge badge-soft-warning fs-13"><span class="cartitem-badge">7</span>
                                                 items</span>
                                         </div>
                                     </div>
@@ -351,17 +311,14 @@
                                                 </div>
                                             </div>
                                             <h5 class="mb-3">Your Cart is Empty!</h5>
-                                            <a href="apps-ecommerce-products.html"
-                                                class="btn btn-success w-md mb-3">Shop Now</a>
+                                            <a href="apps-ecommerce-products.html" class="btn btn-success w-md mb-3">Shop Now</a>
                                         </div>
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-1.png"
-                                                    class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                                <img src="assets/images/products/img-1.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html"
-                                                            class="text-reset">Branded
+                                                        <a href="apps-ecommerce-product-details.html" class="text-reset">Branded
                                                             T-Shirts</a>
                                                     </h6>
                                                     <p class="mb-0 fs-12 text-muted">
@@ -369,50 +326,40 @@
                                                     </p>
                                                 </div>
                                                 <div class="px-2">
-                                                    <h5 class="m-0 fw-normal">$<span class="cart-item-price">320</span>
-                                                    </h5>
+                                                    <h5 class="m-0 fw-normal">$<span class="cart-item-price">320</span></h5>
                                                 </div>
                                                 <div class="ps-2">
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i
-                                                            class="ri-close-fill fs-16"></i></button>
+                                                    <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i class="ri-close-fill fs-16"></i></button>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-2.png"
-                                                    class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                                <img src="assets/images/products/img-2.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html"
-                                                            class="text-reset">Bentwood Chair</a>
+                                                        <a href="apps-ecommerce-product-details.html" class="text-reset">Bentwood Chair</a>
                                                     </h6>
                                                     <p class="mb-0 fs-12 text-muted">
                                                         Quantity: <span>5 x $18</span>
                                                     </p>
                                                 </div>
                                                 <div class="px-2">
-                                                    <h5 class="m-0 fw-normal">$<span class="cart-item-price">89</span>
-                                                    </h5>
+                                                    <h5 class="m-0 fw-normal">$<span class="cart-item-price">89</span></h5>
                                                 </div>
                                                 <div class="ps-2">
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i
-                                                            class="ri-close-fill fs-16"></i></button>
+                                                    <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i class="ri-close-fill fs-16"></i></button>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-3.png"
-                                                    class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                                <img src="assets/images/products/img-3.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html"
-                                                            class="text-reset">
+                                                        <a href="apps-ecommerce-product-details.html" class="text-reset">
                                                             Borosil Paper Cup</a>
                                                     </h6>
                                                     <p class="mb-0 fs-12 text-muted">
@@ -420,25 +367,20 @@
                                                     </p>
                                                 </div>
                                                 <div class="px-2">
-                                                    <h5 class="m-0 fw-normal">$<span class="cart-item-price">750</span>
-                                                    </h5>
+                                                    <h5 class="m-0 fw-normal">$<span class="cart-item-price">750</span></h5>
                                                 </div>
                                                 <div class="ps-2">
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i
-                                                            class="ri-close-fill fs-16"></i></button>
+                                                    <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i class="ri-close-fill fs-16"></i></button>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-6.png"
-                                                    class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                                <img src="assets/images/products/img-6.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html"
-                                                            class="text-reset">Gray
+                                                        <a href="apps-ecommerce-product-details.html" class="text-reset">Gray
                                                             Styled T-Shirt</a>
                                                     </h6>
                                                     <p class="mb-0 fs-12 text-muted">
@@ -446,45 +388,36 @@
                                                     </p>
                                                 </div>
                                                 <div class="px-2">
-                                                    <h5 class="m-0 fw-normal">$ <span
-                                                            class="cart-item-price">1250</span></h5>
+                                                    <h5 class="m-0 fw-normal">$ <span class="cart-item-price">1250</span></h5>
                                                 </div>
                                                 <div class="ps-2">
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i
-                                                            class="ri-close-fill fs-16"></i></button>
+                                                    <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i class="ri-close-fill fs-16"></i></button>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                             <div class="d-flex align-items-center">
-                                                <img src="assets/images/products/img-5.png"
-                                                    class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                                <img src="assets/images/products/img-5.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                                 <div class="flex-1">
                                                     <h6 class="mt-0 mb-1 fs-14">
-                                                        <a href="apps-ecommerce-product-details.html"
-                                                            class="text-reset">Stillbird Helmet</a>
+                                                        <a href="apps-ecommerce-product-details.html" class="text-reset">Stillbird Helmet</a>
                                                     </h6>
                                                     <p class="mb-0 fs-12 text-muted">
                                                         Quantity: <span>2 x $495</span>
                                                     </p>
                                                 </div>
                                                 <div class="px-2">
-                                                    <h5 class="m-0 fw-normal">$<span class="cart-item-price">990</span>
-                                                    </h5>
+                                                    <h5 class="m-0 fw-normal">$<span class="cart-item-price">990</span></h5>
                                                 </div>
                                                 <div class="ps-2">
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i
-                                                            class="ri-close-fill fs-16"></i></button>
+                                                    <button type="button" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn"><i class="ri-close-fill fs-16"></i></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-3 border-bottom-0 border-start-0 border-end-0 border-dashed border"
-                                    id="checkout-elem">
+                                <div class="p-3 border-bottom-0 border-start-0 border-end-0 border-dashed border" id="checkout-elem">
                                     <div class="d-flex justify-content-between align-items-center pb-3">
                                         <h5 class="m-0 text-muted">Total:</h5>
                                         <div class="px-2">
@@ -500,30 +433,23 @@
                         </div>
 
                         <div class="ms-1 header-item d-none d-sm-flex">
-                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                data-toggle="fullscreen">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-toggle="fullscreen">
                                 <i class='bx bx-fullscreen fs-22'></i>
                             </button>
                         </div>
 
                         <div class="ms-1 header-item d-none d-sm-flex">
-                            <button type="button"
-                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
                                 <i class='bx bx-moon fs-22'></i>
                             </button>
                         </div>
 
                         <div class="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
-                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
-                                data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                                 <i class='bx bx-bell fs-22'></i>
-                                <span
-                                    class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">3<span
-                                        class="visually-hidden">unread messages</span></span>
+                                <span class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">3<span class="visually-hidden">unread messages</span></span>
                             </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                                aria-labelledby="page-header-notifications-dropdown">
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
 
                                 <div class="dropdown-head bg-primary bg-pattern rounded-top">
                                     <div class="p-3">
@@ -538,23 +464,19 @@
                                     </div>
 
                                     <div class="px-2 pt-2">
-                                        <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
-                                            id="notificationItemsTab" role="tablist">
+                                        <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true" id="notificationItemsTab" role="tablist">
                                             <li class="nav-item waves-effect waves-light">
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
-                                                    role="tab" aria-selected="true">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab" role="tab" aria-selected="true">
                                                     All (4)
                                                 </a>
                                             </li>
                                             <li class="nav-item waves-effect waves-light">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#messages-tab" role="tab"
-                                                    aria-selected="false">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#messages-tab" role="tab" aria-selected="false">
                                                     Messages
                                                 </a>
                                             </li>
                                             <li class="nav-item waves-effect waves-light">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#alerts-tab" role="tab"
-                                                    aria-selected="false">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#alerts-tab" role="tab" aria-selected="false">
                                                     Alerts
                                                 </a>
                                             </li>
@@ -566,84 +488,67 @@
                                 <div class="tab-content position-relative" id="notificationItemsTabContent">
                                     <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab" role="tabpanel">
                                         <div data-simplebar style="max-height: 300px;" class="pe-2">
-                                            <div
-                                                class="text-reset notification-item d-block dropdown-item position-relative">
+                                            <div class="text-reset notification-item d-block dropdown-item position-relative">
                                                 <div class="d-flex">
                                                     <div class="avatar-xs me-3">
-                                                        <span
-                                                            class="avatar-title bg-soft-info text-info rounded-circle fs-16">
+                                                        <span class="avatar-title bg-soft-info text-info rounded-circle fs-16">
                                                             <i class="bx bx-badge-check"></i>
                                                         </span>
                                                     </div>
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
-                                                            <h6 class="mt-0 mb-2 lh-base">Your <b>Elite</b> author
-                                                                Graphic
-                                                                Optimization <span class="text-secondary">reward</span>
-                                                                is
+                                                            <h6 class="mt-0 mb-2 lh-base">Your <b>Elite</b> author Graphic
+                                                                Optimization <span class="text-secondary">reward</span> is
                                                                 ready!
                                                             </h6>
                                                         </a>
                                                         <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                            <span><i class="mdi mdi-clock-outline"></i> Just 30 sec
-                                                                ago</span>
+                                                            <span><i class="mdi mdi-clock-outline"></i> Just 30 sec ago</span>
                                                         </p>
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="all-notification-check01">
-                                                            <label class="form-check-label"
-                                                                for="all-notification-check01"></label>
+                                                            <input class="form-check-input" type="checkbox" value="" id="all-notification-check01">
+                                                            <label class="form-check-label" for="all-notification-check01"></label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div
-                                                class="text-reset notification-item d-block dropdown-item position-relative">
+                                            <div class="text-reset notification-item d-block dropdown-item position-relative">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-2.jpg"
-                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <img src="assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
                                                             <h6 class="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
                                                         </a>
                                                         <div class="fs-13 text-muted">
-                                                            <p class="mb-1">Answered to your comment on the cash flow
-                                                                forecast's
+                                                            <p class="mb-1">Answered to your comment on the cash flow forecast's
                                                                 graph 🔔.</p>
                                                         </div>
                                                         <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                            <span><i class="mdi mdi-clock-outline"></i> 48 min
-                                                                ago</span>
+                                                            <span><i class="mdi mdi-clock-outline"></i> 48 min ago</span>
                                                         </p>
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="all-notification-check02">
-                                                            <label class="form-check-label"
-                                                                for="all-notification-check02"></label>
+                                                            <input class="form-check-input" type="checkbox" value="" id="all-notification-check02">
+                                                            <label class="form-check-label" for="all-notification-check02"></label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div
-                                                class="text-reset notification-item d-block dropdown-item position-relative">
+                                            <div class="text-reset notification-item d-block dropdown-item position-relative">
                                                 <div class="d-flex">
                                                     <div class="avatar-xs me-3">
-                                                        <span
-                                                            class="avatar-title bg-soft-danger text-danger rounded-circle fs-16">
+                                                        <span class="avatar-title bg-soft-danger text-danger rounded-circle fs-16">
                                                             <i class='bx bx-message-square-dots'></i>
                                                         </span>
                                                     </div>
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
-                                                            <h6 class="mt-0 mb-2 fs-13 lh-base">You have received <b
-                                                                    class="text-success">20</b> new messages in the
-                                                                conversation
+                                                            <h6 class="mt-0 mb-2 fs-13 lh-base">You have received <b class="text-success">20</b> new messages in the conversation
                                                             </h6>
                                                         </a>
                                                         <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
@@ -652,20 +557,16 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="all-notification-check03">
-                                                            <label class="form-check-label"
-                                                                for="all-notification-check03"></label>
+                                                            <input class="form-check-input" type="checkbox" value="" id="all-notification-check03">
+                                                            <label class="form-check-label" for="all-notification-check03"></label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div
-                                                class="text-reset notification-item d-block dropdown-item position-relative">
+                                            <div class="text-reset notification-item d-block dropdown-item position-relative">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-8.jpg"
-                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <img src="assets/images/users/avatar-8.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
                                                             <h6 class="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
@@ -679,32 +580,26 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="all-notification-check04">
-                                                            <label class="form-check-label"
-                                                                for="all-notification-check04"></label>
+                                                            <input class="form-check-input" type="checkbox" value="" id="all-notification-check04">
+                                                            <label class="form-check-label" for="all-notification-check04"></label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="my-3 text-center view-all">
-                                                <button type="button"
-                                                    class="btn btn-soft-success waves-effect waves-light">View
-                                                    All Notifications <i
-                                                        class="ri-arrow-right-line align-middle"></i></button>
+                                                <button type="button" class="btn btn-soft-success waves-effect waves-light">View
+                                                    All Notifications <i class="ri-arrow-right-line align-middle"></i></button>
                                             </div>
                                         </div>
 
                                     </div>
 
-                                    <div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
-                                        aria-labelledby="messages-tab">
+                                    <div class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel" aria-labelledby="messages-tab">
                                         <div data-simplebar style="max-height: 300px;" class="pe-2">
                                             <div class="text-reset notification-item d-block dropdown-item">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-3.jpg"
-                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
                                                             <h6 class="mt-0 mb-1 fs-13 fw-semibold">James Lemire</h6>
@@ -713,16 +608,13 @@
                                                             <p class="mb-1">We talked about a project on linkedin.</p>
                                                         </div>
                                                         <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                            <span><i class="mdi mdi-clock-outline"></i> 30 min
-                                                                ago</span>
+                                                            <span><i class="mdi mdi-clock-outline"></i> 30 min ago</span>
                                                         </p>
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="messages-notification-check01">
-                                                            <label class="form-check-label"
-                                                                for="messages-notification-check01"></label>
+                                                            <input class="form-check-input" type="checkbox" value="" id="messages-notification-check01">
+                                                            <label class="form-check-label" for="messages-notification-check01"></label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -730,15 +622,13 @@
 
                                             <div class="text-reset notification-item d-block dropdown-item">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-2.jpg"
-                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <img src="assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
                                                             <h6 class="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
                                                         </a>
                                                         <div class="fs-13 text-muted">
-                                                            <p class="mb-1">Answered to your comment on the cash flow
-                                                                forecast's
+                                                            <p class="mb-1">Answered to your comment on the cash flow forecast's
                                                                 graph 🔔.</p>
                                                         </div>
                                                         <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
@@ -747,10 +637,8 @@
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="messages-notification-check02">
-                                                            <label class="form-check-label"
-                                                                for="messages-notification-check02"></label>
+                                                            <input class="form-check-input" type="checkbox" value="" id="messages-notification-check02">
+                                                            <label class="form-check-label" for="messages-notification-check02"></label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -758,28 +646,23 @@
 
                                             <div class="text-reset notification-item d-block dropdown-item">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-6.jpg"
-                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <img src="assets/images/users/avatar-6.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
                                                             <h6 class="mt-0 mb-1 fs-13 fw-semibold">Kenneth Brown</h6>
                                                         </a>
                                                         <div class="fs-13 text-muted">
-                                                            <p class="mb-1">Mentionned you in his comment on 📃 invoice
-                                                                #12501.
+                                                            <p class="mb-1">Mentionned you in his comment on 📃 invoice #12501.
                                                             </p>
                                                         </div>
                                                         <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                            <span><i class="mdi mdi-clock-outline"></i> 10 hrs
-                                                                ago</span>
+                                                            <span><i class="mdi mdi-clock-outline"></i> 10 hrs ago</span>
                                                         </p>
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="messages-notification-check03">
-                                                            <label class="form-check-label"
-                                                                for="messages-notification-check03"></label>
+                                                            <input class="form-check-input" type="checkbox" value="" id="messages-notification-check03">
+                                                            <label class="form-check-label" for="messages-notification-check03"></label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -787,8 +670,7 @@
 
                                             <div class="text-reset notification-item d-block dropdown-item">
                                                 <div class="d-flex">
-                                                    <img src="assets/images/users/avatar-8.jpg"
-                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <img src="assets/images/users/avatar-8.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                                     <div class="flex-1">
                                                         <a href="#!" class="stretched-link">
                                                             <h6 class="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
@@ -797,38 +679,29 @@
                                                             <p class="mb-1">We talked about a project on linkedin.</p>
                                                         </div>
                                                         <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                            <span><i class="mdi mdi-clock-outline"></i> 3 days
-                                                                ago</span>
+                                                            <span><i class="mdi mdi-clock-outline"></i> 3 days ago</span>
                                                         </p>
                                                     </div>
                                                     <div class="px-2 fs-15">
                                                         <div class="form-check notification-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="messages-notification-check04">
-                                                            <label class="form-check-label"
-                                                                for="messages-notification-check04"></label>
+                                                            <input class="form-check-input" type="checkbox" value="" id="messages-notification-check04">
+                                                            <label class="form-check-label" for="messages-notification-check04"></label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="my-3 text-center view-all">
-                                                <button type="button"
-                                                    class="btn btn-soft-success waves-effect waves-light">View
-                                                    All Messages <i
-                                                        class="ri-arrow-right-line align-middle"></i></button>
+                                                <button type="button" class="btn btn-soft-success waves-effect waves-light">View
+                                                    All Messages <i class="ri-arrow-right-line align-middle"></i></button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
-                                        aria-labelledby="alerts-tab"></div>
+                                    <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel" aria-labelledby="alerts-tab"></div>
 
                                     <div class="notification-actions" id="notification-actions">
                                         <div class="d-flex text-muted justify-content-center">
-                                            Select <div id="select-content" class="text-body fw-semibold px-1">0</div>
-                                            Result <button type="button" class="btn btn-link link-danger p-0 ms-3"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#removeNotificationModal">Remove</button>
+                                            Select <div id="select-content" class="text-body fw-semibold px-1">0</div> Result <button type="button" class="btn btn-link link-danger p-0 ms-3" data-bs-toggle="modal" data-bs-target="#removeNotificationModal">Remove</button>
                                         </div>
                                     </div>
                                 </div>
@@ -836,48 +709,27 @@
                         </div>
 
                         <div class="dropdown ms-sm-3 header-item topbar-user">
-                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
-                                    <img class="rounded-circle header-profile-user"
-                                        src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
-                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna
-                                            Adame</span>
-                                        <span
-                                            class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>
                                     </span>
                                 </span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <h6 class="dropdown-header">Welcome Anna!</h6>
-                                <a class="dropdown-item" href="pages-profile.html"><i
-                                        class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Profile</span></a>
-                                <a class="dropdown-item" href="apps-chat.html"><i
-                                        class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i>
-                                    <span class="align-middle">Messages</span></a>
-                                <a class="dropdown-item" href="apps-tasks-kanban.html"><i
-                                        class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i>
-                                    <span class="align-middle">Taskboard</span></a>
-                                <a class="dropdown-item" href="pages-faqs.html"><i
-                                        class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Help</span></a>
+                                <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                                <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
+                                <a class="dropdown-item" href="apps-tasks-kanban.html"><i class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Taskboard</span></a>
+                                <a class="dropdown-item" href="pages-faqs.html"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Help</span></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="pages-profile.html"><i
-                                        class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Balance : <b>$5971.67</b></span></a>
-                                <a class="dropdown-item" href="pages-profile-settings.html"><span
-                                        class="badge bg-soft-success text-success mt-1 float-end">New</span><i
-                                        class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Settings</span></a>
-                                <a class="dropdown-item" href="auth-lockscreen-basic.html"><i
-                                        class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle">Lock screen</span></a>
-                                <a class="dropdown-item" href="auth-logout-basic.html"><i
-                                        class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle" data-key="t-logout">Logout</span></a>
+                                <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Balance : <b>$5971.67</b></span></a>
+                                <a class="dropdown-item" href="pages-profile-settings.html"><span class="badge bg-soft-success text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
+                                <a class="dropdown-item" href="auth-lockscreen-basic.html"><i class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Lock screen</span></a>
+                                <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
                             </div>
                         </div>
                     </div>
@@ -890,13 +742,11 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                            id="NotificationModalbtn-close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="NotificationModalbtn-close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mt-2 text-center">
-                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
-                                colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
+                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
                             <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
                                 <h4>Are you sure ?</h4>
                                 <p class="text-muted mx-4 mb-0">Are you sure you want to remove this Notification ?</p>
@@ -904,8 +754,7 @@
                         </div>
                         <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
                             <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn w-sm btn-danger" id="delete-notification">Yes, Delete
-                                It!</button>
+                            <button type="button" class="btn w-sm btn-danger" id="delete-notification">Yes, Delete It!</button>
                         </div>
                     </div>
 
@@ -934,8 +783,7 @@
                         <img src="assets/images/logo-light.png" alt="" height="17">
                     </span>
                 </a>
-                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
-                    id="vertical-hover">
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
                     <i class="ri-record-circle-line"></i>
                 </button>
             </div>
@@ -948,15 +796,13 @@
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                            <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
                                 <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarDashboards">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="dashboard-analytics.html" class="nav-link" data-key="t-analytics">
-                                            Analytics </a>
+                                        <a href="dashboard-analytics.html" class="nav-link" data-key="t-analytics"> Analytics </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="dashboard-crm.html" class="nav-link" data-key="t-crm"> CRM </a>
@@ -965,64 +811,52 @@
                                         <a href="index.html" class="nav-link" data-key="t-ecommerce"> Ecommerce </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="dashboard-crypto.html" class="nav-link" data-key="t-crypto"> Crypto
-                                        </a>
+                                        <a href="dashboard-crypto.html" class="nav-link" data-key="t-crypto"> Crypto </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="dashboard-projects.html" class="nav-link" data-key="t-projects">
-                                            Projects </a>
+                                        <a href="dashboard-projects.html" class="nav-link" data-key="t-projects"> Projects </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="dashboard-nft.html" class="nav-link" data-key="t-nft"> NFT</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="dashboard-job.html" class="nav-link"><span data-key="t-job">Job</span>
-                                            <span class="badge badge-pill bg-success" data-key="t-new">New</span></a>
+                                        <a href="dashboard-job.html" class="nav-link"><span data-key="t-job">Job</span> <span class="badge badge-pill bg-success" data-key="t-new">New</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </li> <!-- end Dashboard Menu -->
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarApps">
+                            <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApps">
                                 <i class="ri-apps-2-line"></i> <span data-key="t-apps">Apps</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarApps">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="apps-calendar.html" class="nav-link" data-key="t-calendar"> Calendar
-                                        </a>
+                                        <a href="apps-calendar.html" class="nav-link" data-key="t-calendar"> Calendar </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="apps-chat.html" class="nav-link" data-key="t-chat"> Chat </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarEmail" class="nav-link" data-bs-toggle="collapse" role="button"
-                                            aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
+                                        <a href="#sidebarEmail" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
                                             Email
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarEmail">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-mailbox.html" class="nav-link" data-key="t-mailbox">
-                                                        Mailbox </a>
+                                                    <a href="apps-mailbox.html" class="nav-link" data-key="t-mailbox"> Mailbox </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="#sidebaremailTemplates" class="nav-link"
-                                                        data-bs-toggle="collapse" role="button" aria-expanded="false"
-                                                        aria-controls="sidebaremailTemplates"
-                                                        data-key="t-email-templates">
+                                                    <a href="#sidebaremailTemplates" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebaremailTemplates" data-key="t-email-templates">
                                                         Email Templates
                                                     </a>
                                                     <div class="collapse menu-dropdown" id="sidebaremailTemplates">
                                                         <ul class="nav nav-sm flex-column">
                                                             <li class="nav-item">
-                                                                <a href="apps-email-basic.html" class="nav-link"
-                                                                    data-key="t-basic-action"> Basic Action </a>
+                                                                <a href="apps-email-basic.html" class="nav-link" data-key="t-basic-action"> Basic Action </a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a href="apps-email-ecommerce.html" class="nav-link"
-                                                                    data-key="t-ecommerce-action"> Ecommerce Action </a>
+                                                                <a href="apps-email-ecommerce.html" class="nav-link" data-key="t-ecommerce-action"> Ecommerce Action </a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -1031,379 +865,297 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarEcommerce" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarEcommerce"
-                                            data-key="t-ecommerce">
+                                        <a href="#sidebarEcommerce" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEcommerce" data-key="t-ecommerce">
                                             Ecommerce
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarEcommerce">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-products.html" class="nav-link"
-                                                        data-key="t-products"> Products </a>
+                                                    <a href="apps-ecommerce-products.html" class="nav-link" data-key="t-products"> Products </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-product-details.html" class="nav-link"
-                                                        data-key="t-product-Details"> Product Details </a>
+                                                    <a href="apps-ecommerce-product-details.html" class="nav-link" data-key="t-product-Details"> Product Details </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-add-product.html" class="nav-link"
-                                                        data-key="t-create-product"> Create Product </a>
+                                                    <a href="apps-ecommerce-add-product.html" class="nav-link" data-key="t-create-product"> Create Product </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-orders.html" class="nav-link"
-                                                        data-key="t-orders">
+                                                    <a href="apps-ecommerce-orders.html" class="nav-link" data-key="t-orders">
                                                         Orders </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-order-details.html" class="nav-link"
-                                                        data-key="t-order-details"> Order Details </a>
+                                                    <a href="apps-ecommerce-order-details.html" class="nav-link" data-key="t-order-details"> Order Details </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-customers.html" class="nav-link"
-                                                        data-key="t-customers"> Customers </a>
+                                                    <a href="apps-ecommerce-customers.html" class="nav-link" data-key="t-customers"> Customers </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-cart.html" class="nav-link"
-                                                        data-key="t-shopping-cart"> Shopping Cart </a>
+                                                    <a href="apps-ecommerce-cart.html" class="nav-link" data-key="t-shopping-cart"> Shopping Cart </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-checkout.html" class="nav-link"
-                                                        data-key="t-checkout"> Checkout </a>
+                                                    <a href="apps-ecommerce-checkout.html" class="nav-link" data-key="t-checkout"> Checkout </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-sellers.html" class="nav-link"
-                                                        data-key="t-sellers">
+                                                    <a href="apps-ecommerce-sellers.html" class="nav-link" data-key="t-sellers">
                                                         Sellers </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-ecommerce-seller-details.html" class="nav-link"
-                                                        data-key="t-sellers-details"> Seller Details </a>
+                                                    <a href="apps-ecommerce-seller-details.html" class="nav-link" data-key="t-sellers-details"> Seller Details </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarProjects"
-                                            data-key="t-projects">
+                                        <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects" data-key="t-projects">
                                             Projects
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarProjects">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-projects-list.html" class="nav-link"
-                                                        data-key="t-list"> List
+                                                    <a href="apps-projects-list.html" class="nav-link" data-key="t-list"> List
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-projects-overview.html" class="nav-link"
-                                                        data-key="t-overview"> Overview </a>
+                                                    <a href="apps-projects-overview.html" class="nav-link" data-key="t-overview"> Overview </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-projects-create.html" class="nav-link"
-                                                        data-key="t-create-project"> Create Project </a>
+                                                    <a href="apps-projects-create.html" class="nav-link" data-key="t-create-project"> Create Project </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarTasks" class="nav-link" data-bs-toggle="collapse" role="button"
-                                            aria-expanded="false" aria-controls="sidebarTasks" data-key="t-tasks"> Tasks
+                                        <a href="#sidebarTasks" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTasks" data-key="t-tasks"> Tasks
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarTasks">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-tasks-kanban.html" class="nav-link"
-                                                        data-key="t-kanbanboard">
+                                                    <a href="apps-tasks-kanban.html" class="nav-link" data-key="t-kanbanboard">
                                                         Kanban Board </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-tasks-list-view.html" class="nav-link"
-                                                        data-key="t-list-view">
+                                                    <a href="apps-tasks-list-view.html" class="nav-link" data-key="t-list-view">
                                                         List View </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-tasks-details.html" class="nav-link"
-                                                        data-key="t-task-details"> Task Details </a>
+                                                    <a href="apps-tasks-details.html" class="nav-link" data-key="t-task-details"> Task Details </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarCRM" class="nav-link" data-bs-toggle="collapse" role="button"
-                                            aria-expanded="false" aria-controls="sidebarCRM" data-key="t-crm"> CRM
+                                        <a href="#sidebarCRM" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCRM" data-key="t-crm"> CRM
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarCRM">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-crm-contacts.html" class="nav-link"
-                                                        data-key="t-contacts">
+                                                    <a href="apps-crm-contacts.html" class="nav-link" data-key="t-contacts">
                                                         Contacts </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-crm-companies.html" class="nav-link"
-                                                        data-key="t-companies">
+                                                    <a href="apps-crm-companies.html" class="nav-link" data-key="t-companies">
                                                         Companies </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-crm-deals.html" class="nav-link" data-key="t-deals">
-                                                        Deals
+                                                    <a href="apps-crm-deals.html" class="nav-link" data-key="t-deals"> Deals
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-crm-leads.html" class="nav-link" data-key="t-leads">
-                                                        Leads
+                                                    <a href="apps-crm-leads.html" class="nav-link" data-key="t-leads"> Leads
                                                     </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarCrypto" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarCrypto"
-                                            data-key="t-crypto"> Crypto
+                                        <a href="#sidebarCrypto" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCrypto" data-key="t-crypto"> Crypto
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarCrypto">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-crypto-transactions.html" class="nav-link"
-                                                        data-key="t-transactions"> Transactions </a>
+                                                    <a href="apps-crypto-transactions.html" class="nav-link" data-key="t-transactions"> Transactions </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-crypto-buy-sell.html" class="nav-link"
-                                                        data-key="t-buy-sell">
+                                                    <a href="apps-crypto-buy-sell.html" class="nav-link" data-key="t-buy-sell">
                                                         Buy & Sell </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-crypto-orders.html" class="nav-link"
-                                                        data-key="t-orders">
+                                                    <a href="apps-crypto-orders.html" class="nav-link" data-key="t-orders">
                                                         Orders </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-crypto-wallet.html" class="nav-link"
-                                                        data-key="t-my-wallet">
+                                                    <a href="apps-crypto-wallet.html" class="nav-link" data-key="t-my-wallet">
                                                         My Wallet </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-crypto-ico.html" class="nav-link"
-                                                        data-key="t-ico-list"> ICO
+                                                    <a href="apps-crypto-ico.html" class="nav-link" data-key="t-ico-list"> ICO
                                                         List </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-crypto-kyc.html" class="nav-link"
-                                                        data-key="t-kyc-application"> KYC Application </a>
+                                                    <a href="apps-crypto-kyc.html" class="nav-link" data-key="t-kyc-application"> KYC Application </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarInvoices" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarInvoices"
-                                            data-key="t-invoices">
+                                        <a href="#sidebarInvoices" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarInvoices" data-key="t-invoices">
                                             Invoices
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarInvoices">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-invoices-list.html" class="nav-link"
-                                                        data-key="t-list-view">
+                                                    <a href="apps-invoices-list.html" class="nav-link" data-key="t-list-view">
                                                         List View </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-invoices-details.html" class="nav-link"
-                                                        data-key="t-details">
+                                                    <a href="apps-invoices-details.html" class="nav-link" data-key="t-details">
                                                         Details </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-invoices-create.html" class="nav-link"
-                                                        data-key="t-create-invoice"> Create Invoice </a>
+                                                    <a href="apps-invoices-create.html" class="nav-link" data-key="t-create-invoice"> Create Invoice </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarTickets" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarTickets"
-                                            data-key="t-supprt-tickets">
+                                        <a href="#sidebarTickets" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTickets" data-key="t-supprt-tickets">
                                             Support Tickets
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarTickets">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-tickets-list.html" class="nav-link"
-                                                        data-key="t-list-view">
+                                                    <a href="apps-tickets-list.html" class="nav-link" data-key="t-list-view">
                                                         List View </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-tickets-details.html" class="nav-link"
-                                                        data-key="t-ticket-details"> Ticket Details </a>
+                                                    <a href="apps-tickets-details.html" class="nav-link" data-key="t-ticket-details"> Ticket Details </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarnft" class="nav-link" data-bs-toggle="collapse" role="button"
-                                            aria-expanded="false" aria-controls="sidebarnft"
-                                            data-key="t-nft-marketplace">
+                                        <a href="#sidebarnft" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarnft" data-key="t-nft-marketplace">
                                             NFT Marketplace
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarnft">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-marketplace.html" class="nav-link"
-                                                        data-key="t-marketplace"> Marketplace </a>
+                                                    <a href="apps-nft-marketplace.html" class="nav-link" data-key="t-marketplace"> Marketplace </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-explore.html" class="nav-link"
-                                                        data-key="t-explore-now"> Explore Now </a>
+                                                    <a href="apps-nft-explore.html" class="nav-link" data-key="t-explore-now"> Explore Now </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-auction.html" class="nav-link"
-                                                        data-key="t-live-auction"> Live Auction </a>
+                                                    <a href="apps-nft-auction.html" class="nav-link" data-key="t-live-auction"> Live Auction </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-item-details.html" class="nav-link"
-                                                        data-key="t-item-details"> Item Details </a>
+                                                    <a href="apps-nft-item-details.html" class="nav-link" data-key="t-item-details"> Item Details </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-collections.html" class="nav-link"
-                                                        data-key="t-collections"> Collections </a>
+                                                    <a href="apps-nft-collections.html" class="nav-link" data-key="t-collections"> Collections </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-creators.html" class="nav-link"
-                                                        data-key="t-creators"> Creators </a>
+                                                    <a href="apps-nft-creators.html" class="nav-link" data-key="t-creators"> Creators </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-ranking.html" class="nav-link"
-                                                        data-key="t-ranking"> Ranking </a>
+                                                    <a href="apps-nft-ranking.html" class="nav-link" data-key="t-ranking"> Ranking </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-wallet.html" class="nav-link"
-                                                        data-key="t-wallet-connect"> Wallet Connect </a>
+                                                    <a href="apps-nft-wallet.html" class="nav-link" data-key="t-wallet-connect"> Wallet Connect </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-nft-create.html" class="nav-link"
-                                                        data-key="t-create-nft"> Create NFT </a>
+                                                    <a href="apps-nft-create.html" class="nav-link" data-key="t-create-nft"> Create NFT </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="apps-file-manager.html" class="nav-link"> <span
-                                                data-key="t-file-manager">File Manager</span></a>
+                                        <a href="apps-file-manager.html" class="nav-link"> <span data-key="t-file-manager">File Manager</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="apps-todo.html" class="nav-link"> <span data-key="t-to-do">To
-                                                Do</span></a>
+                                        <a href="apps-todo.html" class="nav-link"> <span data-key="t-to-do">To Do</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarjobs" class="nav-link" data-bs-toggle="collapse" role="button"
-                                            aria-expanded="false" aria-controls="sidebarjobs"> <span
-                                                data-key="t-jobs">Jobs</span> <span class="badge badge-pill bg-success"
-                                                data-key="t-new">New</span></a>
+                                        <a href="#sidebarjobs" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarjobs"> <span data-key="t-jobs">Jobs</span> <span class="badge badge-pill bg-success" data-key="t-new">New</span></a>
                                         <div class="collapse menu-dropdown" id="sidebarjobs">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="apps-job-statistics.html" class="nav-link"
-                                                        data-key="t-candidate-list"> Statistics </a>
+                                                    <a href="apps-job-statistics.html" class="nav-link" data-key="t-candidate-list"> Statistics </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="#sidebarJoblists" class="nav-link"
-                                                        data-bs-toggle="collapse" role="button" aria-expanded="false"
-                                                        aria-controls="sidebarJoblists" data-key="t-job-lists">
+                                                    <a href="#sidebarJoblists" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarJoblists" data-key="t-job-lists">
                                                         Job Lists
                                                     </a>
                                                     <div class="collapse menu-dropdown" id="sidebarJoblists">
                                                         <ul class="nav nav-sm flex-column">
                                                             <li class="nav-item">
-                                                                <a href="apps-job-lists.html" class="nav-link"
-                                                                    data-key="t-list"> List
+                                                                <a href="apps-job-lists.html" class="nav-link" data-key="t-list"> List
                                                                 </a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a href="apps-job-grid-lists.html" class="nav-link"
-                                                                    data-key="t-grid"> Grid </a>
+                                                                <a href="apps-job-grid-lists.html" class="nav-link" data-key="t-grid"> Grid </a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a href="apps-job-details.html" class="nav-link"
-                                                                    data-key="t-overview"> Overview</a>
+                                                                <a href="apps-job-details.html" class="nav-link" data-key="t-overview"> Overview</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="#sidebarCandidatelists" class="nav-link"
-                                                        data-bs-toggle="collapse" role="button" aria-expanded="false"
-                                                        aria-controls="sidebarCandidatelists"
-                                                        data-key="t-candidate-lists">
+                                                    <a href="#sidebarCandidatelists" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCandidatelists" data-key="t-candidate-lists">
                                                         Candidate Lists
                                                     </a>
                                                     <div class="collapse menu-dropdown" id="sidebarCandidatelists">
                                                         <ul class="nav nav-sm flex-column">
                                                             <li class="nav-item">
-                                                                <a href="apps-job-candidate-lists.html" class="nav-link"
-                                                                    data-key="t-list-view"> List View
+                                                                <a href="apps-job-candidate-lists.html" class="nav-link" data-key="t-list-view"> List View
                                                                 </a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a href="apps-job-candidate-grid.html" class="nav-link"
-                                                                    data-key="t-grid-view"> Grid View</a>
+                                                                <a href="apps-job-candidate-grid.html" class="nav-link" data-key="t-grid-view"> Grid View</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-job-application.html" class="nav-link"
-                                                        data-key="t-application"> Application </a>
+                                                    <a href="apps-job-application.html" class="nav-link" data-key="t-application"> Application </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-job-new.html" class="nav-link" data-key="t-new-job">
-                                                        New Job </a>
+                                                    <a href="apps-job-new.html" class="nav-link" data-key="t-new-job"> New Job </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-job-companies-lists.html" class="nav-link"
-                                                        data-key="t-companies-list"> Companies List </a>
+                                                    <a href="apps-job-companies-lists.html" class="nav-link" data-key="t-companies-list"> Companies List </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="apps-job-categories.html" class="nav-link"
-                                                        data-key="t-job-categories"> Job Categories</a>
+                                                    <a href="apps-job-categories.html" class="nav-link" data-key="t-job-categories"> Job Categories</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="apps-api-key.html" class="nav-link"> <span data-key="t-api-key">API
-                                                Key</span> <span class="badge badge-pill bg-success"
-                                                data-key="t-new">New</span></a>
+                                        <a href="apps-api-key.html" class="nav-link"> <span data-key="t-api-key">API Key</span> <span class="badge badge-pill bg-success" data-key="t-new">New</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarLayouts">
-                                <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Layouts</span> <span
-                                    class="badge badge-pill bg-danger" data-key="t-hot">Hot</span>
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Layouts</span> <span class="badge badge-pill bg-danger" data-key="t-hot">Hot</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarLayouts">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="layouts-horizontal.html" target="_blank" class="nav-link"
-                                            data-key="t-horizontal">Horizontal</a>
+                                        <a href="layouts-horizontal.html" target="_blank" class="nav-link" data-key="t-horizontal">Horizontal</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="layouts-detached.html" target="_blank" class="nav-link"
-                                            data-key="t-detached">Detached</a>
+                                        <a href="layouts-detached.html" target="_blank" class="nav-link" data-key="t-detached">Detached</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="layouts-two-column.html" target="_blank" class="nav-link"
-                                            data-key="t-two-column">Two Column</a>
+                                        <a href="layouts-two-column.html" target="_blank" class="nav-link" data-key="t-two-column">Two Column</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="layouts-vertical-hovered.html" target="_blank" class="nav-link"
-                                            data-key="t-hovered">Hovered</a>
+                                        <a href="layouts-vertical-hovered.html" target="_blank" class="nav-link" data-key="t-hovered">Hovered</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1412,48 +1164,38 @@
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarAuth">
-                                <i class="ri-account-circle-line"></i> <span
-                                    data-key="t-authentication">Authentication</span>
+                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                                <i class="ri-account-circle-line"></i> <span data-key="t-authentication">Authentication</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarAuth">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarSignIn"
-                                            data-key="t-signin"> Sign In
+                                        <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignIn" data-key="t-signin"> Sign In
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarSignIn">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-signin-basic.html" class="nav-link"
-                                                        data-key="t-basic"> Basic
+                                                    <a href="auth-signin-basic.html" class="nav-link" data-key="t-basic"> Basic
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-signin-cover.html" class="nav-link"
-                                                        data-key="t-cover"> Cover
+                                                    <a href="auth-signin-cover.html" class="nav-link" data-key="t-cover"> Cover
                                                     </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarSignUp"
-                                            data-key="t-signup"> Sign Up
+                                        <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignUp" data-key="t-signup"> Sign Up
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarSignUp">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-signup-basic.html" class="nav-link"
-                                                        data-key="t-basic"> Basic
+                                                    <a href="auth-signup-basic.html" class="nav-link" data-key="t-basic"> Basic
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-signup-cover.html" class="nav-link"
-                                                        data-key="t-cover"> Cover
+                                                    <a href="auth-signup-cover.html" class="nav-link" data-key="t-cover"> Cover
                                                     </a>
                                                 </li>
                                             </ul>
@@ -1461,21 +1203,17 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="#sidebarResetPass" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarResetPass"
-                                            data-key="t-password-reset">
+                                        <a href="#sidebarResetPass" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarResetPass" data-key="t-password-reset">
                                             Password Reset
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarResetPass">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-pass-reset-basic.html" class="nav-link"
-                                                        data-key="t-basic">
+                                                    <a href="auth-pass-reset-basic.html" class="nav-link" data-key="t-basic">
                                                         Basic </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-pass-reset-cover.html" class="nav-link"
-                                                        data-key="t-cover">
+                                                    <a href="auth-pass-reset-cover.html" class="nav-link" data-key="t-cover">
                                                         Cover </a>
                                                 </li>
                                             </ul>
@@ -1483,21 +1221,17 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="#sidebarchangePass" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarchangePass"
-                                            data-key="t-password-create">
+                                        <a href="#sidebarchangePass" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarchangePass" data-key="t-password-create">
                                             Password Create
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarchangePass">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-pass-change-basic.html" class="nav-link"
-                                                        data-key="t-basic">
+                                                    <a href="auth-pass-change-basic.html" class="nav-link" data-key="t-basic">
                                                         Basic </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-pass-change-cover.html" class="nav-link"
-                                                        data-key="t-cover">
+                                                    <a href="auth-pass-change-cover.html" class="nav-link" data-key="t-cover">
                                                         Cover </a>
                                                 </li>
                                             </ul>
@@ -1505,21 +1239,17 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="#sidebarLockScreen" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarLockScreen"
-                                            data-key="t-lock-screen">
+                                        <a href="#sidebarLockScreen" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLockScreen" data-key="t-lock-screen">
                                             Lock Screen
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarLockScreen">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-lockscreen-basic.html" class="nav-link"
-                                                        data-key="t-basic">
+                                                    <a href="auth-lockscreen-basic.html" class="nav-link" data-key="t-basic">
                                                         Basic </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-lockscreen-cover.html" class="nav-link"
-                                                        data-key="t-cover">
+                                                    <a href="auth-lockscreen-cover.html" class="nav-link" data-key="t-cover">
                                                         Cover </a>
                                                 </li>
                                             </ul>
@@ -1527,93 +1257,75 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="#sidebarLogout" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarLogout"
-                                            data-key="t-logout"> Logout
+                                        <a href="#sidebarLogout" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLogout" data-key="t-logout"> Logout
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarLogout">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-logout-basic.html" class="nav-link"
-                                                        data-key="t-basic"> Basic
+                                                    <a href="auth-logout-basic.html" class="nav-link" data-key="t-basic"> Basic
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-logout-cover.html" class="nav-link"
-                                                        data-key="t-cover"> Cover
+                                                    <a href="auth-logout-cover.html" class="nav-link" data-key="t-cover"> Cover
                                                     </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarSuccessMsg" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarSuccessMsg"
-                                            data-key="t-success-message"> Success Message
+                                        <a href="#sidebarSuccessMsg" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSuccessMsg" data-key="t-success-message"> Success Message
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarSuccessMsg">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-success-msg-basic.html" class="nav-link"
-                                                        data-key="t-basic">
+                                                    <a href="auth-success-msg-basic.html" class="nav-link" data-key="t-basic">
                                                         Basic </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-success-msg-cover.html" class="nav-link"
-                                                        data-key="t-cover">
+                                                    <a href="auth-success-msg-cover.html" class="nav-link" data-key="t-cover">
                                                         Cover </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarTwoStep" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarTwoStep"
-                                            data-key="t-two-step-verification"> Two Step Verification
+                                        <a href="#sidebarTwoStep" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTwoStep" data-key="t-two-step-verification"> Two Step Verification
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarTwoStep">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-twostep-basic.html" class="nav-link"
-                                                        data-key="t-basic"> Basic
+                                                    <a href="auth-twostep-basic.html" class="nav-link" data-key="t-basic"> Basic
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-twostep-cover.html" class="nav-link"
-                                                        data-key="t-cover"> Cover
+                                                    <a href="auth-twostep-cover.html" class="nav-link" data-key="t-cover"> Cover
                                                     </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarErrors" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarErrors"
-                                            data-key="t-errors"> Errors
+                                        <a href="#sidebarErrors" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarErrors" data-key="t-errors"> Errors
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarErrors">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="auth-404-basic.html" class="nav-link"
-                                                        data-key="t-404-basic"> 404
+                                                    <a href="auth-404-basic.html" class="nav-link" data-key="t-404-basic"> 404
                                                         Basic </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-404-cover.html" class="nav-link"
-                                                        data-key="t-404-cover"> 404
+                                                    <a href="auth-404-cover.html" class="nav-link" data-key="t-404-cover"> 404
                                                         Cover </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-404-alt.html" class="nav-link" data-key="t-404-alt">
-                                                        404 Alt
+                                                    <a href="auth-404-alt.html" class="nav-link" data-key="t-404-alt"> 404 Alt
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="auth-500.html" class="nav-link" data-key="t-500"> 500 </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="auth-offline.html" class="nav-link"
-                                                        data-key="t-offline-page"> Offline Page </a>
+                                                    <a href="auth-offline.html" class="nav-link" data-key="t-offline-page"> Offline Page </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1623,8 +1335,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarPages">
+                            <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
                                 <i class="ri-pages-line"></i> <span data-key="t-pages">Pages</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarPages">
@@ -1633,20 +1344,16 @@
                                         <a href="pages-starter.html" class="nav-link" data-key="t-starter"> Starter </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarProfile" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarProfile"
-                                            data-key="t-profile"> Profile
+                                        <a href="#sidebarProfile" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProfile" data-key="t-profile"> Profile
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarProfile">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="pages-profile.html" class="nav-link"
-                                                        data-key="t-simple-page">
+                                                    <a href="pages-profile.html" class="nav-link" data-key="t-simple-page">
                                                         Simple Page </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="pages-profile-settings.html" class="nav-link"
-                                                        data-key="t-settings"> Settings </a>
+                                                    <a href="pages-profile-settings.html" class="nav-link" data-key="t-settings"> Settings </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1655,8 +1362,7 @@
                                         <a href="pages-team.html" class="nav-link" data-key="t-team"> Team </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages-timeline.html" class="nav-link" data-key="t-timeline"> Timeline
-                                        </a>
+                                        <a href="pages-timeline.html" class="nav-link" data-key="t-timeline"> Timeline </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="pages-faqs.html" class="nav-link" data-key="t-faqs"> FAQs </a>
@@ -1668,39 +1374,31 @@
                                         <a href="pages-gallery.html" class="nav-link" data-key="t-gallery"> Gallery </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages-maintenance.html" class="nav-link" data-key="t-maintenance">
-                                            Maintenance
+                                        <a href="pages-maintenance.html" class="nav-link" data-key="t-maintenance"> Maintenance
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages-coming-soon.html" class="nav-link" data-key="t-coming-soon">
-                                            Coming Soon
+                                        <a href="pages-coming-soon.html" class="nav-link" data-key="t-coming-soon"> Coming Soon
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="pages-sitemap.html" class="nav-link" data-key="t-sitemap"> Sitemap </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages-search-results.html" class="nav-link"
-                                            data-key="t-search-results"> Search Results </a>
+                                        <a href="pages-search-results.html" class="nav-link" data-key="t-search-results"> Search Results </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages-privacy-policy.html" class="nav-link"><span
-                                                data-key="t-privacy-policy">Privacy Policy</span> <span
-                                                class="badge badge-pill bg-success" data-key="t-new">New</span></a>
+                                        <a href="pages-privacy-policy.html" class="nav-link"><span data-key="t-privacy-policy">Privacy Policy</span> <span class="badge badge-pill bg-success" data-key="t-new">New</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages-term-conditions.html" class="nav-link"><span
-                                                data-key="t-term-conditions">Term & Conditions</span> <span
-                                                class="badge badge-pill bg-success" data-key="t-new">New</span></a>
+                                        <a href="pages-term-conditions.html" class="nav-link"><span data-key="t-term-conditions">Term & Conditions</span> <span class="badge badge-pill bg-success" data-key="t-new">New</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarLanding" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarLanding">
+                            <a class="nav-link menu-link" href="#sidebarLanding" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLanding">
                                 <i class="ri-rocket-line"></i> <span data-key="t-landing">Landing</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarLanding">
@@ -1709,23 +1407,19 @@
                                         <a href="landing.html" class="nav-link" data-key="t-one-page"> One Page </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing"> NFT
-                                            Landing </a>
+                                        <a href="nft-landing.html" class="nav-link" data-key="t-nft-landing"> NFT Landing </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="job-landing.html" class="nav-link"><span data-key="t-job">Job</span>
-                                            <span class="badge badge-pill bg-success" data-key="t-new">New</span></a>
+                                        <a href="job-landing.html" class="nav-link"><span data-key="t-job">Job</span> <span class="badge badge-pill bg-success" data-key="t-new">New</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span
-                                data-key="t-components">Components</span></li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Components</span></li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarUI">
+                            <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarUI">
                                 <i class="ri-pencil-ruler-2-line"></i> <span data-key="t-base-ui">Base UI</span>
                             </a>
                             <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarUI">
@@ -1739,8 +1433,7 @@
                                                 <a href="ui-badges.html" class="nav-link" data-key="t-badges">Badges</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-buttons.html" class="nav-link"
-                                                    data-key="t-buttons">Buttons</a>
+                                                <a href="ui-buttons.html" class="nav-link" data-key="t-buttons">Buttons</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="ui-colors.html" class="nav-link" data-key="t-colors">Colors</a>
@@ -1749,12 +1442,10 @@
                                                 <a href="ui-cards.html" class="nav-link" data-key="t-cards">Cards</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-carousel.html" class="nav-link"
-                                                    data-key="t-carousel">Carousel</a>
+                                                <a href="ui-carousel.html" class="nav-link" data-key="t-carousel">Carousel</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-dropdowns.html" class="nav-link"
-                                                    data-key="t-dropdowns">Dropdowns</a>
+                                                <a href="ui-dropdowns.html" class="nav-link" data-key="t-dropdowns">Dropdowns</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="ui-grid.html" class="nav-link" data-key="t-grid">Grid</a>
@@ -1770,27 +1461,22 @@
                                                 <a href="ui-tabs.html" class="nav-link" data-key="t-tabs">Tabs</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-accordions.html" class="nav-link"
-                                                    data-key="t-accordion-collapse">Accordion & Collapse</a>
+                                                <a href="ui-accordions.html" class="nav-link" data-key="t-accordion-collapse">Accordion & Collapse</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="ui-modals.html" class="nav-link" data-key="t-modals">Modals</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-offcanvas.html" class="nav-link"
-                                                    data-key="t-offcanvas">Offcanvas</a>
+                                                <a href="ui-offcanvas.html" class="nav-link" data-key="t-offcanvas">Offcanvas</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-placeholders.html" class="nav-link"
-                                                    data-key="t-placeholders">Placeholders</a>
+                                                <a href="ui-placeholders.html" class="nav-link" data-key="t-placeholders">Placeholders</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-progress.html" class="nav-link"
-                                                    data-key="t-progress">Progress</a>
+                                                <a href="ui-progress.html" class="nav-link" data-key="t-progress">Progress</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-notifications.html" class="nav-link"
-                                                    data-key="t-notifications">Notifications</a>
+                                                <a href="ui-notifications.html" class="nav-link" data-key="t-notifications">Notifications</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1801,28 +1487,23 @@
                                                     object</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-embed-video.html" class="nav-link"
-                                                    data-key="t-embed-video">Embed
+                                                <a href="ui-embed-video.html" class="nav-link" data-key="t-embed-video">Embed
                                                     Video</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-typography.html" class="nav-link"
-                                                    data-key="t-typography">Typography</a>
+                                                <a href="ui-typography.html" class="nav-link" data-key="t-typography">Typography</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="ui-lists.html" class="nav-link" data-key="t-lists">Lists</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-general.html" class="nav-link"
-                                                    data-key="t-general">General</a>
+                                                <a href="ui-general.html" class="nav-link" data-key="t-general">General</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-ribbons.html" class="nav-link"
-                                                    data-key="t-ribbons">Ribbons</a>
+                                                <a href="ui-ribbons.html" class="nav-link" data-key="t-ribbons">Ribbons</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="ui-utilities.html" class="nav-link"
-                                                    data-key="t-utilities">Utilities</a>
+                                                <a href="ui-utilities.html" class="nav-link" data-key="t-utilities">Utilities</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1831,49 +1512,40 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
+                            <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
                                 <i class="ri-stack-line"></i> <span data-key="t-advance-ui">Advance UI</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="advance-ui-sweetalerts.html" class="nav-link"
-                                            data-key="t-sweet-alerts">Sweet
+                                        <a href="advance-ui-sweetalerts.html" class="nav-link" data-key="t-sweet-alerts">Sweet
                                             Alerts</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="advance-ui-nestable.html" class="nav-link"
-                                            data-key="t-nestable-list">Nestable
+                                        <a href="advance-ui-nestable.html" class="nav-link" data-key="t-nestable-list">Nestable
                                             List</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="advance-ui-scrollbar.html" class="nav-link"
-                                            data-key="t-scrollbar">Scrollbar</a>
+                                        <a href="advance-ui-scrollbar.html" class="nav-link" data-key="t-scrollbar">Scrollbar</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="advance-ui-animation.html" class="nav-link"
-                                            data-key="t-animation">Animation</a>
+                                        <a href="advance-ui-animation.html" class="nav-link" data-key="t-animation">Animation</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="advance-ui-tour.html" class="nav-link" data-key="t-tour">Tour</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="advance-ui-swiper.html" class="nav-link"
-                                            data-key="t-swiper-slider">Swiper
+                                        <a href="advance-ui-swiper.html" class="nav-link" data-key="t-swiper-slider">Swiper
                                             Slider</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="advance-ui-ratings.html" class="nav-link"
-                                            data-key="t-ratings">Ratings</a>
+                                        <a href="advance-ui-ratings.html" class="nav-link" data-key="t-ratings">Ratings</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="advance-ui-highlight.html" class="nav-link"
-                                            data-key="t-highlight">Highlight</a>
+                                        <a href="advance-ui-highlight.html" class="nav-link" data-key="t-highlight">Highlight</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="advance-ui-scrollspy.html" class="nav-link"
-                                            data-key="t-scrollSpy">ScrollSpy</a>
+                                        <a href="advance-ui-scrollspy.html" class="nav-link" data-key="t-scrollSpy">ScrollSpy</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1886,8 +1558,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarForms">
+                            <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
                                 <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Forms</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarForms">
@@ -1897,32 +1568,26 @@
                                             Elements</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="forms-select.html" class="nav-link" data-key="t-form-select"> Form
-                                            Select </a>
+                                        <a href="forms-select.html" class="nav-link" data-key="t-form-select"> Form Select </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="forms-checkboxs-radios.html" class="nav-link"
-                                            data-key="t-checkboxs-radios">Checkboxs & Radios</a>
+                                        <a href="forms-checkboxs-radios.html" class="nav-link" data-key="t-checkboxs-radios">Checkboxs & Radios</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="forms-pickers.html" class="nav-link" data-key="t-pickers"> Pickers </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="forms-masks.html" class="nav-link" data-key="t-input-masks">Input
-                                            Masks</a>
+                                        <a href="forms-masks.html" class="nav-link" data-key="t-input-masks">Input Masks</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="forms-advanced.html" class="nav-link"
-                                            data-key="t-advanced">Advanced</a>
+                                        <a href="forms-advanced.html" class="nav-link" data-key="t-advanced">Advanced</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="forms-range-sliders.html" class="nav-link" data-key="t-range-slider">
-                                            Range
+                                        <a href="forms-range-sliders.html" class="nav-link" data-key="t-range-slider"> Range
                                             Slider </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="forms-validation.html" class="nav-link"
-                                            data-key="t-validation">Validation</a>
+                                        <a href="forms-validation.html" class="nav-link" data-key="t-validation">Validation</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="forms-wizard.html" class="nav-link" data-key="t-wizard">Wizard</a>
@@ -1931,13 +1596,11 @@
                                         <a href="forms-editors.html" class="nav-link" data-key="t-editors">Editors</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="forms-file-uploads.html" class="nav-link"
-                                            data-key="t-file-uploads">File
+                                        <a href="forms-file-uploads.html" class="nav-link" data-key="t-file-uploads">File
                                             Uploads</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="forms-layouts.html" class="nav-link" data-key="t-form-layouts">Form
-                                            Layouts</a>
+                                        <a href="forms-layouts.html" class="nav-link" data-key="t-form-layouts">Form Layouts</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="forms-select2.html" class="nav-link" data-key="t-select2">Select2</a>
@@ -1947,15 +1610,13 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarTables">
+                            <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
                                 <i class="ri-layout-grid-line"></i> <span data-key="t-tables">Tables</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarTables">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="tables-basic.html" class="nav-link" data-key="t-basic-tables">Basic
-                                            Tables</a>
+                                        <a href="tables-basic.html" class="nav-link" data-key="t-basic-tables">Basic Tables</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="tables-gridjs.html" class="nav-link" data-key="t-grid-js">Grid Js</a>
@@ -1964,122 +1625,99 @@
                                         <a href="tables-listjs.html" class="nav-link" data-key="t-list-js">List Js</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="tables-datatables.html" class="nav-link"
-                                            data-key="t-datatables">Datatables</a>
+                                        <a href="tables-datatables.html" class="nav-link" data-key="t-datatables">Datatables</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarCharts">
+                            <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCharts">
                                 <i class="ri-pie-chart-line"></i> <span data-key="t-charts">Charts</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarCharts">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#sidebarApexcharts" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarApexcharts"
-                                            data-key="t-apexcharts">
+                                        <a href="#sidebarApexcharts" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApexcharts" data-key="t-apexcharts">
                                             Apexcharts
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarApexcharts">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-line.html" class="nav-link" data-key="t-line">
-                                                        Line
+                                                    <a href="charts-apex-line.html" class="nav-link" data-key="t-line"> Line
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-area.html" class="nav-link" data-key="t-area">
-                                                        Area
+                                                    <a href="charts-apex-area.html" class="nav-link" data-key="t-area"> Area
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-column.html" class="nav-link"
-                                                        data-key="t-column">
+                                                    <a href="charts-apex-column.html" class="nav-link" data-key="t-column">
                                                         Column </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-bar.html" class="nav-link" data-key="t-bar">
-                                                        Bar </a>
+                                                    <a href="charts-apex-bar.html" class="nav-link" data-key="t-bar"> Bar </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-mixed.html" class="nav-link"
-                                                        data-key="t-mixed"> Mixed
+                                                    <a href="charts-apex-mixed.html" class="nav-link" data-key="t-mixed"> Mixed
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-timeline.html" class="nav-link"
-                                                        data-key="t-timeline">
+                                                    <a href="charts-apex-timeline.html" class="nav-link" data-key="t-timeline">
                                                         Timeline </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-candlestick.html" class="nav-link"
-                                                        data-key="t-candlstick"> Candlstick </a>
+                                                    <a href="charts-apex-candlestick.html" class="nav-link" data-key="t-candlstick"> Candlstick </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-boxplot.html" class="nav-link"
-                                                        data-key="t-boxplot">
+                                                    <a href="charts-apex-boxplot.html" class="nav-link" data-key="t-boxplot">
                                                         Boxplot </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-bubble.html" class="nav-link"
-                                                        data-key="t-bubble">
+                                                    <a href="charts-apex-bubble.html" class="nav-link" data-key="t-bubble">
                                                         Bubble </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-scatter.html" class="nav-link"
-                                                        data-key="t-scatter">
+                                                    <a href="charts-apex-scatter.html" class="nav-link" data-key="t-scatter">
                                                         Scatter </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-heatmap.html" class="nav-link"
-                                                        data-key="t-heatmap">
+                                                    <a href="charts-apex-heatmap.html" class="nav-link" data-key="t-heatmap">
                                                         Heatmap </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-treemap.html" class="nav-link"
-                                                        data-key="t-treemap">
+                                                    <a href="charts-apex-treemap.html" class="nav-link" data-key="t-treemap">
                                                         Treemap </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-pie.html" class="nav-link" data-key="t-pie">
-                                                        Pie </a>
+                                                    <a href="charts-apex-pie.html" class="nav-link" data-key="t-pie"> Pie </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-radialbar.html" class="nav-link"
-                                                        data-key="t-radialbar"> Radialbar </a>
+                                                    <a href="charts-apex-radialbar.html" class="nav-link" data-key="t-radialbar"> Radialbar </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-radar.html" class="nav-link"
-                                                        data-key="t-radar"> Radar
+                                                    <a href="charts-apex-radar.html" class="nav-link" data-key="t-radar"> Radar
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="charts-apex-polar.html" class="nav-link"
-                                                        data-key="t-polar-area">
+                                                    <a href="charts-apex-polar.html" class="nav-link" data-key="t-polar-area">
                                                         Polar Area </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="charts-chartjs.html" class="nav-link" data-key="t-chartjs"> Chartjs
-                                        </a>
+                                        <a href="charts-chartjs.html" class="nav-link" data-key="t-chartjs"> Chartjs </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="charts-echarts.html" class="nav-link" data-key="t-echarts"> Echarts
-                                        </a>
+                                        <a href="charts-echarts.html" class="nav-link" data-key="t-echarts"> Echarts </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarIcons">
+                            <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarIcons">
                                 <i class="ri-compasses-2-line"></i> <span data-key="t-icons">Icons</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarIcons">
@@ -2088,12 +1726,10 @@
                                         <a href="icons-remix.html" class="nav-link" data-key="t-remix">Remix</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="icons-boxicons.html" class="nav-link"
-                                            data-key="t-boxicons">Boxicons</a>
+                                        <a href="icons-boxicons.html" class="nav-link" data-key="t-boxicons">Boxicons</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="icons-materialdesign.html" class="nav-link"
-                                            data-key="t-material-design">Material Design</a>
+                                        <a href="icons-materialdesign.html" class="nav-link" data-key="t-material-design">Material Design</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="icons-lineawesome.html" class="nav-link" data-key="t-line-awesome">Line
@@ -2103,16 +1739,14 @@
                                         <a href="icons-feather.html" class="nav-link" data-key="t-feather">Feather</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="icons-crypto.html" class="nav-link"> <span
-                                                data-key="t-crypto-svg">Crypto SVG</span></a>
+                                        <a href="icons-crypto.html" class="nav-link"> <span data-key="t-crypto-svg">Crypto SVG</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarMaps">
+                            <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">
                                 <i class="ri-map-pin-line"></i> <span data-key="t-maps">Maps</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarMaps">
@@ -2137,8 +1771,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarMultilevel" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
+                            <a class="nav-link menu-link" href="#sidebarMultilevel" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
                                 <i class="ri-share-line"></i> <span data-key="t-multi-level">Multi Level</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarMultilevel">
@@ -2147,9 +1780,7 @@
                                         <a href="#" class="nav-link" data-key="t-level-1.1"> Level 1.1 </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarAccount"
-                                            data-key="t-level-1.2"> Level
+                                        <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAccount" data-key="t-level-1.2"> Level
                                             1.2
                                         </a>
                                         <div class="collapse menu-dropdown" id="sidebarAccount">
@@ -2158,20 +1789,16 @@
                                                     <a href="#" class="nav-link" data-key="t-level-2.1"> Level 2.1 </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="#sidebarCrm" class="nav-link" data-bs-toggle="collapse"
-                                                        role="button" aria-expanded="false" aria-controls="sidebarCrm"
-                                                        data-key="t-level-2.2"> Level 2.2
+                                                    <a href="#sidebarCrm" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCrm" data-key="t-level-2.2"> Level 2.2
                                                     </a>
                                                     <div class="collapse menu-dropdown" id="sidebarCrm">
                                                         <ul class="nav nav-sm flex-column">
                                                             <li class="nav-item">
-                                                                <a href="#" class="nav-link" data-key="t-level-3.1">
-                                                                    Level 3.1
+                                                                <a href="#" class="nav-link" data-key="t-level-3.1"> Level 3.1
                                                                 </a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a href="#" class="nav-link" data-key="t-level-3.2">
-                                                                    Level 3.2
+                                                                <a href="#" class="nav-link" data-key="t-level-3.2"> Level 3.2
                                                                 </a>
                                                             </li>
                                                         </ul>
@@ -2227,17 +1854,13 @@
                                 <div class="card-body text-center">
                                     <h6 class="card-title mb-3 flex-grow-1 text-start">Time Tracking</h6>
                                     <div class="mb-2">
-                                        <lord-icon src="https://cdn.lordicon.com/kbtmbyzy.json" trigger="loop"
-                                            colors="primary:#405189,secondary:#02a8b5"
-                                            style="width:90px;height:90px"></lord-icon>
+                                        <lord-icon src="https://cdn.lordicon.com/kbtmbyzy.json" trigger="loop" colors="primary:#405189,secondary:#02a8b5" style="width:90px;height:90px"></lord-icon>
                                     </div>
                                     <h3 class="mb-1">9 hrs 13 min</h3>
                                     <h5 class="fs-14 mb-4">Profile Page Satructure</h5>
                                     <div class="hstack gap-2 justify-content-center">
-                                        <button class="btn btn-danger btn-sm"><i
-                                                class="ri-stop-circle-line align-bottom me-1"></i> Stop</button>
-                                        <button class="btn btn-success btn-sm"><i
-                                                class="ri-play-circle-line align-bottom me-1"></i> Start</button>
+                                        <button class="btn btn-danger btn-sm"><i class="ri-stop-circle-line align-bottom me-1"></i> Stop</button>
+                                        <button class="btn btn-success btn-sm"><i class="ri-play-circle-line align-bottom me-1"></i> Start</button>
                                     </div>
                                 </div>
                             </div>
@@ -2245,8 +1868,7 @@
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <div class="mb-4">
-                                        <select class="form-control" name="choices-single-default" data-choices
-                                            data-choices-search-false>
+                                        <select class="form-control" name="choices-single-default" data-choices data-choices-search-false>
                                             <option value="">Select Task board</option>
                                             <option value="Unassigned">Unassigned</option>
                                             <option value="To Do">To Do</option>
@@ -2294,18 +1916,14 @@
                                     <div class="d-flex mb-3">
                                         <h6 class="card-title mb-0 flex-grow-1">Assigned To</h6>
                                         <div class="flex-shrink-0">
-                                            <button type="button" class="btn btn-soft-danger btn-sm"
-                                                data-bs-toggle="modal" data-bs-target="#inviteMembersModal"><i
-                                                    class="ri-share-line me-1 align-bottom"></i> Assigned
-                                                Member</button>
+                                            <button type="button" class="btn btn-soft-danger btn-sm" data-bs-toggle="modal" data-bs-target="#inviteMembersModal"><i class="ri-share-line me-1 align-bottom"></i> Assigned Member</button>
                                         </div>
                                     </div>
                                     <ul class="list-unstyled vstack gap-3 mb-0">
                                         <li>
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-shrink-0">
-                                                    <img src="assets/images/users/avatar-10.jpg" alt=""
-                                                        class="avatar-xs rounded-circle">
+                                                    <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-xs rounded-circle">
                                                 </div>
                                                 <div class="flex-grow-1 ms-2">
                                                     <h6 class="mb-1"><a href="pages-profile.html">Tonya Noble</a></h6>
@@ -2313,21 +1931,13 @@
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <div class="dropdown">
-                                                        <button class="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <button class="btn btn-icon btn-sm fs-16 text-muted dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i class="ri-more-fill"></i>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-eye-fill text-muted me-2 align-bottom"></i>View</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-star-fill text-muted me-2 align-bottom"></i>Favourite</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>Delete</a>
-                                                            </li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-eye-fill text-muted me-2 align-bottom"></i>View</a></li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-star-fill text-muted me-2 align-bottom"></i>Favourite</a></li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>Delete</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -2336,8 +1946,7 @@
                                         <li>
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-shrink-0">
-                                                    <img src="assets/images/users/avatar-8.jpg" alt=""
-                                                        class="avatar-xs rounded-circle">
+                                                    <img src="assets/images/users/avatar-8.jpg" alt="" class="avatar-xs rounded-circle">
                                                 </div>
                                                 <div class="flex-grow-1 ms-2">
                                                     <h6 class="mb-1"><a href="pages-profile.html">Thomas Taylor</a></h6>
@@ -2345,21 +1954,13 @@
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <div class="dropdown">
-                                                        <button class="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <button class="btn btn-icon btn-sm fs-16 text-muted dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i class="ri-more-fill"></i>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-eye-fill text-muted me-2 align-bottom"></i>View</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-star-fill text-muted me-2 align-bottom"></i>Favourite</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>Delete</a>
-                                                            </li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-eye-fill text-muted me-2 align-bottom"></i>View</a></li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-star-fill text-muted me-2 align-bottom"></i>Favourite</a></li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>Delete</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -2368,8 +1969,7 @@
                                         <li>
                                             <div class="d-flex align-items-center">
                                                 <div class="flex-shrink-0">
-                                                    <img src="assets/images/users/avatar-2.jpg" alt=""
-                                                        class="avatar-xs rounded-circle">
+                                                    <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle">
                                                 </div>
                                                 <div class="flex-grow-1 ms-2">
                                                     <h6 class="mb-1"><a href="pages-profile.html">Nancy Martino</a></h6>
@@ -2377,21 +1977,13 @@
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <div class="dropdown">
-                                                        <button class="btn btn-icon btn-sm fs-16 text-muted dropdown"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false">
+                                                        <button class="btn btn-icon btn-sm fs-16 text-muted dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i class="ri-more-fill"></i>
                                                         </button>
                                                         <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-eye-fill text-muted me-2 align-bottom"></i>View</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-star-fill text-muted me-2 align-bottom"></i>Favourite</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i
-                                                                        class="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>Delete</a>
-                                                            </li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-eye-fill text-muted me-2 align-bottom"></i>View</a></li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-star-fill text-muted me-2 align-bottom"></i>Favourite</a></li>
+                                                            <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-5-fill text-muted me-2 align-bottom"></i>Delete</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -2415,32 +2007,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1 overflow-hidden">
-                                                    <h5 class="fs-13 mb-1"><a href="javascript:void(0);"
-                                                            class="text-body text-truncate d-block">App pages.zip</a>
-                                                    </h5>
+                                                    <h5 class="fs-13 mb-1"><a href="javascript:void(0);" class="text-body text-truncate d-block">App pages.zip</a></h5>
                                                     <div>2.2MB</div>
                                                 </div>
                                                 <div class="flex-shrink-0 ms-2">
                                                     <div class="d-flex gap-1">
-                                                        <button type="button"
-                                                            class="btn btn-icon text-muted btn-sm fs-18"><i
-                                                                class="ri-download-2-line"></i></button>
+                                                        <button type="button" class="btn btn-icon text-muted btn-sm fs-18"><i class="ri-download-2-line"></i></button>
                                                         <div class="dropdown">
-                                                            <button
-                                                                class="btn btn-icon text-muted btn-sm fs-18 dropdown"
-                                                                type="button" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <button class="btn btn-icon text-muted btn-sm fs-18 dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 <i class="ri-more-fill"></i>
                                                             </button>
                                                             <ul class="dropdown-menu">
-                                                                <li><a class="dropdown-item"
-                                                                        href="javascript:void(0);"><i
-                                                                            class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                                                        Rename</a></li>
-                                                                <li><a class="dropdown-item"
-                                                                        href="javascript:void(0);"><i
-                                                                            class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                                                        Delete</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Rename</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -2458,32 +2037,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1 overflow-hidden">
-                                                    <h5 class="fs-13 mb-1"><a href="javascript:void(0);"
-                                                            class="text-body text-truncate d-block">Velzon admin.ppt</a>
-                                                    </h5>
+                                                    <h5 class="fs-13 mb-1"><a href="javascript:void(0);" class="text-body text-truncate d-block">Velzon admin.ppt</a></h5>
                                                     <div>2.4MB</div>
                                                 </div>
                                                 <div class="flex-shrink-0 ms-2">
                                                     <div class="d-flex gap-1">
-                                                        <button type="button"
-                                                            class="btn btn-icon text-muted btn-sm fs-18"><i
-                                                                class="ri-download-2-line"></i></button>
+                                                        <button type="button" class="btn btn-icon text-muted btn-sm fs-18"><i class="ri-download-2-line"></i></button>
                                                         <div class="dropdown">
-                                                            <button
-                                                                class="btn btn-icon text-muted btn-sm fs-18 dropdown"
-                                                                type="button" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <button class="btn btn-icon text-muted btn-sm fs-18 dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 <i class="ri-more-fill"></i>
                                                             </button>
                                                             <ul class="dropdown-menu">
-                                                                <li><a class="dropdown-item"
-                                                                        href="javascript:void(0);"><i
-                                                                            class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                                                        Rename</a></li>
-                                                                <li><a class="dropdown-item"
-                                                                        href="javascript:void(0);"><i
-                                                                            class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                                                        Delete</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Rename</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -2501,31 +2067,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1 overflow-hidden">
-                                                    <h5 class="fs-13 mb-1"><a href="javascript:void(0);"
-                                                            class="text-body text-truncate d-block">Images.zip</a></h5>
+                                                    <h5 class="fs-13 mb-1"><a href="javascript:void(0);" class="text-body text-truncate d-block">Images.zip</a></h5>
                                                     <div>1.2MB</div>
                                                 </div>
                                                 <div class="flex-shrink-0 ms-2">
                                                     <div class="d-flex gap-1">
-                                                        <button type="button"
-                                                            class="btn btn-icon text-muted btn-sm fs-18"><i
-                                                                class="ri-download-2-line"></i></button>
+                                                        <button type="button" class="btn btn-icon text-muted btn-sm fs-18"><i class="ri-download-2-line"></i></button>
                                                         <div class="dropdown">
-                                                            <button
-                                                                class="btn btn-icon text-muted btn-sm fs-18 dropdown"
-                                                                type="button" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <button class="btn btn-icon text-muted btn-sm fs-18 dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 <i class="ri-more-fill"></i>
                                                             </button>
                                                             <ul class="dropdown-menu">
-                                                                <li><a class="dropdown-item"
-                                                                        href="javascript:void(0);"><i
-                                                                            class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                                                        Rename</a></li>
-                                                                <li><a class="dropdown-item"
-                                                                        href="javascript:void(0);"><i
-                                                                            class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                                                        Delete</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Rename</a></li>
+                                                                <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -2546,20 +2100,13 @@
                                 <div class="card-body">
                                     <div class="text-muted">
                                         <h6 class="mb-3 fw-semibold text-uppercase">Summary</h6>
-                                        <p>It will be as simple as occidental in fact, it will be Occidental. To an
-                                            English person, it will seem like simplified English, as a skeptical
-                                            Cambridge friend of mine told me what Occidental is. The European languages
-                                            are members of the same family. Their separate existence is a myth. For
-                                            science, music, sport, etc, Europe uses the same vocabulary. The languages
-                                            only differ in their grammar, their pronunciation and their most common
-                                            words.</p>
+                                        <p>It will be as simple as occidental in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words.</p>
 
                                         <h6 class="mb-3 fw-semibold text-uppercase">Sub-tasks</h6>
                                         <ul class="ps-3 list-unstyled vstack gap-2">
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="productTask">
+                                                    <input class="form-check-input" type="checkbox" value="" id="productTask">
                                                     <label class="form-check-label" for="productTask">
                                                         Product Design, Figma (Software), Prototype
                                                     </label>
@@ -2567,8 +2114,7 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="dashboardTask" checked>
+                                                    <input class="form-check-input" type="checkbox" value="" id="dashboardTask" checked>
                                                     <label class="form-check-label" for="dashboardTask">
                                                         Dashboards : Ecommerce, Analytics, Project,etc.
                                                     </label>
@@ -2576,8 +2122,7 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="calenderTask">
+                                                    <input class="form-check-input" type="checkbox" value="" id="calenderTask">
                                                     <label class="form-check-label" for="calenderTask">
                                                         Create calendar, chat and email app pages
                                                     </label>
@@ -2585,8 +2130,7 @@
                                             </li>
                                             <li>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="authenticationTask">
+                                                    <input class="form-check-input" type="checkbox" value="" id="authenticationTask">
                                                     <label class="form-check-label" for="authenticationTask">
                                                         Add authentication pages
                                                     </label>
@@ -2609,11 +2153,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div>
-                                        <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0"
-                                            role="tablist">
+                                        <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#home-1"
-                                                    role="tab">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#home-1" role="tab">
                                                     Comments (5)
                                                 </a>
                                             </li>
@@ -2638,96 +2180,58 @@
                                             <div data-simplebar style="height: 508px;" class="px-3 mx-n3 mb-2">
                                                 <div class="d-flex mb-4">
                                                     <div class="flex-shrink-0">
-                                                        <img src="assets/images/users/avatar-7.jpg" alt=""
-                                                            class="avatar-xs rounded-circle" />
+                                                        <img src="assets/images/users/avatar-7.jpg" alt="" class="avatar-xs rounded-circle" />
                                                     </div>
                                                     <div class="flex-grow-1 ms-3">
-                                                        <h5 class="fs-13"><a href="pages-profile.html">Joseph Parker</a>
-                                                            <small class="text-muted">20 Dec 2021 - 05:47AM</small></h5>
-                                                        <p class="text-muted">I am getting message from customers that
-                                                            when they place order always get error message .</p>
-                                                        <a href="javascript: void(0);"
-                                                            class="badge text-muted bg-light"><i
-                                                                class="mdi mdi-reply"></i> Reply</a>
+                                                        <h5 class="fs-13"><a href="pages-profile.html">Joseph Parker</a> <small class="text-muted">20 Dec 2021 - 05:47AM</small></h5>
+                                                        <p class="text-muted">I am getting message from customers that when they place order always get error message .</p>
+                                                        <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
                                                         <div class="d-flex mt-4">
                                                             <div class="flex-shrink-0">
-                                                                <img src="assets/images/users/avatar-10.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle" />
+                                                                <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-xs rounded-circle" />
                                                             </div>
                                                             <div class="flex-grow-1 ms-3">
-                                                                <h5 class="fs-13"><a href="pages-profile.html">Tonya
-                                                                        Noble</a> <small class="text-muted">22 Dec 2021
-                                                                        - 02:32PM</small></h5>
-                                                                <p class="text-muted">Please be sure to check your Spam
-                                                                    mailbox to see if your email filters have identified
-                                                                    the email from Dell as spam.</p>
-                                                                <a href="javascript: void(0);"
-                                                                    class="badge text-muted bg-light"><i
-                                                                        class="mdi mdi-reply"></i> Reply</a>
+                                                                <h5 class="fs-13"><a href="pages-profile.html">Tonya Noble</a> <small class="text-muted">22 Dec 2021 - 02:32PM</small></h5>
+                                                                <p class="text-muted">Please be sure to check your Spam mailbox to see if your email filters have identified the email from Dell as spam.</p>
+                                                                <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex mb-4">
                                                     <div class="flex-shrink-0">
-                                                        <img src="assets/images/users/avatar-8.jpg" alt=""
-                                                            class="avatar-xs rounded-circle" />
+                                                        <img src="assets/images/users/avatar-8.jpg" alt="" class="avatar-xs rounded-circle" />
                                                     </div>
                                                     <div class="flex-grow-1 ms-3">
-                                                        <h5 class="fs-13"><a href="pages-profile.html">Thomas Taylor</a>
-                                                            <small class="text-muted">24 Dec 2021 - 05:20PM</small></h5>
-                                                        <p class="text-muted">If you have further questions, please
-                                                            contact Customer Support from the “Action Menu” on your <a
-                                                                href="javascript:void(0);"
-                                                                class="text-decoration-underline">Online Order
-                                                                Support</a>.</p>
-                                                        <a href="javascript: void(0);"
-                                                            class="badge text-muted bg-light"><i
-                                                                class="mdi mdi-reply"></i> Reply</a>
+                                                        <h5 class="fs-13"><a href="pages-profile.html">Thomas Taylor</a> <small class="text-muted">24 Dec 2021 - 05:20PM</small></h5>
+                                                        <p class="text-muted">If you have further questions, please contact Customer Support from the “Action Menu” on your <a href="javascript:void(0);" class="text-decoration-underline">Online Order Support</a>.</p>
+                                                        <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex">
                                                     <div class="flex-shrink-0">
-                                                        <img src="assets/images/users/avatar-10.jpg" alt=""
-                                                            class="avatar-xs rounded-circle" />
+                                                        <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-xs rounded-circle" />
                                                     </div>
                                                     <div class="flex-grow-1 ms-3">
-                                                        <h5 class="fs-13"><a href="pages-profile.html">Tonya Noble</a>
-                                                            <small class="text-muted">26 min ago</small></h5>
-                                                        <p class="text-muted">Your <a href="javascript:void(0)"
-                                                                class="text-decoration-underline">Online Order
-                                                                Support</a> provides you with the most current status of
-                                                            your order. To help manage your order refer to the “Action
-                                                            Menu” to initiate return, contact Customer Support and more.
-                                                        </p>
+                                                        <h5 class="fs-13"><a href="pages-profile.html">Tonya Noble</a> <small class="text-muted">26 min ago</small></h5>
+                                                        <p class="text-muted">Your <a href="javascript:void(0)" class="text-decoration-underline">Online Order Support</a> provides you with the most current status of your order. To help manage your order refer to the “Action Menu” to initiate return, contact Customer Support and more.</p>
                                                         <div class="row g-2 mb-3">
                                                             <div class="col-lg-1 col-sm-2 col-6">
-                                                                <img src="assets/images/small/img-4.jpg" alt=""
-                                                                    class="img-fluid rounded">
+                                                                <img src="assets/images/small/img-4.jpg" alt="" class="img-fluid rounded">
                                                             </div>
                                                             <div class="col-lg-1 col-sm-2 col-6">
-                                                                <img src="assets/images/small/img-5.jpg" alt=""
-                                                                    class="img-fluid rounded">
+                                                                <img src="assets/images/small/img-5.jpg" alt="" class="img-fluid rounded">
                                                             </div>
                                                         </div>
-                                                        <a href="javascript: void(0);"
-                                                            class="badge text-muted bg-light"><i
-                                                                class="mdi mdi-reply"></i> Reply</a>
+                                                        <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
                                                         <div class="d-flex mt-4">
                                                             <div class="flex-shrink-0">
-                                                                <img src="assets/images/users/avatar-6.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle" />
+                                                                <img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle" />
                                                             </div>
                                                             <div class="flex-grow-1 ms-3">
-                                                                <h5 class="fs-13"><a href="pages-profile.html">Nancy
-                                                                        Martino</a> <small class="text-muted">8 sec
-                                                                        ago</small></h5>
-                                                                <p class="text-muted">Other shipping methods are
-                                                                    available at checkout if you want your purchase
-                                                                    delivered faster.</p>
-                                                                <a href="javascript: void(0);"
-                                                                    class="badge text-muted bg-light"><i
-                                                                        class="mdi mdi-reply"></i> Reply</a>
+                                                                <h5 class="fs-13"><a href="pages-profile.html">Nancy Martino</a> <small class="text-muted">8 sec ago</small></h5>
+                                                                <p class="text-muted">Other shipping methods are available at checkout if you want your purchase delivered faster.</p>
+                                                                <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2736,19 +2240,13 @@
                                             <form class="mt-4">
                                                 <div class="row g-3">
                                                     <div class="col-lg-12">
-                                                        <label for="exampleFormControlTextarea1"
-                                                            class="form-label">Leave a Comments</label>
-                                                        <textarea class="form-control bg-light border-light"
-                                                            id="exampleFormControlTextarea1" rows="3"
-                                                            placeholder="Enter comments"></textarea>
+                                                        <label for="exampleFormControlTextarea1" class="form-label">Leave a Comments</label>
+                                                        <textarea class="form-control bg-light border-light" id="exampleFormControlTextarea1" rows="3" placeholder="Enter comments"></textarea>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-12 text-end">
-                                                        <button type="button"
-                                                            class="btn btn-ghost-secondary btn-icon waves-effect me-1"><i
-                                                                class="ri-attachment-line fs-16"></i></button>
-                                                        <a href="javascript:void(0);" class="btn btn-success">Post
-                                                            Comments</a>
+                                                        <button type="button" class="btn btn-ghost-secondary btn-icon waves-effect me-1"><i class="ri-attachment-line fs-16"></i></button>
+                                                        <a href="javascript:void(0);" class="btn btn-success">Post Comments</a>
                                                     </div>
                                                 </div>
                                                 <!--end row-->
@@ -2772,15 +2270,12 @@
                                                             <td>
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="avatar-sm">
-                                                                        <div
-                                                                            class="avatar-title bg-soft-primary text-primary rounded fs-20">
+                                                                        <div class="avatar-title bg-soft-primary text-primary rounded fs-20">
                                                                             <i class="ri-file-zip-fill"></i>
                                                                         </div>
                                                                     </div>
                                                                     <div class="ms-3 flex-grow-1">
-                                                                        <h6 class="fs-15 mb-0"><a
-                                                                                href="javascript:void(0)">App
-                                                                                pages.zip</a></h6>
+                                                                        <h6 class="fs-15 mb-0"><a href="javascript:void(0)">App pages.zip</a></h6>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -2789,29 +2284,14 @@
                                                             <td>21 Dec, 2021</td>
                                                             <td>
                                                                 <div class="dropdown">
-                                                                    <a href="javascript:void(0);"
-                                                                        class="btn btn-light btn-icon"
-                                                                        id="dropdownMenuLink1" data-bs-toggle="dropdown"
-                                                                        aria-expanded="true">
+                                                                    <a href="javascript:void(0);" class="btn btn-light btn-icon" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="true">
                                                                         <i class="ri-equalizer-fill"></i>
                                                                     </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        aria-labelledby="dropdownMenuLink1"
-                                                                        data-popper-placement="bottom-end"
-                                                                        style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-eye-fill me-2 align-middle text-muted"></i>View</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
-                                                                        </li>
+                                                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink1" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);">
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-eye-fill me-2 align-middle text-muted"></i>View</a></li>
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a></li>
                                                                         <li class="dropdown-divider"></li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete</a>
-                                                                        </li>
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </td>
@@ -2820,15 +2300,12 @@
                                                             <td>
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="avatar-sm">
-                                                                        <div
-                                                                            class="avatar-title bg-soft-danger text-danger rounded fs-20">
+                                                                        <div class="avatar-title bg-soft-danger text-danger rounded fs-20">
                                                                             <i class="ri-file-pdf-fill"></i>
                                                                         </div>
                                                                     </div>
                                                                     <div class="ms-3 flex-grow-1">
-                                                                        <h6 class="fs-15 mb-0"><a
-                                                                                href="javascript:void(0);">Velzon
-                                                                                admin.ppt</a></h6>
+                                                                        <h6 class="fs-15 mb-0"><a href="javascript:void(0);">Velzon admin.ppt</a></h6>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -2837,29 +2314,14 @@
                                                             <td>25 Dec, 2021</td>
                                                             <td>
                                                                 <div class="dropdown">
-                                                                    <a href="javascript:void(0);"
-                                                                        class="btn btn-light btn-icon"
-                                                                        id="dropdownMenuLink2" data-bs-toggle="dropdown"
-                                                                        aria-expanded="true">
+                                                                    <a href="javascript:void(0);" class="btn btn-light btn-icon" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="true">
                                                                         <i class="ri-equalizer-fill"></i>
                                                                     </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        aria-labelledby="dropdownMenuLink2"
-                                                                        data-popper-placement="bottom-end"
-                                                                        style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-eye-fill me-2 align-middle text-muted"></i>View</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a>
-                                                                        </li>
+                                                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink2" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);">
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-eye-fill me-2 align-middle text-muted"></i>View</a></li>
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-download-2-fill me-2 align-middle text-muted"></i>Download</a></li>
                                                                         <li class="dropdown-divider"></li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete</a>
-                                                                        </li>
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </td>
@@ -2868,15 +2330,12 @@
                                                             <td>
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="avatar-sm">
-                                                                        <div
-                                                                            class="avatar-title bg-soft-info text-info rounded fs-20">
+                                                                        <div class="avatar-title bg-soft-info text-info rounded fs-20">
                                                                             <i class="ri-folder-line"></i>
                                                                         </div>
                                                                     </div>
                                                                     <div class="ms-3 flex-grow-1">
-                                                                        <h6 class="fs-15 mb-0"><a
-                                                                                href="javascript:void(0);">Images.zip</a>
-                                                                        </h6>
+                                                                        <h6 class="fs-15 mb-0"><a href="javascript:void(0);">Images.zip</a></h6>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -2885,28 +2344,13 @@
                                                             <td>28 Dec, 2021</td>
                                                             <td>
                                                                 <div class="dropdown">
-                                                                    <a href="javascript:void(0);"
-                                                                        class="btn btn-light btn-icon"
-                                                                        id="dropdownMenuLink3" data-bs-toggle="dropdown"
-                                                                        aria-expanded="true">
+                                                                    <a href="javascript:void(0);" class="btn btn-light btn-icon" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="true">
                                                                         <i class="ri-equalizer-fill"></i>
                                                                     </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        aria-labelledby="dropdownMenuLink3"
-                                                                        data-popper-placement="bottom-end"
-                                                                        style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-eye-fill me-2 align-middle"></i>View</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-download-2-fill me-2 align-middle"></i>Download</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-delete-bin-5-line me-2 align-middle"></i>Delete</a>
-                                                                        </li>
+                                                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink3" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);">
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-eye-fill me-2 align-middle"></i>View</a></li>
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-download-2-fill me-2 align-middle"></i>Download</a></li>
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-5-line me-2 align-middle"></i>Delete</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </td>
@@ -2915,15 +2359,12 @@
                                                             <td>
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="avatar-sm">
-                                                                        <div
-                                                                            class="avatar-title bg-soft-danger text-danger rounded fs-20">
+                                                                        <div class="avatar-title bg-soft-danger text-danger rounded fs-20">
                                                                             <i class="ri-image-2-fill"></i>
                                                                         </div>
                                                                     </div>
                                                                     <div class="ms-3 flex-grow-1">
-                                                                        <h6 class="fs-15 mb-0"><a
-                                                                                href="javascript:void(0);">Bg-pattern.png</a>
-                                                                        </h6>
+                                                                        <h6 class="fs-15 mb-0"><a href="javascript:void(0);">Bg-pattern.png</a></h6>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -2932,28 +2373,13 @@
                                                             <td>02 Nov 2021</td>
                                                             <td>
                                                                 <div class="dropdown">
-                                                                    <a href="javascript:void(0);"
-                                                                        class="btn btn-light btn-icon"
-                                                                        id="dropdownMenuLink4" data-bs-toggle="dropdown"
-                                                                        aria-expanded="true">
+                                                                    <a href="javascript:void(0);" class="btn btn-light btn-icon" id="dropdownMenuLink4" data-bs-toggle="dropdown" aria-expanded="true">
                                                                         <i class="ri-equalizer-fill"></i>
                                                                     </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        aria-labelledby="dropdownMenuLink4"
-                                                                        data-popper-placement="bottom-end"
-                                                                        style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-eye-fill me-2 align-middle"></i>View</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-download-2-fill me-2 align-middle"></i>Download</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);"><i
-                                                                                    class="ri-delete-bin-5-line me-2 align-middle"></i>Delete</a>
-                                                                        </li>
+                                                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink4" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);">
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-eye-fill me-2 align-middle"></i>View</a></li>
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-download-2-fill me-2 align-middle"></i>Download</a></li>
+                                                                        <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-delete-bin-5-line me-2 align-middle"></i>Delete</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </td>
@@ -2981,11 +2407,9 @@
                                                         <tr>
                                                             <th scope="row">
                                                                 <div class="d-flex align-items-center">
-                                                                    <img src="assets/images/users/avatar-8.jpg" alt=""
-                                                                        class="rounded-circle avatar-xxs">
+                                                                    <img src="assets/images/users/avatar-8.jpg" alt="" class="rounded-circle avatar-xxs">
                                                                     <div class="flex-grow-1 ms-2">
-                                                                        <a href="pages-profile.html"
-                                                                            class="fw-medium">Thomas Taylor</a>
+                                                                        <a href="pages-profile.html" class="fw-medium">Thomas Taylor</a>
                                                                     </div>
                                                                 </div>
                                                             </th>
@@ -2997,11 +2421,9 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="d-flex align-items-center">
-                                                                    <img src="assets/images/users/avatar-10.jpg" alt=""
-                                                                        class="rounded-circle avatar-xxs">
+                                                                    <img src="assets/images/users/avatar-10.jpg" alt="" class="rounded-circle avatar-xxs">
                                                                     <div class="flex-grow-1 ms-2">
-                                                                        <a href="pages-profile.html"
-                                                                            class="fw-medium">Tonya Noble</a>
+                                                                        <a href="pages-profile.html" class="fw-medium">Tonya Noble</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -3013,11 +2435,9 @@
                                                         <tr>
                                                             <th scope="row">
                                                                 <div class="d-flex align-items-center">
-                                                                    <img src="assets/images/users/avatar-10.jpg" alt=""
-                                                                        class="rounded-circle avatar-xxs">
+                                                                    <img src="assets/images/users/avatar-10.jpg" alt="" class="rounded-circle avatar-xxs">
                                                                     <div class="flex-grow-1 ms-2">
-                                                                        <a href="pages-profile.html"
-                                                                            class="fw-medium">Tonya Noble</a>
+                                                                        <a href="pages-profile.html" class="fw-medium">Tonya Noble</a>
                                                                     </div>
                                                                 </div>
                                                             </th>
@@ -3043,19 +2463,16 @@
                     </div>
                     <!--end row-->
 
-                    <div class="modal fade" id="inviteMembersModal" tabindex="-1"
-                        aria-labelledby="inviteMembersModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="inviteMembersModal" tabindex="-1" aria-labelledby="inviteMembersModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content border-0">
                                 <div class="modal-header p-3 ps-4 bg-soft-success">
                                     <h5 class="modal-title" id="inviteMembersModalLabel">Team Members</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body p-4">
                                     <div class="search-box mb-3">
-                                        <input type="text" class="form-control bg-light border-light"
-                                            placeholder="Search here...">
+                                        <input type="text" class="form-control bg-light border-light" placeholder="Search here...">
                                         <i class="ri-search-line search-icon"></i>
                                     </div>
 
@@ -3064,28 +2481,19 @@
                                             <h5 class="mb-0 fs-13">Members :</h5>
                                         </div>
                                         <div class="avatar-group justify-content-center">
-                                            <a href="javascript: void(0);" class="avatar-group-item"
-                                                data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top"
-                                                title="Tonya Noble">
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Tonya Noble">
                                                 <div class="avatar-xs">
-                                                    <img src="assets/images/users/avatar-10.jpg" alt=""
-                                                        class="rounded-circle img-fluid">
+                                                    <img src="assets/images/users/avatar-10.jpg" alt="" class="rounded-circle img-fluid">
                                                 </div>
                                             </a>
-                                            <a href="javascript: void(0);" class="avatar-group-item"
-                                                data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top"
-                                                title="Thomas Taylor">
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Thomas Taylor">
                                                 <div class="avatar-xs">
-                                                    <img src="assets/images/users/avatar-8.jpg" alt=""
-                                                        class="rounded-circle img-fluid">
+                                                    <img src="assets/images/users/avatar-8.jpg" alt="" class="rounded-circle img-fluid">
                                                 </div>
                                             </a>
-                                            <a href="javascript: void(0);" class="avatar-group-item"
-                                                data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top"
-                                                title="Nancy Martino">
+                                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Nancy Martino">
                                                 <div class="avatar-xs">
-                                                    <img src="assets/images/users/avatar-2.jpg" alt=""
-                                                        class="rounded-circle img-fluid">
+                                                    <img src="assets/images/users/avatar-2.jpg" alt="" class="rounded-circle img-fluid">
                                                 </div>
                                             </a>
                                         </div>
@@ -3094,12 +2502,10 @@
                                         <div class="vstack gap-3">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <img src="assets/images/users/avatar-2.jpg" alt=""
-                                                        class="img-fluid rounded-circle">
+                                                    <img src="assets/images/users/avatar-2.jpg" alt="" class="img-fluid rounded-circle">
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);"
-                                                            class="text-body d-block">Nancy Martino</a></h5>
+                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);" class="text-body d-block">Nancy Martino</a></h5>
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -3113,8 +2519,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);"
-                                                            class="text-body d-block">Henry Baird</a></h5>
+                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);" class="text-body d-block">Henry Baird</a></h5>
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -3123,12 +2528,10 @@
                                             <!-- end member item -->
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <img src="assets/images/users/avatar-3.jpg" alt=""
-                                                        class="img-fluid rounded-circle">
+                                                    <img src="assets/images/users/avatar-3.jpg" alt="" class="img-fluid rounded-circle">
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);"
-                                                            class="text-body d-block">Frank Hook</a></h5>
+                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);" class="text-body d-block">Frank Hook</a></h5>
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -3137,12 +2540,10 @@
                                             <!-- end member item -->
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <img src="assets/images/users/avatar-4.jpg" alt=""
-                                                        class="img-fluid rounded-circle">
+                                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="img-fluid rounded-circle">
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);"
-                                                            class="text-body d-block">Jennifer Carter</a></h5>
+                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);" class="text-body d-block">Jennifer Carter</a></h5>
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -3151,14 +2552,12 @@
                                             <!-- end member item -->
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <div
-                                                        class="avatar-title bg-soft-success text-success rounded-circle">
+                                                    <div class="avatar-title bg-soft-success text-success rounded-circle">
                                                         AC
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);"
-                                                            class="text-body d-block">Alexis Clarke</a></h5>
+                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);" class="text-body d-block">Alexis Clarke</a></h5>
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -3167,12 +2566,10 @@
                                             <!-- end member item -->
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <img src="assets/images/users/avatar-7.jpg" alt=""
-                                                        class="img-fluid rounded-circle">
+                                                    <img src="assets/images/users/avatar-7.jpg" alt="" class="img-fluid rounded-circle">
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);"
-                                                            class="text-body d-block">Joseph Parker</a></h5>
+                                                    <h5 class="fs-13 mb-0"><a href="javascript:void(0);" class="text-body d-block">Joseph Parker</a></h5>
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -3184,8 +2581,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-light w-xs"
-                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-light w-xs" data-bs-dismiss="modal">Cancel</button>
                                     <button type="button" class="btn btn-success w-xs">Assigned</button>
                                 </div>
                             </div>
@@ -3204,7 +2600,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Velzon.
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Velzon.
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
@@ -3238,8 +2636,7 @@
     </div>
 
     <div class="customizer-setting d-none d-md-block">
-        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas"
-            data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
             <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
         </div>
     </div>
@@ -3249,8 +2646,7 @@
         <div class="d-flex align-items-center bg-primary bg-gradient p-3 offcanvas-header">
             <h5 class="m-0 me-2 text-white">Theme Customizer</h5>
 
-            <button type="button" class="btn-close btn-close-white ms-auto" id="customizerclose-btn"
-                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white ms-auto" id="customizerclose-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body p-0">
             <div data-simplebar class="h-100">
@@ -3261,8 +2657,7 @@
                     <div class="row gy-3">
                         <div class="col-4">
                             <div class="form-check card-radio">
-                                <input id="customizer-layout01" name="data-layout" type="radio" value="vertical"
-                                    class="form-check-input">
+                                <input id="customizer-layout01" name="data-layout" type="radio" value="vertical" class="form-check-input">
                                 <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout01">
                                     <span class="d-flex gap-1 h-100">
                                         <span class="flex-shrink-0">
@@ -3286,8 +2681,7 @@
                         </div>
                         <div class="col-4">
                             <div class="form-check card-radio">
-                                <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal"
-                                    class="form-check-input">
+                                <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" class="form-check-input">
                                 <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout02">
                                     <span class="d-flex h-100 flex-column gap-1">
                                         <span class="bg-light d-flex p-1 gap-1 align-items-center">
@@ -3304,8 +2698,7 @@
                         </div>
                         <div class="col-4">
                             <div class="form-check card-radio">
-                                <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn"
-                                    class="form-check-input">
+                                <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input">
                                 <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout03">
                                     <span class="d-flex gap-1 h-100">
                                         <span class="flex-shrink-0">
@@ -3339,8 +2732,7 @@
 
                         <div class="col-4">
                             <div class="form-check card-radio">
-                                <input id="customizer-layout04" name="data-layout" type="radio" value="semibox"
-                                    class="form-check-input">
+                                <input id="customizer-layout04" name="data-layout" type="radio" value="semibox" class="form-check-input">
                                 <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout04">
                                     <span class="d-flex gap-1 h-100">
                                         <span class="flex-shrink-0 p-1">
@@ -3372,8 +2764,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-mode"
-                                        id="layout-mode-light" value="light">
+                                    <input class="form-check-input" type="radio" name="data-layout-mode" id="layout-mode-light" value="light">
                                     <label class="form-check-label p-0 avatar-md w-100" for="layout-mode-light">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3398,8 +2789,7 @@
 
                             <div class="col-4">
                                 <div class="form-check card-radio dark">
-                                    <input class="form-check-input" type="radio" name="data-layout-mode"
-                                        id="layout-mode-dark" value="dark">
+                                    <input class="form-check-input" type="radio" name="data-layout-mode" id="layout-mode-dark" value="dark">
                                     <label class="form-check-label p-0 avatar-md w-100 bg-dark" for="layout-mode-dark">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3431,8 +2821,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility"
-                                        id="sidebar-visibility-show" value="show">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility" id="sidebar-visibility-show" value="show">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-visibility-show">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0 p-1">
@@ -3456,10 +2845,8 @@
                             </div>
                             <div class="col-4">
                                 <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility"
-                                        id="sidebar-visibility-hidden" value="hidden">
-                                    <label class="form-check-label p-0 avatar-md w-100 px-2"
-                                        for="sidebar-visibility-hidden">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility" id="sidebar-visibility-hidden" value="hidden">
+                                    <label class="form-check-label p-0 avatar-md w-100 px-2" for="sidebar-visibility-hidden">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-grow-1">
                                                 <span class="d-flex h-100 flex-column pt-1 px-2">
@@ -3482,8 +2869,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-width"
-                                        id="layout-width-fluid" value="fluid">
+                                    <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-fluid" value="fluid">
                                     <label class="form-check-label p-0 avatar-md w-100" for="layout-width-fluid">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3507,8 +2893,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-width"
-                                        id="layout-width-boxed" value="boxed">
+                                    <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-boxed" value="boxed">
                                     <label class="form-check-label p-0 avatar-md w-100 px-2" for="layout-width-boxed">
                                         <span class="d-flex gap-1 h-100 border-start border-end">
                                             <span class="flex-shrink-0">
@@ -3538,12 +2923,10 @@
                         <p class="text-muted">Choose Fixed or Scrollable Layout Position.</p>
 
                         <div class="btn-group radio" role="group">
-                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed"
-                                value="fixed">
+                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
                             <label class="btn btn-light w-sm" for="layout-position-fixed">Fixed</label>
 
-                            <input type="radio" class="btn-check" name="data-layout-position"
-                                id="layout-position-scrollable" value="scrollable">
+                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
                             <label class="btn btn-light w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
                         </div>
                     </div>
@@ -3553,8 +2936,7 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="form-check card-radio">
-                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-light"
-                                    value="light">
+                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-light" value="light">
                                 <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-light">
                                     <span class="d-flex gap-1 h-100">
                                         <span class="flex-shrink-0">
@@ -3578,8 +2960,7 @@
                         </div>
                         <div class="col-4">
                             <div class="form-check card-radio">
-                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-dark"
-                                    value="dark">
+                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-dark" value="dark">
                                 <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-dark">
                                     <span class="d-flex gap-1 h-100">
                                         <span class="flex-shrink-0">
@@ -3610,8 +2991,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size"
-                                        id="sidebar-size-default" value="lg">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-default" value="lg">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-default">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3636,8 +3016,7 @@
 
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size"
-                                        id="sidebar-size-compact" value="md">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-compact" value="md">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-compact">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3662,8 +3041,7 @@
 
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size"
-                                        id="sidebar-size-small" value="sm">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-small" value="sm">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3688,8 +3066,7 @@
 
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size"
-                                        id="sidebar-size-small-hover" value="sm-hover">
+                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-small-hover" value="sm-hover">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small-hover">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3721,8 +3098,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-style"
-                                        id="sidebar-view-default" value="default">
+                                    <input class="form-check-input" type="radio" name="data-layout-style" id="sidebar-view-default" value="default">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-view-default">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3746,8 +3122,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-style"
-                                        id="sidebar-view-detached" value="detached">
+                                    <input class="form-check-input" type="radio" name="data-layout-style" id="sidebar-view-detached" value="detached">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-view-detached">
                                         <span class="d-flex h-100 flex-column">
                                             <span class="bg-light d-flex p-1 gap-1 align-items-center px-2">
@@ -3778,10 +3153,8 @@
 
                         <div class="row">
                             <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseBgGradient.show">
-                                    <input class="form-check-input" type="radio" name="data-sidebar"
-                                        id="sidebar-color-light" value="light">
+                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-light" value="light">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-color-light">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3804,10 +3177,8 @@
                                 <h5 class="fs-13 text-center mt-2">Light</h5>
                             </div>
                             <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseBgGradient.show">
-                                    <input class="form-check-input" type="radio" name="data-sidebar"
-                                        id="sidebar-color-dark" value="dark">
+                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-dark" value="dark">
                                     <label class="form-check-label p-0 avatar-md w-100" for="sidebar-color-dark">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3830,9 +3201,7 @@
                                 <h5 class="fs-13 text-center mt-2">Dark</h5>
                             </div>
                             <div class="col-4">
-                                <button class="btn btn-link avatar-md w-100 p-0 overflow-hidden border collapsed"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient"
-                                    aria-expanded="false" aria-controls="collapseBgGradient">
+                                <button class="btn btn-link avatar-md w-100 p-0 overflow-hidden border collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient" aria-expanded="false" aria-controls="collapseBgGradient">
                                     <span class="d-flex gap-1 h-100">
                                         <span class="flex-shrink-0">
                                             <span class="bg-vertical-gradient d-flex h-100 flex-column gap-1 p-1">
@@ -3859,34 +3228,26 @@
                             <div class="d-flex gap-2 flex-wrap img-switch p-2 px-3 bg-light rounded">
 
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar"
-                                        id="sidebar-color-gradient" value="gradient">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle"
-                                        for="sidebar-color-gradient">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient" value="gradient">
+                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient">
                                         <span class="avatar-title rounded-circle bg-vertical-gradient"></span>
                                     </label>
                                 </div>
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar"
-                                        id="sidebar-color-gradient-2" value="gradient-2">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle"
-                                        for="sidebar-color-gradient-2">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-2" value="gradient-2">
+                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-2">
                                         <span class="avatar-title rounded-circle bg-vertical-gradient-2"></span>
                                     </label>
                                 </div>
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar"
-                                        id="sidebar-color-gradient-3" value="gradient-3">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle"
-                                        for="sidebar-color-gradient-3">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-3" value="gradient-3">
+                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-3">
                                         <span class="avatar-title rounded-circle bg-vertical-gradient-3"></span>
                                     </label>
                                 </div>
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar"
-                                        id="sidebar-color-gradient-4" value="gradient-4">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle"
-                                        for="sidebar-color-gradient-4">
+                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-4" value="gradient-4">
+                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-4">
                                         <span class="avatar-title rounded-circle bg-vertical-gradient-4"></span>
                                     </label>
                                 </div>
@@ -3900,47 +3261,37 @@
 
                         <div class="d-flex gap-2 flex-wrap img-switch">
                             <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image"
-                                    id="sidebarimg-none" value="none">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-none" value="none">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-none">
-                                    <span
-                                        class="avatar-md w-auto bg-light d-flex align-items-center justify-content-center">
+                                    <span class="avatar-md w-auto bg-light d-flex align-items-center justify-content-center">
                                         <i class="ri-close-fill fs-20"></i>
                                     </span>
                                 </label>
                             </div>
 
                             <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image"
-                                    id="sidebarimg-01" value="img-1">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-01" value="img-1">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-01">
-                                    <img src="assets/images/sidebar/img-1.jpg" alt=""
-                                        class="avatar-md w-auto object-cover">
+                                    <img src="assets/images/sidebar/img-1.jpg" alt="" class="avatar-md w-auto object-cover">
                                 </label>
                             </div>
 
                             <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image"
-                                    id="sidebarimg-02" value="img-2">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-02" value="img-2">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-02">
-                                    <img src="assets/images/sidebar/img-2.jpg" alt=""
-                                        class="avatar-md w-auto object-cover">
+                                    <img src="assets/images/sidebar/img-2.jpg" alt="" class="avatar-md w-auto object-cover">
                                 </label>
                             </div>
                             <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image"
-                                    id="sidebarimg-03" value="img-3">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-03" value="img-3">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-03">
-                                    <img src="assets/images/sidebar/img-3.jpg" alt=""
-                                        class="avatar-md w-auto object-cover">
+                                    <img src="assets/images/sidebar/img-3.jpg" alt="" class="avatar-md w-auto object-cover">
                                 </label>
                             </div>
                             <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image"
-                                    id="sidebarimg-04" value="img-4">
+                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-04" value="img-4">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-04">
-                                    <img src="assets/images/sidebar/img-4.jpg" alt=""
-                                        class="avatar-md w-auto object-cover">
+                                    <img src="assets/images/sidebar/img-4.jpg" alt="" class="avatar-md w-auto object-cover">
                                 </label>
                             </div>
                         </div>
@@ -3953,8 +3304,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-preloader"
-                                        id="preloader-view-custom" value="enable">
+                                    <input class="form-check-input" type="radio" name="data-preloader" id="preloader-view-custom" value="enable">
                                     <label class="form-check-label p-0 avatar-md w-100" for="preloader-view-custom">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -3985,8 +3335,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-preloader"
-                                        id="preloader-view-none" value="disable">
+                                    <input class="form-check-input" type="radio" name="data-preloader" id="preloader-view-none" value="disable">
                                     <label class="form-check-label p-0 avatar-md w-100" for="preloader-view-none">
                                         <span class="d-flex gap-1 h-100">
                                             <span class="flex-shrink-0">
@@ -4023,8 +3372,7 @@
                     <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
                 </div>
                 <div class="col-6">
-                    <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy
-                        Now</a>
+                    <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy Now</a>
                 </div>
             </div>
         </div>

@@ -1447,12 +1447,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                         success: function(data) {
                             if (data.success) {
                                 $.get("assets/Email/email_assigned_project.php", function(htmlCode) {
-                                    // htmlCode = htmlCode.replace("[Employee_Name]", $("#inputName4").val());
-                                    var inputStartDate = $("#datepicker-startDate-input").val();
-                                    var formattedDate = inputStartDate.split('-').reverse().join('-')
+                                    var inputStartDate = moment($("#datepicker-startDate-input").val()).format('D MMM, YYYY hh:mm A');
+
                                     htmlCode = htmlCode.replace("[Project Name]", $("#project-title-input").val())
                                         .replace("[Project Name]", $("#project-title-input").val())
-                                        .replace("[Start Date]", formattedDate)
+                                        .replace("[Start Date]", inputStartDate)
                                         .replace("[Admin Name]", '<?php echo $Uname; ?>')
                                         .replace("[Admin Name]", '<?php echo $Uname; ?>')
                                         .replace("[Admin Name]", '<?php echo $Uname; ?>')
@@ -1485,9 +1484,9 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                 }
                                             });
                                         },
-                                        complete: function() {
-                                            window.location.href = "projects-list.php";
-                                        },
+                                        // complete: function() {
+                                        //     window.location.href = "projects-list.php";
+                                        // },
                                         success: function(result) {
                                             console.log(result);
                                         }

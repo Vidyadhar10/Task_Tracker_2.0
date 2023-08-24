@@ -28,7 +28,6 @@ if ($Update) {
     $Activity_By = $ResEmpID;
     $InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`, `sutaskID`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By', '$subtaskId')");
     if ($InsertInNotifi) {
-
         $response = array(
             "success" => true,
         );

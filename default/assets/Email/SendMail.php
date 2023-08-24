@@ -9,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['body']))
 
     // For sending mail to project selected employees
     if (isset($_POST['SelectedEmps'])) {
-        include '../assets/php/connection.php';
+        include '../php/connection.php';
 
         $my_array = json_decode($_POST['SelectedEmps'], true);
 
@@ -65,7 +65,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['body']))
     } elseif (isset($_POST['assigneeID'])) {
 
         // For sending mail to task assigned employee
-        include '../assets/php/connection.php';
+        include '../php/connection.php';
 
         $employeesID = $_POST['assigneeID'];
         $queryToGetAssigneeName = mysqli_query($con, "SELECT * FROM `employeedata` WHERE `ID` = '$employeesID'");

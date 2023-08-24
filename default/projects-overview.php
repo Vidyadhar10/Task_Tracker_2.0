@@ -131,19 +131,6 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                 </div>
                                             </div>
 
-                                            <!-- <div class="col-md-auto">
-                                                <div class="hstack gap-1 flex-wrap">
-                                                    <button type="button" class="btn py-0 fs-16 favourite-btn active">
-                                                        <i class="ri-star-fill"></i>
-                                                    </button>
-                                                    <button type="button" class="btn py-0 fs-16 text-body">
-                                                        <i class="ri-share-line"></i>
-                                                    </button>
-                                                    <button type="button" class="btn py-0 fs-16 text-body">
-                                                        <i class="ri-flag-line"></i>
-                                                    </button>
-                                                </div>
-                                            </div> -->
                                         </div>
 
                                         <ul class="nav nav-tabs-custom border-bottom-0" role="tablist">
@@ -433,7 +420,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                                         <div class="card-body">
                                             <div class="d-flex align-items-center mb-4">
                                                 <h5 class="card-title flex-grow-1">Tasks</h5>
-                                                <a href="CreateTaskPage.php?pid=<?php echo $_GET['pid']; ?>" class="btn btn-success"><i class="ri-eye-fill align-bottom me-1"></i> View All</a>
+                                                <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> Add New</a>
                                             </div>
 
                                             <div class="row">
@@ -465,6 +452,85 @@ $_SESSION['Admin_id'] = $Admin_id;
                                     </div>
                                 </div>
                                 <!-- end tab pane -->
+                                <div class="modal fade zoomIn" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content border-0">
+                                            <div class="modal-header p-3 bg-soft-info">
+                                                <h5 class="modal-title" id="exampleModalLabel">Create Task</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
+                                            </div>
+                                            <form class="tablelist-form needs-validation" id="TaskAddForm" autocomplete="off" novalidate>
+                                                <div class="modal-body">
+                                                    <input type="hidden" id="tasksId" />
+                                                    <div class="row g-3">
+                                                        <div class="col-lg-12">
+                                                            <label for="projectName-field" class="form-label">Project Name</label>
+                                                            <input type="text" id="projectName-field" class="form-control" placeholder="Project name" disabled />
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-lg-12 position-relative">
+                                                            <div>
+                                                                <label for="tasksTitle-field" class="form-label requiredField">Title</label>
+                                                                <input type="text" id="tasksTitle-field" class="form-control" placeholder="Title" required />
+                                                                <div class="invalid-tooltip" id="tasktitleInvField">Task title should not be empty!</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6">
+                                                            <div class="position-relative">
+                                                                <label for="duedate-field" class="form-label requiredField">Due Date</label>
+                                                                <input type="text" id="duedate-field" class="form-control" data-provider="flatpickr" placeholder="Due date" required />
+                                                                <div class="invalid-tooltip" id="dueDateInvalidField">Task due date should not be empty!</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="position-relative">
+                                                                <label for="priority-field" class="form-label requiredField">Priority</label>
+                                                                <select class="form-control" data-choices data-choices-search-false id="priority-field">
+                                                                    <option value="" selected>select</option>
+                                                                    <?php
+                                                                    include 'assets/php/connection.php';
+                                                                    $query = "SELECT * FROM `tasks_priority`";
+                                                                    $result = $con->query($query);
+                                                                    if ($result->num_rows > 0) {
+                                                                        while ($optionData = $result->fetch_assoc()) {
+                                                                            $options = $optionData['Tasks_Priority'];
+                                                                            $task_priorityID = $optionData['ID'];
+                                                                    ?>
+                                                                            <option value="<?php echo $task_priorityID; ?>"><?php echo $options; ?></option>
+                                                                    <?php }
+                                                                    } ?>
+                                                                    <?php mysqli_close($con); ?>
+                                                                </select>
+                                                                <div class="invalid-tooltip" id="priorityInvField">Please select task priority!</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3 col-lg-12">
+                                                            <div class="position-relative">
+
+                                                                <label class="form-label requiredField">Task Description</label>
+                                                                <div id="ckeditor-classic-taskDescription">
+
+                                                                </div>
+                                                                <div class="invalid-tooltip Project-description-tooltip" id="TaskDescriptionInvDiv">Task description should not be empty!</div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                    </div>
+                                                    <!--end row-->
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="hstack gap-2 justify-content-end">
+                                                        <button type="button" class="btn btn-light" id="close-modal" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-success" id="add-btn">Add Task</button>
+                                                        <!-- <button type="button" class="btn btn-success" id="edit-btn">Update Task</button> -->
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end modal-->
                                 <div class="tab-pane fade" id="project-activities" role="tabpanel">
                                     <div class="card">
                                         <div class="card-body">
@@ -2087,10 +2153,14 @@ $_SESSION['Admin_id'] = $Admin_id;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
-
+    <!-- ckeditor -->
+    <script src="assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+    <!-- form validation setup  -->
+    <script src="assets/js/pages/form-validation.init.js"></script>
     <script>
         var filterData;
         var empIDArray = [];
+        var projectID;
         var FileTypeArray = {
             'zip': '<i class="ri-folder-zip-line"></i>',
             'pdf': '<i class="ri-file-pdf-fill"></i>',
@@ -2109,7 +2179,9 @@ $_SESSION['Admin_id'] = $Admin_id;
             success: function(data) {
                 // console.log(data);
                 $.each(data.projectData, function(ind, item) {
+                    projectID = item.ProjectKey;
                     $('#project-title').html(item.ProjectName);
+                    $('#projectName-field').val(item.ProjectName);
                     $('#projectLogoImage').attr('src', item.ProjectLogo);
 
                     $('#project-createddate').html(moment(item.Created_Date).format('D MMM, YYYY hh:mm A'));
@@ -2122,6 +2194,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
 
                 })
+
                 $.each(data.AttachmentData, function(index, it) {
                     if (it.File_Type in FileTypeArray) {
                         var fileTypeIcon = FileTypeArray[it.File_Type];
@@ -2195,7 +2268,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                                 </div>
                                                                 <div class="flex-shrink-0">
                                                                     <div class="d-flex align-items-center gap-1">
-                                                                        <button type="button" class="btn btn-light btn-sm" onclick="window.location.href='pages-profile.php?id=${dataItem.ID}'">View profile</button>
+                                                                        <button type="button" class="btn btn-light btn-sm" onclick="window.location.href='pages-profile.php?id=${btoa(dataItem.ID)}'">View profile</button>
                                                                     </div>
                                                                 </div>
                                                             </div>`;
@@ -2338,6 +2411,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                 },
                 success: function(data) {
                     console.log(data);
+                    $('#AllTasksTableBody').html('');
                     if (data[0] == "No Tasks Yet!") {
                         var tableRowString = ` <tr style="text-align:center;">
                                                     <td colspan="6">
@@ -2378,6 +2452,104 @@ $_SESSION['Admin_id'] = $Admin_id;
                             $('#AllTasksTableBody').append(tableRowString);
                         })
                     }
+                }
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize CKEditor 5
+            ClassicEditor
+                .create(document.querySelector('#ckeditor-classic-taskDescription'))
+                .then(newEditor => {
+                    DescriptionEditor = newEditor; // Save the editor instance
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        })
+
+        var valid = true;
+        $('#TaskAddForm').on('submit', function(event) {
+            event.preventDefault();
+            if ($('#duedate-field').val() == '') {
+                $('#dueDateInvalidField').css('display', 'block');
+                valid = false;
+            }
+            if ($('#priority-field').val() == '') {
+                $('#priorityInvField').css('display', 'block');
+                valid = false;
+            }
+            var DescriptionEditorContent = DescriptionEditor.getData();
+            if (DescriptionEditorContent == '') {
+                $('#TaskDescriptionInvDiv').css('display', 'block');
+                valid = false;
+            }
+            setTimeout(() => {
+                $('#TaskAddForm').removeClass('was-validated')
+                $('#tasktitleInvField').css('display', 'none');
+                $('#tasktitleInvField').removeClass('is-invalid');
+                $('#TaskDescriptionInvDiv').css('display', 'none');
+                $('#priorityInvField').css('display', 'none');
+                $('#dueDateInvalidField').css('display', 'none');
+                valid = true;
+            }, "3000");
+
+            if (valid) {
+                //submit the form
+                SaveTaskDetails();
+            }
+
+        })
+
+        function SaveTaskDetails() {
+            //body
+            Swal.fire({
+                title: 'Create?',
+                text: 'Would you like to create this Task?',
+                showDenyButton: true,
+                width: '400px',
+                confirmButtonText: 'Yes',
+                denyButtonText: `No`,
+                confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
+                denyButtonClass: "btn btn-danger w-xs mt-2",
+                buttonsStyling: !1,
+                focusConfirm: true,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var DescriptionEditorContent = DescriptionEditor.getData();
+
+                    $.ajax({
+                        url: 'assets/php/taskadd.php',
+                        type: 'POST',
+                        dataType: 'JSON',
+                        data: {
+                            ProjIDD: '<?php echo $_GET['pid']; ?>',
+                            Proj_NAME: $('#projectName-field').val(),
+                            ProjKEY: projectID,
+                            taskName: $('#tasksTitle-field').val(),
+                            taskpri: $('#priority-field').val(),
+                            taskDue: $('#duedate-field').val(),
+                            taskDescription: DescriptionEditorContent
+                        },
+                        success: function(result) {
+                            $('#showModal').modal('hide');
+                            ShowTasks();
+                            Swal.fire(
+                                "Added",
+                                "Task added successfully!",
+                                // height = '200px',
+                                // width = '200px',
+                                "success");
+
+                        }
+                    });
                 }
             });
         }

@@ -28,7 +28,7 @@ while ($rowinfo = $executeQ->fetch_assoc()) {
 }
 
 $T_Key = 1;
-$retriveTaskKey = "SELECT * FROM `taskdata` WHERE `Project_name`='$p_name' AND `ProjectKey`='$P_key' ORDER BY `TaskKey`";
+$retriveTaskKey = "SELECT * FROM `taskdata` WHERE `Project_id`='$p_id' ORDER BY `TaskKey`";
 
 $resultQ = $con->query($retriveTaskKey);
 if (mysqli_num_rows($resultQ) > 0) {
@@ -44,7 +44,7 @@ if (mysqli_num_rows($resultQ) > 0) {
 	} else {
 		$T_Key_Text =  $P_key . '-' . $T_Key;
 	}
-	$sql = "INSERT INTO taskdata (`Task_name`, `Task_priority`, `Task_Due`, `Task_description`,`Project_name`,`ProjectKey`,`TaskKey`,`TaskKeyText`,`Project_id`,`CreatedBy`) VALUES ('$taskNm ', '$taskPriority', '$taskDue', '$taskDescription','$p_name','$P_key','$T_Key','$T_Key_Text','$p_id','$createrID')";
+	$sql = "INSERT INTO taskdata (`Task_name`, `Task_priority`, `Task_Due`, `Task_description`,`TaskKey`,`TaskKeyText`,`Project_id`,`CreatedBy`) VALUES ('$taskNm ', '$taskPriority', '$taskDue', '$taskDescription','$T_Key','$T_Key_Text','$p_id','$createrID')";
 	mysqli_query($con, $sql);
 
 
@@ -80,7 +80,7 @@ if (mysqli_num_rows($resultQ) > 0) {
 	} else {
 		$T_Key_Text =  $P_key . '-' . $T_Key;
 	}
-	$sql = "INSERT INTO `taskdata` (`Task_name`, `Task_priority`, `Task_Due`, `Task_description`,`Project_name`,`ProjectKey`,`TaskKey`,`TaskKeyText`,`Project_id`,`CreatedBy`) VALUES ('$taskNm ', '$taskPriority', '$taskDue', '$taskDescription','$p_name','$P_key','$T_Key','$T_Key_Text','$p_id','$createrID')";
+	$sql = "INSERT INTO `taskdata` (`Task_name`, `Task_priority`, `Task_Due`, `Task_description`,`TaskKey`,`TaskKeyText`,`Project_id`,`CreatedBy`) VALUES ('$taskNm ', '$taskPriority', '$taskDue', '$taskDescription','$T_Key','$T_Key_Text','$p_id','$createrID')";
 	mysqli_query($con, $sql);
 
 	//adding to recent activity
