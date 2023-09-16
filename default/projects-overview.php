@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'assets/php/connection.php';
+include './php/connection.php';
 if (isset($_SESSION['Mobile_No'])) {
     $Admin_mob = $_SESSION['Mobile_No'];
     $m = "SELECT * FROM employeedata WHERE $Admin_mob = MobileNo";
@@ -16,7 +16,7 @@ if (isset($_SESSION['Mobile_No'])) {
         }
     }
 } else {
-    header("location:assets/php/logout.php");
+    header("location:./php/logout.php");
 }
 $_SESSION['Admin_id'] = $Admin_id;
 ?>
@@ -53,7 +53,7 @@ $_SESSION['Admin_id'] = $Admin_id;
     <div id="layout-wrapper">
 
         <?php
-        include 'assets/php/Header.php';
+        include './php/Header.php';
         ?>
 
         <!-- removeNotificationModal -->
@@ -82,7 +82,7 @@ $_SESSION['Admin_id'] = $Admin_id;
         </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
         <?php
-        include './assets/php/App_Menu.php';
+        include './php/App_Menu.php';
         ?>
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
@@ -149,11 +149,16 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                     Tasks
                                                 </a>
                                             </li>
-                                            <!-- <li class="nav-item">
-                                                <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#project-team" role="tab">
-                                                    Team
+                                            <li class="nav-item">
+                                                <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#project-employee-performance" id="performance-tab-link" role="tab">
+                                                    Performance
                                                 </a>
-                                            </li> -->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#project-roadmap" role="tab">
+                                                    Roadmap
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <!-- end card body -->
@@ -219,102 +224,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                 </div>
                                                 <!-- end card body -->
                                             </div>
-                                            <!-- end card -->
 
-                                            <!-- <div class="card">
-                                                <div class="card-header align-items-center d-flex">
-                                                    <h4 class="card-title mb-0 flex-grow-1">Comments</h4>
-                                                    <div class="flex-shrink-0">
-                                                        <div class="dropdown card-header-dropdown">
-                                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <span class="text-muted">Recent<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                                            </a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <a class="dropdown-item" href="#">Recent</a>
-                                                                <a class="dropdown-item" href="#">Top Rated</a>
-                                                                <a class="dropdown-item" href="#">Previous</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="card-body">
-
-                                                    <div data-simplebar style="height: 300px;" class="px-3 mx-n3 mb-2">
-                                                        <div class="d-flex mb-4">
-                                                            <div class="flex-shrink-0">
-                                                                <img src="assets/images/users/avatar-8.jpg" alt="" class="avatar-xs rounded-circle" />
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3">
-                                                                <h5 class="fs-13">Joseph Parker <small class="text-muted ms-2">20 Dec 2021 - 05:47AM</small></h5>
-                                                                <p class="text-muted">I am getting message from customers that when they place order always get error message .</p>
-                                                                <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
-                                                                <div class="d-flex mt-4">
-                                                                    <div class="flex-shrink-0">
-                                                                        <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-xs rounded-circle" />
-                                                                    </div>
-                                                                    <div class="flex-grow-1 ms-3">
-                                                                        <h5 class="fs-13">Alexis Clarke <small class="text-muted ms-2">22 Dec 2021 - 02:32PM</small></h5>
-                                                                        <p class="text-muted">Please be sure to check your Spam mailbox to see if your email filters have identified the email from Dell as spam.</p>
-                                                                        <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex mb-4">
-                                                            <div class="flex-shrink-0">
-                                                                <img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle" />
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3">
-                                                                <h5 class="fs-13">Donald Palmer <small class="text-muted ms-2">24 Dec 2021 - 05:20PM</small></h5>
-                                                                <p class="text-muted">If you have further questions, please contact Customer Support from the “Action Menu” on your <a href="javascript:void(0);" class="text-decoration-underline">Online Order Support</a>.</p>
-                                                                <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="flex-shrink-0">
-                                                                <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-xs rounded-circle" />
-                                                            </div>
-                                                            <div class="flex-grow-1 ms-3">
-                                                                <h5 class="fs-13">Alexis Clarke <small class="text-muted ms-2">26 min ago</small></h5>
-                                                                <p class="text-muted">Your <a href="javascript:void(0)" class="text-decoration-underline">Online Order Support</a> provides you with the most current status of your order. To help manage your order refer to the “Action Menu” to initiate return, contact Customer Support and more.</p>
-                                                                <div class="row g-2 mb-3">
-                                                                    <div class="col-lg-1 col-sm-2 col-6">
-                                                                        <img src="assets/images/small/img-4.jpg" alt="" class="img-fluid rounded">
-                                                                    </div>
-                                                                    <div class="col-lg-1 col-sm-2 col-6">
-                                                                        <img src="assets/images/small/img-5.jpg" alt="" class="img-fluid rounded">
-                                                                    </div>
-                                                                </div>
-                                                                <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
-                                                                <div class="d-flex mt-4">
-                                                                    <div class="flex-shrink-0">
-                                                                        <img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle" />
-                                                                    </div>
-                                                                    <div class="flex-grow-1 ms-3">
-                                                                        <h5 class="fs-13">Donald Palmer <small class="text-muted ms-2">8 sec ago</small></h5>
-                                                                        <p class="text-muted">Other shipping methods are available at checkout if you want your purchase delivered faster.</p>
-                                                                        <a href="javascript: void(0);" class="badge text-muted bg-light"><i class="mdi mdi-reply"></i> Reply</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <form class="mt-4">
-                                                        <div class="row g-3">
-                                                            <div class="col-12">
-                                                                <label for="exampleFormControlTextarea1" class="form-label text-body">Leave a Comments</label>
-                                                                <textarea class="form-control bg-light border-light" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your comment..."></textarea>
-                                                            </div>
-                                                            <div class="col-12 text-end">
-                                                                <button type="button" class="btn btn-ghost-secondary btn-icon waves-effect me-1"><i class="ri-attachment-line fs-16"></i></button>
-                                                                <a href="javascript:void(0);" class="btn btn-success">Post Comments</a>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div> -->
-                                            <!-- end card -->
                                         </div>
                                         <!-- ene col -->
                                         <div class="col-xl-3 col-lg-4">
@@ -1304,6 +1214,290 @@ $_SESSION['Admin_id'] = $Admin_id;
                                     </div><!-- end row -->
                                 </div>
                                 <!-- end tab pane -->
+                                <div class=" fade" id="project-employee-performance" role="tabpanel">
+
+                                    <div class="card" id="performance_page">
+                                        <div class="card-body">
+
+                                            <div class="row col-md-12 g-3" id="PieChartDropdowns">
+                                                <div class="employeeDropDown col-md-4">
+                                                    <select name="performanceEmpDD" class="form-select" id="PerformanceEmpDD" aria-label="Default select example" required>
+                                                        <option selected value="">Select Employee</option>
+
+                                                    </select>
+                                                    <div class="invalid-feedback" id="PerformanceDDInvDiv">Please select employee !</div>
+                                                </div>
+
+                                                <div class="TimeDropdown">
+                                                    <div class="row g-3">
+
+                                                        <div class="dropdown col-md-4">
+                                                            <button class="btn btn-primary w-100 dropdown-toggle" type="button" id="timePeriodDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Select Time
+                                                            </button>
+                                                            <ul class="dropdown-menu DaysDropdwonMenuItems" aria-labelledby="timePeriodDropdown">
+                                                                <li>
+                                                                    <h6 class="dropdown-header">Days</h6>
+                                                                    <a class="dropdown-item" href="#" data-value="1">Last 1 day</a>
+                                                                    <a class="dropdown-item" href="#" data-value="2">Last 2 days</a>
+                                                                    <a class="dropdown-item" href="#" data-value="3">Last 3 days</a>
+                                                                    <a class="dropdown-item" href="#" data-value="4">Last 4 days</a>
+                                                                    <a class="dropdown-item" href="#" data-value="5">Last 5 days</a>
+                                                                    <a class="dropdown-item" href="#" data-value="6">Last 6 days</a>
+                                                                    <a class="dropdown-item" href="#" data-value="7">Last 1 week</a>
+                                                                </li>
+                                                                <li>
+                                                                    <hr class="dropdown-divider">
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="dropdown-header">Weeks</h6>
+                                                                    <a class="dropdown-item" href="#" data-value="7">Last 1 week</a>
+                                                                    <a class="dropdown-item" href="#" data-value="14">Last 2 weeks</a>
+                                                                    <a class="dropdown-item" href="#" data-value="21">Last 3 weeks</a>
+                                                                    <a class="dropdown-item" href="#" data-value="28">Last 4 weeks</a>
+                                                                </li>
+                                                                <li>
+                                                                    <hr class="dropdown-divider">
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="dropdown-header">Months</h6>
+                                                                    <a class="dropdown-item" href="#" data-value="30">Last 1 month</a>
+                                                                    <a class="dropdown-item" href="#" data-value="60">Last 2 months</a>
+                                                                    <a class="dropdown-item" href="#" data-value="90">Last 3 months</a>
+                                                                    <a class="dropdown-item" href="#" data-value="120">Last 4 months</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            To
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <input type="text" id="todays-date-field" class="form-control" data-provider="flatpickr" data-date-format="D-m-Y" disabled required />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="card-header">
+                                                <h5 class="card-title">Performance Pie Chart</h5>
+                                            </div>
+
+                                            <!-- Pie Chart -->
+                                            <div class="card-body">
+                                                <div id="chart-pie" data-colors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]' class="e-charts" style="visibility: hidden;"></div>
+                                            </div>
+                                            <!-- End Pie Chart -->
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- end tab pane -->
+                                <div class="tab-pane fade" id="project-roadmap" role="tabpanel">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <h5 class="card-title flex-grow-1">Goals</h5>
+                                        <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#GoalCreateModal" onclick="showModalAddBtn()"><i class="ri-add-line align-bottom me-1"></i> Add New</a>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div>
+                                                <!-- <h5>Timeline</h5> -->
+                                                <div class="timeline" id="RoadMapAllCardsDiv">
+
+                                                    <div class="timeline-item left">
+                                                        <i class="icon ri-stack-line"></i>
+                                                        <div class="date">15 Dec 2021</div>
+                                                        <div class="content">
+                                                            <div class="d-flex">
+                                                                <div class="flex-shrink-0">
+                                                                    <img src="assets/images/users/avatar-5.jpg" alt="" class="avatar-sm rounded">
+                                                                </div>
+                                                                <div class="flex-grow-1 ms-3">
+                                                                    <h5 class="fs-15">@Erica245 <small class="text-muted fs-13 fw-normal">- 10 min Ago</small></h5>
+                                                                    <p class="text-muted mb-2">Wish someone a sincere ‘good luck in your new job’ with these sweet messages. Make sure you pick out a good luck new job card to go with the words, and pop a beautiful bunch of flowers from our gift range in your basket, to make them feel super special.</p>
+                                                                    <div class="hstack gap-2">
+                                                                        <a class="btn btn-sm btn-light"><span class="me-1">&#128293;</span> 19</a>
+                                                                        <a class="btn btn-sm btn-light"><span class="me-1">&#129321;</span> 22</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-item right">
+                                                        <i class="icon ri-vip-diamond-line"></i>
+                                                        <div class="date">22 Oct 2021</div>
+                                                        <div class="content">
+                                                            <h5>Adding a new event with attachments</h5>
+                                                            <p class="text-muted">Too much or too little spacing, as in the example below, can make things unpleasant for the reader.</p>
+                                                            <div class="row g-2">
+                                                                <div class="col-sm-6">
+                                                                    <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                                                        <div class="flex-shrink-0 avatar-xs">
+                                                                            <div class="avatar-title bg-soft-danger text-danger fs-15 rounded">
+                                                                                <i class="ri-image-2-line"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="flex-shrink-0">
+
+                                                                        </div>
+                                                                        <div class="flex-grow-1 overflow-hidden ms-2">
+                                                                            <h6 class="text-truncate mb-0"><a href="javascript:void(0);" class="stretched-link">Business Template - UI/UX design</a></h6>
+                                                                            <small>685 KB</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end col-->
+                                                                <div class="col-sm-6">
+                                                                    <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                                                        <div class="flex-shrink-0 avatar-xs">
+                                                                            <div class="avatar-title bg-soft-info text-info fs-15 rounded">
+                                                                                <i class="ri-file-zip-line"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="flex-grow-1 ms-2 overflow-hidden">
+                                                                            <h6 class="mb-0 text-truncate"><a href="javascript:void(0);" class="stretched-link">Bank Management System - PSD</a></h6>
+                                                                            <small>8.78 MB</small>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end col-->
+                                                            </div>
+                                                            <!--end row-->
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-item left">
+                                                        <i class="icon ri-gift-line"></i>
+                                                        <div class="date">10 Jul 2021</div>
+                                                        <div class="content">
+                                                            <h5>Create new project buildng product</h5>
+                                                            <p class="text-muted">Every team project can have a velzon. Use the velzon to share information with your team to understand and contribute to your project.</p>
+                                                            <div class="avatar-group mb-2">
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title="Christi">
+                                                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="rounded-circle avatar-xs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title="Frank Hook">
+                                                                    <img src="assets/images/users/avatar-3.jpg" alt="" class="rounded-circle avatar-xs">
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title=" Ruby">
+                                                                    <div class="avatar-xs">
+                                                                        <div class="avatar-title rounded-circle bg-light text-primary">
+                                                                            R
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" data-bs-original-title="more">
+                                                                    <div class="avatar-xs">
+                                                                        <div class="avatar-title rounded-circle">
+                                                                            2+
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-item right">
+                                                        <i class="icon ri-shield-star-line"></i>
+                                                        <div class="date">18 May 2021</div>
+                                                        <div class="content">
+                                                            <h5>Donald Palmer <small class="text-muted fs-13 fw-normal">- Has changed 2 attributes</small></h5>
+                                                            <p class="text-muted fst-italic mb-2">" This is an awesome admin dashboard template. It is extremely well structured and uses state of the art components (e.g. one of the only templates using boostrap 5.1.3 so far). I integrated it into a Rails 6 project. Needs manual integration work of course but the template structure made it easy. "</p>
+                                                            <div class="hstack gap-2">
+                                                                <a class="btn btn-sm bg-light"><span class="me-1">&#128151;</span> 35</a>
+                                                                <a class="btn btn-sm btn-light"><span class="me-1">&#128077;</span> 10</a>
+                                                                <a class="btn btn-sm btn-light"><span class="me-1">&#128591;</span> 10</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-item left">
+                                                        <i class="icon ri-user-smile-line"></i>
+                                                        <div class="date">10 Feb 2021</div>
+                                                        <div class="content">
+                                                            <h5>Velzon admin dashboard templates layout upload</h5>
+                                                            <p class="text-muted">Powerful, clean & modern responsive bootstrap 5 admin template. The maximum file size for uploads in this demo :</p>
+                                                            <div class="row border border-dashed rounded gx-2 p-2">
+                                                                <div class="col-3">
+                                                                    <img src="assets/images/small/img-2.jpg" alt="" class="img-fluid rounded">
+                                                                </div>
+                                                                <!--end col-->
+                                                                <div class="col-3">
+                                                                    <img src="assets/images/small/img-3.jpg" alt="" class="img-fluid rounded">
+                                                                </div>
+                                                                <!--end col-->
+                                                                <div class="col-3">
+                                                                    <img src="assets/images/small/img-4.jpg" alt="" class="img-fluid rounded">
+                                                                </div>
+                                                                <!--end col-->
+                                                                <div class="col-3">
+                                                                    <img src="assets/images/small/img-6.jpg" alt="" class="img-fluid rounded">
+                                                                </div>
+                                                                <!--end col-->
+                                                            </div>
+                                                            <!--end row-->
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                </div>
+
+                                <!-- goal create modal  -->
+                                <div class="modal fade zoomIn" id="GoalCreateModal" tabindex="-1" aria-labelledby="GoalCreateModal" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal">
+                                        <div class="modal-content border-0">
+                                            <div class="modal-header p-3 bg-soft-info">
+                                                <h5 class="modal-title" id="GoalCreateModal">Create Goal</h5>
+                                                <button type="button" class="btn-close GoalModalCloseBtn" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <form class="tablelist-form needs-validation" id="GoalAddForm" autocomplete="off" novalidate>
+                                                <div class="modal-body">
+                                                    <div class="row g-3">
+                                                        <div class="col-lg-12 position-relative">
+                                                            <div>
+                                                                <label for="Goal-title-field" class="form-label requiredField">Goal Title</label>
+                                                                <input type="text" id="Goal-title-field" class="form-control" placeholder="Title" placeholder="Enter Goal Head" required />
+                                                                <div class="invalid-tooltip" id="goalTitleInvField">Goal title should not be empty!</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-12">
+                                                            <div class="position-relative">
+                                                                <label for="goal-date-field" class="form-label requiredField">Goal Date</label>
+                                                                <input type="text" id="goal-date-field" class="form-control" data-provider="flatpickr" placeholder="Enter Goal Date" required />
+                                                                <div class="invalid-tooltip" id="GoalDateInvField">Goal date should not be empty!</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3 col-lg-12">
+                                                            <div class="position-relative">
+                                                                <label class="form-label requiredField">Goal Description</label>
+                                                                <div id="ckeditor-classic-goalDescription">
+
+                                                                </div>
+                                                                <div class="invalid-tooltip" id="GoalDescriptionInvField">Goal description should not be empty!</div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                    </div>
+                                                    <!--end row-->
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="hstack gap-2 justify-content-end">
+                                                        <button type="button" class="btn btn-light GoalModalCloseBtn" id="close-modal" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-success" id="RoadMapAddBtn">Add</button>
+                                                        <button type="button" class="btn btn-success d-none" id="RoadMapUpdateBtn">Update</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end goal create modal-->
+
                             </div>
                         </div>
                         <!-- end col -->
@@ -1322,11 +1516,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                                 document.write(new Date().getFullYear())
                             </script> © Velzon.
                         </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </footer>
@@ -1387,761 +1577,8 @@ $_SESSION['Admin_id'] = $Admin_id;
         </div>
     </div>
 
-    <div class="customizer-setting d-none d-md-block">
-        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
-            <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
-        </div>
-    </div>
-
-    <!-- Theme Settings -->
-    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="theme-settings-offcanvas">
-        <div class="d-flex align-items-center bg-primary bg-gradient p-3 offcanvas-header">
-            <h5 class="m-0 me-2 text-white">Theme Customizer</h5>
-
-            <button type="button" class="btn-close btn-close-white ms-auto" id="customizerclose-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body p-0">
-            <div data-simplebar class="h-100">
-                <div class="p-4">
-                    <h6 class="mb-0 fw-semibold text-uppercase">Layout</h6>
-                    <p class="text-muted">Choose your layout</p>
-
-                    <div class="row gy-3">
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input id="customizer-layout01" name="data-layout" type="radio" value="vertical" class="form-check-input">
-                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout01">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Vertical</h5>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" class="form-check-input">
-                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout02">
-                                    <span class="d-flex h-100 flex-column gap-1">
-                                        <span class="bg-light d-flex p-1 gap-1 align-items-center">
-                                            <span class="d-block p-1 bg-soft-primary rounded me-1"></span>
-                                            <span class="d-block p-1 pb-0 px-2 bg-soft-primary ms-auto"></span>
-                                            <span class="d-block p-1 pb-0 px-2 bg-soft-primary"></span>
-                                        </span>
-                                        <span class="bg-light d-block p-1"></span>
-                                        <span class="bg-light d-block p-1 mt-auto"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Horizontal</h5>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input">
-                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout03">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1">
-                                                <span class="d-block p-1 bg-soft-primary mb-2"></span>
-                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Two Column</h5>
-                        </div>
-                        <!-- end col -->
-
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input id="customizer-layout04" name="data-layout" type="radio" value="semibox" class="form-check-input">
-                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout04">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0 p-1">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column pt-1 pe-2">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Semi Box</h5>
-                        </div>
-                        <!-- end col -->
-                    </div>
-
-                    <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Color Scheme</h6>
-                    <p class="text-muted">Choose Light or Dark Scheme.</p>
-
-                    <div class="colorscheme-cardradio">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-mode" id="layout-mode-light" value="light">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="layout-mode-light">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Light</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check card-radio dark">
-                                    <input class="form-check-input" type="radio" name="data-layout-mode" id="layout-mode-dark" value="dark">
-                                    <label class="form-check-label p-0 avatar-md w-100 bg-dark" for="layout-mode-dark">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-soft-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-soft-light d-block p-1"></span>
-                                                    <span class="bg-soft-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Dark</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="sidebar-visibility">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Visibility</h6>
-                        <p class="text-muted">Choose show or Hidden sidebar.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility" id="sidebar-visibility-show" value="show">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-visibility-show">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0 p-1">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column pt-1 pe-2">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Show</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility" id="sidebar-visibility-hidden" value="hidden">
-                                    <label class="form-check-label p-0 avatar-md w-100 px-2" for="sidebar-visibility-hidden">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column pt-1 px-2">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Hidden</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="layout-width">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Layout Width</h6>
-                        <p class="text-muted">Choose Fluid or Boxed layout.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-fluid" value="fluid">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="layout-width-fluid">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Fluid</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-boxed" value="boxed">
-                                    <label class="form-check-label p-0 avatar-md w-100 px-2" for="layout-width-boxed">
-                                        <span class="d-flex gap-1 h-100 border-start border-end">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Boxed</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="layout-position">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Layout Position</h6>
-                        <p class="text-muted">Choose Fixed or Scrollable Layout Position.</p>
-
-                        <div class="btn-group radio" role="group">
-                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
-                            <label class="btn btn-light w-sm" for="layout-position-fixed">Fixed</label>
-
-                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
-                            <label class="btn btn-light w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
-                        </div>
-                    </div>
-                    <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Topbar Color</h6>
-                    <p class="text-muted">Choose Light or Dark Topbar Color.</p>
-
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-light" value="light">
-                                <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-light">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Light</h5>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-dark" value="dark">
-                                <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-dark">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-primary d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Dark</h5>
-                        </div>
-                    </div>
-
-                    <div id="sidebar-size">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Size</h6>
-                        <p class="text-muted">Choose a size of Sidebar.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-default" value="lg">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-default">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Default</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-compact" value="md">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-compact">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Compact</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-small" value="sm">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1">
-                                                    <span class="d-block p-1 bg-soft-primary mb-2"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Small (Icon View)</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-small-hover" value="sm-hover">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small-hover">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1">
-                                                    <span class="d-block p-1 bg-soft-primary mb-2"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Small Hover View</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="sidebar-view">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar View</h6>
-                        <p class="text-muted">Choose Default or Detached Sidebar view.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-style" id="sidebar-view-default" value="default">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-view-default">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Default</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-style" id="sidebar-view-detached" value="detached">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-view-detached">
-                                        <span class="d-flex h-100 flex-column">
-                                            <span class="bg-light d-flex p-1 gap-1 align-items-center px-2">
-                                                <span class="d-block p-1 bg-soft-primary rounded me-1"></span>
-                                                <span class="d-block p-1 pb-0 px-2 bg-soft-primary ms-auto"></span>
-                                                <span class="d-block p-1 pb-0 px-2 bg-soft-primary"></span>
-                                            </span>
-                                            <span class="d-flex gap-1 h-100 p-1 px-2">
-                                                <span class="flex-shrink-0">
-                                                    <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="bg-light d-block p-1 mt-auto px-2"></span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Detached</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="sidebar-color">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Color</h6>
-                        <p class="text-muted">Choose a color of Sidebar.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-light" value="light">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-color-light">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-white border-end d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Light</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-dark" value="dark">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-color-dark">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-primary d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Dark</h5>
-                            </div>
-                            <div class="col-4">
-                                <button class="btn btn-link avatar-md w-100 p-0 overflow-hidden border collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient" aria-expanded="false" aria-controls="collapseBgGradient">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-vertical-gradient d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </button>
-                                <h5 class="fs-13 text-center mt-2">Gradient</h5>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                        <div class="collapse" id="collapseBgGradient">
-                            <div class="d-flex gap-2 flex-wrap img-switch p-2 px-3 bg-light rounded">
-
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient" value="gradient">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient">
-                                        <span class="avatar-title rounded-circle bg-vertical-gradient"></span>
-                                    </label>
-                                </div>
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-2" value="gradient-2">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-2">
-                                        <span class="avatar-title rounded-circle bg-vertical-gradient-2"></span>
-                                    </label>
-                                </div>
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-3" value="gradient-3">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-3">
-                                        <span class="avatar-title rounded-circle bg-vertical-gradient-3"></span>
-                                    </label>
-                                </div>
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-4" value="gradient-4">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-4">
-                                        <span class="avatar-title rounded-circle bg-vertical-gradient-4"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="sidebar-img">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Images</h6>
-                        <p class="text-muted">Choose a image of Sidebar.</p>
-
-                        <div class="d-flex gap-2 flex-wrap img-switch">
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-none" value="none">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-none">
-                                    <span class="avatar-md w-auto bg-light d-flex align-items-center justify-content-center">
-                                        <i class="ri-close-fill fs-20"></i>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-01" value="img-1">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-01">
-                                    <img src="assets/images/sidebar/img-1.jpg" alt="" class="avatar-md w-auto object-cover">
-                                </label>
-                            </div>
-
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-02" value="img-2">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-02">
-                                    <img src="assets/images/sidebar/img-2.jpg" alt="" class="avatar-md w-auto object-cover">
-                                </label>
-                            </div>
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-03" value="img-3">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-03">
-                                    <img src="assets/images/sidebar/img-3.jpg" alt="" class="avatar-md w-auto object-cover">
-                                </label>
-                            </div>
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-04" value="img-4">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-04">
-                                    <img src="assets/images/sidebar/img-4.jpg" alt="" class="avatar-md w-auto object-cover">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="preloader-menu">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Preloader</h6>
-                        <p class="text-muted">Choose a preloader.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-preloader" id="preloader-view-custom" value="enable">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="preloader-view-custom">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                        <!-- <div id="preloader"> -->
-                                        <div id="status" class="d-flex align-items-center justify-content-center">
-                                            <div class="spinner-border text-primary avatar-xxs m-auto" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div>
-                                        </div>
-                                        <!-- </div> -->
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Enable</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-preloader" id="preloader-view-none" value="disable">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="preloader-view-none">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Disable</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- end preloader-menu -->
-
-                </div>
-            </div>
-
-        </div>
-        <div class="offcanvas-footer border-top p-3 text-center">
-            <div class="row">
-                <div class="col-6">
-                    <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
-                </div>
-                <div class="col-6">
-                    <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- JAVASCRIPT -->
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/node-waves/waves.min.js"></script>
-    <script src="assets/libs/feather-icons/feather.min.js"></script>
-    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="assets/js/plugins.js"></script>
 
-    <script src="assets/js/pages/project-overview.init.js"></script>
-
-    <!-- App js -->
-    <script src="assets/js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- master js file  -->
@@ -2158,6 +1595,249 @@ $_SESSION['Admin_id'] = $Admin_id;
     <!-- form validation setup  -->
     <script src="assets/js/pages/form-validation.init.js"></script>
     <script>
+        ShowRoadMap();
+
+        function ShowRoadMap() {
+            $.ajax({
+                url: './php/showroadmap.php',
+                dataType: 'json',
+                type: 'POST',
+                data: {
+                    p_id: '<?php echo $_GET['pid']; ?>'
+                },
+                success: function(data) {
+                    $('#RoadMapAllCardsDiv').empty();
+                    let toggleState = "left";
+                    $.each(data, function(ind, item) {
+                        var CardString = `<div class="timeline-item ${toggleState}">
+                                                        <i class="icon ri-shield-star-line"></i>
+                                                        <div class="date">${moment(item.goalDate).format('D MMM, YYYY hh:mm A')}</div>
+                                                        <div class="content">
+                                                            <h5>${item.goal_head}<span class="badge bg-soft-${item.achived == 0 ? 'danger':'success'} text-${item.achived == 0 ? 'danger':'success'} fs-10 align-middle ms-1">${item.achived == 0 ? 'Not Achieved':'Achieved'}</span></h5>
+                                                            <p class="text-muted mb-2">
+                                                                ${item.goal_description}
+                                                            </p>
+                                                            <!-- <a href="javascript:void(0);" class="link-primary text-decoration-underline">Read More <i class="ri-arrow-right-line"></i></a> -->
+                                                            <div class="hstack gap-2">
+                                                            ${item.achived == 0 ? `<a class="btn btn-sm btn-light" onclick="MarkGoalAsAchieved(${item.goal_id})"><span class="me-1"><i class="text-success ri-check-line"></i></span> Mark Achieved</a>`:''}
+                                                                
+                                                                <a href="#" class="btn btn-sm btn-light" onclick="EditGoal(${item.goal_id})" data-bs-toggle="modal" data-bs-target="#GoalCreateModal"> <span class="me-1"><i class="text-info ri-edit-box-line"></i></span> Edit</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+                        $('#RoadMapAllCardsDiv').append(CardString);
+                        toggleState = toggleState === "left" ? "right" : "left";
+                    })
+                }
+            })
+        }
+        $('.GoalModalCloseBtn').on('click', function() {
+            $('#GoalAddForm')[0].reset();
+            $('#Goal-title-field').val('');
+            $('#goal-date-field').val();
+            GoalDescriptionEditor.setData('');
+            $('#GoalCreateModal').modal('hide');
+        })
+
+        function MarkGoalAsAchieved(goalID) {
+            Swal.fire({
+                title: 'Sure?',
+                icon: 'question',
+                text: 'Mark this Goal as Achieved?',
+                showDenyButton: true,
+                width: '400px',
+                confirmButtonText: 'Yes',
+                denyButtonText: `No`,
+                confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
+                denyButtonClass: "btn btn-danger w-xs mt-2",
+                buttonsStyling: !1,
+                focusConfirm: true,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: './php/markGoalAchived.php',
+                        dataType: 'json',
+                        type: 'POST',
+                        data: {
+                            goal_id: goalID
+                        },
+                        success: function(result) {
+                            console.log(result);
+                            if (result.success) {
+                                ShowRoadMap();
+                                Swal.fire(
+                                    "Marked!",
+                                    "Goal Marked As Achieved successfully!",
+                                    "success");
+                            }
+                        }
+                    })
+                }
+
+            })
+        }
+
+        function showModalAddBtn() {
+            $('#RoadMapAddBtn').removeClass('d-none')
+            $('#RoadMapUpdateBtn').addClass('d-none')
+        }
+
+        function EditGoal(goalID) {
+            $('#RoadMapAddBtn').addClass('d-none')
+            $('#RoadMapUpdateBtn').removeClass('d-none')
+            localStorage.setItem('g_id', goalID);
+
+            $.ajax({
+                url: './php/showroadmap.php',
+                dataType: 'json',
+                type: 'POST',
+                data: {
+                    GoalID: goalID,
+                    p_id: '<?php echo $_GET['pid']; ?>'
+                },
+                success: function(data) {
+                    $.each(data, function(i, item) {
+                        $('#Goal-title-field').val(item.goal_head)
+                        $('#goal-date-field').val(moment(item.goalDate).format('D-MM-YYYY'))
+                        GoalDescriptionEditor.setData(item.goal_description)
+
+                    })
+                }
+            })
+        }
+
+        $('#RoadMapUpdateBtn').on('click', function() {
+            event.preventDefault();
+            var valid = true;
+            if ($('#goal-date-field').val() == '') {
+                $('#GoalDateInvField').css('display', 'block');
+            } else {
+                $('#GoalDateInvField').css('display', 'none');
+            }
+            var GoalDesc = GoalDescriptionEditor.getData();
+            if (GoalDesc == '') {
+                $('#GoalDescriptionInvField').css('display', 'block');
+                valid = false;
+            } else {
+                $('#GoalDescriptionInvField').css('display', 'none');
+            }
+            if (valid) {
+                // update details
+                var GoalDesc = GoalDescriptionEditor.getData();
+
+                $.ajax({
+                    url: './php/RoadMapUpdate.php',
+                    dataType: 'json',
+                    type: 'POST',
+                    data: {
+                        goalid: localStorage.getItem('g_id'),
+                        projectid: <?php echo $_GET['pid']; ?>,
+                        goalHead: $('#Goal-title-field').val(),
+                        goalDate: $('#goal-date-field').val(),
+                        goalDescrip: GoalDesc,
+                    },
+                    success: function(data) {
+                        if (data.success) {
+                            $('#GoalCreateModal').modal('hide');
+                            localStorage.removeItem('g_id');
+                            Swal.fire(
+                                "Updated",
+                                "Goal updated successfully!",
+                                "success");
+                            ShowRoadMap();
+                            $('#GoalAddForm')[0].reset();
+                            $('#Goal-title-field').val('');
+                            $('#goal-date-field').val();
+                            GoalDescriptionEditor.setData('');
+
+                        }
+                    }
+                })
+            }
+        })
+
+
+
+
+        $('#GoalAddForm').on('submit', function(event) {
+            event.preventDefault();
+            var valid = true;
+            if ($('#goal-date-field').val() == '') {
+                $('#GoalDateInvField').css('display', 'block');
+            } else {
+                $('#GoalDateInvField').css('display', 'none');
+            }
+            var GoalDesc = GoalDescriptionEditor.getData();
+            if (GoalDesc == '') {
+                $('#GoalDescriptionInvField').css('display', 'block');
+                valid = false;
+            } else {
+                $('#GoalDescriptionInvField').css('display', 'none');
+            }
+            if (valid) {
+                SaveGoalDetails()
+            }
+        })
+
+        function SaveGoalDetails() {
+            Swal.fire({
+                title: 'Create?',
+                icon: 'question',
+                text: 'Would you like to create this Goal?',
+                showDenyButton: true,
+                width: '400px',
+                confirmButtonText: 'Yes',
+                denyButtonText: `No`,
+                confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
+                denyButtonClass: "btn btn-danger w-xs mt-2",
+                buttonsStyling: !1,
+                focusConfirm: true,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var GoalDesc = GoalDescriptionEditor.getData();
+                    $.ajax({
+                        url: './php/roadmap.php',
+                        type: 'POST',
+                        dataType: 'JSON',
+                        data: {
+                            projectid: '<?php echo $_GET['pid']; ?>',
+                            goalHead: $('#Goal-title-field').val(),
+                            goalDate: $('#goal-date-field').val(),
+                            goalDescrip: GoalDesc,
+                        },
+                        success: function(result) {
+
+                            $('#GoalCreateModal').modal('hide');
+                            ShowRoadMap();
+                            Swal.fire(
+                                "Added",
+                                "Goal added successfully!",
+                                "success");
+                        }
+                    })
+                }
+            })
+        }
+    </script>
+
+
+    <script>
         var filterData;
         var empIDArray = [];
         var projectID;
@@ -2170,7 +1850,7 @@ $_SESSION['Admin_id'] = $Admin_id;
             'jpg': ' <i class="ri-image-2-fill"></i>',
         }
         $.ajax({
-            url: 'assets/php/GetProjectDetails.php',
+            url: './php/GetProjectDetails.php',
             type: 'POST',
             dataType: 'json',
             data: {
@@ -2190,9 +1870,6 @@ $_SESSION['Admin_id'] = $Admin_id;
                     $('.project-priority').html(item.ProjectPriority);
                     $('#descriptionDetails').html(item.PROJDesc);
                     $('#missionDetails').html(item.PROJMission);
-
-
-
                 })
 
                 $.each(data.AttachmentData, function(index, it) {
@@ -2258,6 +1935,12 @@ $_SESSION['Admin_id'] = $Admin_id;
 
                 })
                 $.each(data.EmployeeData, function(idn, dataItem) {
+                    filterData = $.grep(data.EmployeeData, function(item) {
+                        var empNM = item.ID;
+                        return empNM;
+                    });
+                    $('#PerformanceEmpDD').append($('<option>').val(dataItem.ID).text(dataItem.EmpName))
+
                     empIDArray.push(dataItem.ID);
                     var EmpStr = ` <div class="d-flex align-items-center">
                                                                 <div class="avatar-xs flex-shrink-0 me-3">
@@ -2285,7 +1968,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
         function ShowEmployeeList() {
             $.ajax({
-                url: 'assets/php/GetAllEmployees.php',
+                url: './php/GetAllEmployees.php',
                 type: 'POST',
                 dataType: 'json',
                 success: function(data) {
@@ -2353,11 +2036,15 @@ $_SESSION['Admin_id'] = $Admin_id;
                 backdrop: 'static',
                 keyboard: false
             });
+            $('#GoalCreateModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
         });
 
         function showSelectedEmp() {
             $.ajax({
-                url: 'assets/php/updateemponproj.php',
+                url: './php/updateemponproj.php',
                 dataType: 'json',
                 type: 'post',
                 data: {
@@ -2370,7 +2057,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                         $('#membersDiv').html('');
                         $('#inviteMembersModal').modal('hide');
                         $.ajax({
-                            url: 'assets/php/GetProjectDetails.php',
+                            url: './php/GetProjectDetails.php',
                             type: 'POST',
                             dataType: 'json',
                             data: {
@@ -2404,13 +2091,13 @@ $_SESSION['Admin_id'] = $Admin_id;
 
         function ShowTasks() {
             $.ajax({
-                url: 'assets/php/taskshow.php',
+                url: './php/taskshow.php',
                 type: 'GET',
                 data: {
                     PID: <?php echo $_GET['pid']; ?>
                 },
                 success: function(data) {
-                    console.log(data);
+                    // console.log(data);
                     $('#AllTasksTableBody').html('');
                     if (data[0] == "No Tasks Yet!") {
                         var tableRowString = ` <tr style="text-align:center;">
@@ -2461,6 +2148,14 @@ $_SESSION['Admin_id'] = $Admin_id;
                 .create(document.querySelector('#ckeditor-classic-taskDescription'))
                 .then(newEditor => {
                     DescriptionEditor = newEditor; // Save the editor instance
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+            ClassicEditor
+                .create(document.querySelector('#ckeditor-classic-goalDescription'))
+                .then(newEditor => {
+                    GoalDescriptionEditor = newEditor; // Save the editor instance
                 })
                 .catch(error => {
                     console.error(error);
@@ -2526,7 +2221,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                     var DescriptionEditorContent = DescriptionEditor.getData();
 
                     $.ajax({
-                        url: 'assets/php/taskadd.php',
+                        url: './php/taskadd.php',
                         type: 'POST',
                         dataType: 'JSON',
                         data: {
@@ -2553,6 +2248,104 @@ $_SESSION['Admin_id'] = $Admin_id;
                 }
             });
         }
+    </script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <script src="assets/js/pages/project-overview.init.js"></script>
+    <!-- echarts js -->
+    <script src="assets/libs/echarts/echarts.min.js"></script>
+
+    <!-- echarts init -->
+    <script src="assets/js/pages/echarts.init.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#project-employee-performance').addClass('tab-pane');
+            if ($('#performance-tab-link').hasClass('active')) {
+                $('#project-employee-performance').removeClass('tab-pane')
+            } else {
+                $('#project-employee-performance').addClass('tab-pane')
+
+            }
+        })
+        $('#todays-date-field').val(moment().format('DD MMM, YYYY'))
+        document.addEventListener("DOMContentLoaded", () => {
+            const chart = echarts.init(document.querySelector("#chart-pie"));
+            $(document).ready(function() {
+
+                $('.dropdown-item').on('click', function() {
+                    const selectedValue = $(this).attr('data-value');
+                    const selectedText = $(this).text();
+
+                    if ($('#PerformanceEmpDD').val() == "") {
+                        $('#PerformanceDDInvDiv').css('display', 'block')
+                    } else {
+                        $('#PerformanceDDInvDiv').css('display', 'none')
+                        $('#timePeriodDropdown').text(selectedText);
+                        $('#chart-pie').css('visibility', 'visible')
+                        $.ajax({
+                            url: './php/GetEmployeePerformanceData.php',
+                            type: 'POST',
+                            dataType: 'JSON',
+                            data: {
+                                SelectedValue: selectedValue,
+                                EmpIDSel: $('#PerformanceEmpDD').val(),
+                                ProjectID: <?php echo $_GET['pid']; ?>,
+                            },
+                            success: function(data) {
+                                const jsonData = data;
+                                const pieData = Object.entries(jsonData).map((
+                                    [name, value]) => ({
+                                    value: value,
+                                    name: name
+                                }));
+                                // const colors = ["#5470C6", "#FFCE56", "#FF2465"];
+                                const option = {
+                                    tooltip: {
+                                        trigger: "item",
+                                        formatter: "{b}: {d}% ({c})",
+                                    },
+                                    legend: {
+                                        orient: "vertical",
+                                        left: "left",
+                                    },
+                                    series: [{
+                                        name: "Access From",
+                                        type: "pie",
+                                        radius: "50%",
+                                        data: pieData,
+                                        emphasis: {
+                                            itemStyle: {
+                                                shadowBlur: 10,
+                                                shadowOffsetX: 0,
+                                                shadowColor: "rgba(0, 0, 0, 0.5)",
+                                            },
+                                        },
+                                        // itemStyle: {
+                                        //     color: function(params) {
+                                        //         return colors[params.dataIndex]; // Set color based on index
+                                        //     },
+                                        // },
+                                    }],
+                                };
+
+                                chart.setOption(option);
+                            }
+                        });
+                    }
+                })
+            })
+        });
+        $('#PerformanceEmpDD').on('change', function() {
+            $('#PerformanceDDInvDiv').css('display', 'none')
+        })
     </script>
 
 </body>

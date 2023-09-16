@@ -9,3 +9,78 @@
     color: red;
     font-size: 13px;
 }
+
+.DaysDropdwonMenuItems {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.flicker-element {
+    /* width: 100px;
+    height: 100px; */
+    background-color: snow;
+    animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#AllNotificationsTabDiv::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent;
+    /* Hide the scrollbar background */
+}
+
+#AllNotificationsTabDiv::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    /* Semi-transparent scrollbar thumb */
+    border-radius: 6px;
+}
+
+#AllNotificationsTabDiv::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+    /* Darker thumb on hover */
+}
+
+.ScrollBarCss::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent;
+    /* Hide the scrollbar background */
+}
+
+.ScrollBarCss::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    /* Semi-transparent scrollbar thumb */
+    border-radius: 6px;
+}
+
+.ScrollBarCss::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+    /* Darker thumb on hover */
+}
+
+.custom-icon-rotating {
+    animation: spin 4s linear infinite;
+    /* Adjust the duration and timing as needed */
+    transform-origin: center;
+    /* Rotate from the center of the element */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

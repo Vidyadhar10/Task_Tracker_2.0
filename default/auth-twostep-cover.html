@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
 
 <head>
 
     <meta charset="utf-8" />
-    <title>Two Step Verification | Velzon - Admin & Dashboard Template</title>
+    <title>Two Step Verification | Task Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -21,7 +22,8 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
-
+    <!-- custom style  -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -41,8 +43,11 @@
                                         <div class="bg-overlay"></div>
                                         <div class="position-relative h-100 d-flex flex-column">
                                             <div class="mb-4">
-                                                <a href="index.html" class="d-block">
-                                                    <img src="assets/images/logo-light.png" alt="" height="18">
+                                                <a href="index.php" class="d-block">
+                                                    <!-- <img src="assets/images/logo-light.png" alt="" height="18"> -->
+                                                    <span height="18" class="LogoTaskTracker">
+                                                        Task Tracker
+                                                    </span>
                                                 </a>
                                             </div>
                                             <div class="mt-auto">
@@ -50,21 +55,30 @@
                                                     <i class="ri-double-quotes-l display-4 text-success"></i>
                                                 </div>
 
-                                                <div id="qoutescarouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                                                <div id="qoutescarouselIndicators" class="carousel slide"
+                                                    data-bs-ride="carousel">
                                                     <div class="carousel-indicators">
-                                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                        <button type="button" data-bs-target="#qoutescarouselIndicators"
+                                                            data-bs-slide-to="0" class="active" aria-current="true"
+                                                            aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#qoutescarouselIndicators"
+                                                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                        <button type="button" data-bs-target="#qoutescarouselIndicators"
+                                                            data-bs-slide-to="2" aria-label="Slide 3"></button>
                                                     </div>
                                                     <div class="carousel-inner text-center text-white-50 pb-5">
                                                         <div class="carousel-item active">
-                                                            <p class="fs-15">" Great! Clean code, clean design, easy for customization. Thanks very much! "</p>
+                                                            <p class="fs-15 fst-italic">" An Amazing Project Management
+                                                                System ! "</p>
                                                         </div>
                                                         <div class="carousel-item">
-                                                            <p class="fs-15">" The theme is really great with an amazing customer support."</p>
+                                                            <p class="fs-15 fst-italic">" Also An Employee Mangement
+                                                                System!. "</p>
                                                         </div>
                                                         <div class="carousel-item">
-                                                            <p class="fs-15">" Great! Clean code, clean design, easy for customization. Thanks very much! "</p>
+                                                            <p class="fs-15 fst-italic">" Superb functionality with
+                                                                faster loading and Great flexibility Also has dynamic
+                                                                features ! "</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -79,50 +93,90 @@
                                     <div class="p-lg-5 p-4">
                                         <div class="mb-4">
                                             <div class="avatar-lg mx-auto">
-                                                <div class="avatar-title bg-light text-primary display-5 rounded-circle">
+                                                <div
+                                                    class="avatar-title bg-light text-primary display-5 rounded-circle">
                                                     <i class="ri-mail-line"></i>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="text-muted text-center mx-lg-3">
                                             <h4 class="">Verify Your Email</h4>
-                                            <p>Please enter the 4 digit code sent to <span class="fw-semibold">example@abc.com</span></p>
+                                            <p>Please enter the 6 digit code sent to <span class="fw-semibold"
+                                                    id="link-email-address"></span></p>
                                         </div>
 
                                         <div class="mt-4">
                                             <form autocomplete="off">
                                                 <div class="row">
-                                                    <div class="col-3">
+
+                                                    <div class="col">
                                                         <div class="mb-3">
-                                                            <label for="digit1-input" class="visually-hidden">Digit 1</label>
-                                                            <input type="text" class="form-control form-control-lg bg-light border-light text-center" onkeyup="moveToNext(1, event)" maxLength="1" id="digit1-input">
+                                                            <label for="digit1-input" class="visually-hidden">Digit
+                                                                1</label>
+                                                            <input type="text"
+                                                                class="form-control form-control-lg bg-light border-light text-center"
+                                                                onkeyup="moveToNext(1, event)" maxLength="1"
+                                                                id="digit1-input">
                                                         </div>
                                                     </div><!-- end col -->
-                                                
-                                                    <div class="col-3">
+
+                                                    <div class="col">
                                                         <div class="mb-3">
-                                                            <label for="digit2-input" class="visually-hidden">Digit 2</label>
-                                                            <input type="text" class="form-control form-control-lg bg-light border-light text-center" onkeyup="moveToNext(2, event)" maxLength="1" id="digit2-input">
+                                                            <label for="digit2-input" class="visually-hidden">Digit
+                                                                2</label>
+                                                            <input type="text"
+                                                                class="form-control form-control-lg bg-light border-light text-center"
+                                                                onkeyup="moveToNext(2, event)" maxLength="1"
+                                                                id="digit2-input">
                                                         </div>
                                                     </div><!-- end col -->
-                                                
-                                                    <div class="col-3">
+
+                                                    <div class="col">
                                                         <div class="mb-3">
-                                                            <label for="digit3-input" class="visually-hidden">Digit 3</label>
-                                                            <input type="text" class="form-control form-control-lg bg-light border-light text-center" onkeyup="moveToNext(3, event)" maxLength="1" id="digit3-input">
+                                                            <label for="digit3-input" class="visually-hidden">Digit
+                                                                3</label>
+                                                            <input type="text"
+                                                                class="form-control form-control-lg bg-light border-light text-center"
+                                                                onkeyup="moveToNext(3, event)" maxLength="1"
+                                                                id="digit3-input">
                                                         </div>
                                                     </div><!-- end col -->
-                                                
-                                                    <div class="col-3">
+
+                                                    <div class="col">
                                                         <div class="mb-3">
-                                                            <label for="digit4-input" class="visually-hidden">Digit 4</label>
-                                                            <input type="text" class="form-control form-control-lg bg-light border-light text-center" onkeyup="moveToNext(4, event)" maxLength="1" id="digit4-input">
+                                                            <label for="digit4-input" class="visually-hidden">Digit
+                                                                4</label>
+                                                            <input type="text"
+                                                                class="form-control form-control-lg bg-light border-light text-center"
+                                                                onkeyup="moveToNext(4, event)" maxLength="1"
+                                                                id="digit4-input">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label for="digit5-input" class="visually-hidden">Digit
+                                                                5</label>
+                                                            <input type="text"
+                                                                class="form-control form-control-lg bg-light border-light text-center"
+                                                                onkeyup="moveToNext(5, event)" maxLength="1"
+                                                                id="digit5-input">
+                                                        </div>
+                                                    </div><!-- end col -->
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label for="digit6-input" class="visually-hidden">Digit
+                                                                6</label>
+                                                            <input type="text"
+                                                                class="form-control form-control-lg bg-light border-light text-center"
+                                                                onkeyup="moveToNext(6, event)" maxLength="1"
+                                                                id="digit6-input">
                                                         </div>
                                                     </div><!-- end col -->
                                                 </div>
 
                                                 <div class="mt-3">
-                                                    <button type="button" class="btn btn-success w-100">Confirm</button>
+                                                    <button type="button" class="btn btn-success w-100"
+                                                        id="verify-email-btn">Confirm</button>
                                                 </div>
 
                                             </form>
@@ -130,7 +184,12 @@
                                         </div>
 
                                         <div class="mt-5 text-center">
-                                            <p class="mb-0">Didn't receive a code ? <a href="auth-pass-reset-cover.html" class="fw-semibold text-primary text-decoration-underline">Resend</a> </p>
+                                            <p class="mb-0">Didn't receive a code ?
+                                                <a href="#" onclick="GenerateNewOtp()"
+                                                    class="fw-semibold text-primary text-decoration-underline">
+                                                    Resend
+                                                </a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -156,7 +215,8 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>document.write(new Date().getFullYear())</script> Task Tracker. Crafted with <i
+                                    class="mdi mdi-heart text-danger"></i>
                             </p>
                         </div>
                     </div>
@@ -168,6 +228,31 @@
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
+    <!-- ajax cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- master js file  -->
+    <script src="./assets/js/master.js"></script>
+    <!-- moment.js cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <!-- Sweet Alerts js -->
+    <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Sweet Alerts js -->
+    <!-- <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script> -->
+    <!-- sweet alert aimation cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+    <!-- ckeditor -->
+    <script src="assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+    <!-- form validation setup  -->
+    <script src="assets/js/pages/form-validation.init.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
@@ -175,8 +260,210 @@
     <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
     <script src="assets/js/plugins.js"></script>
 
+
     <!-- two-step-verification js -->
     <script src="assets/js/pages/two-step-verification.init.js"></script>
+    <script>
+        function moveToNext(currentDigit, event) {
+            const maxDigits = 6;
+            const input = event.target;
+
+            // Allow only numeric input
+            input.value = input.value.replace(/[^0-9]/g, '');
+
+            if (input.value.length === 1) {
+                if (currentDigit < maxDigits) {
+                    const nextDigitInput = document.getElementById(`digit${currentDigit + 1}-input`);
+                    nextDigitInput.focus();
+                } else {
+                    // All digits have been filled, you can perform any action here
+                    // For example, submit the form or trigger a function.
+                }
+            } else if (event.key === "Backspace" && currentDigit > 1) {
+                // Handle Backspace key by moving to the previous input field
+                const previousDigitInput = document.getElementById(`digit${currentDigit - 1}-input`);
+                previousDigitInput.focus();
+            }
+        }
+        $(document).ready(function () {
+            var url = new URL(window.location.href);
+            var emlAdd = atob(url.searchParams.get("eml"));
+            let hiddenEmail = emlAdd.substr(0, 3) + '***@' + emlAdd.split('@')[1];
+            $('#link-email-address').html(hiddenEmail);
+        })
+
+        $('#verify-email-btn').on('click', function () {
+            event.preventDefault();
+            const digits = [];
+            for (let i = 1; i <= 6; i++) {
+                const inputField = document.getElementById(`digit${i}-input`);
+                digits.push(inputField.value);
+            }
+            const verificationCode = parseInt(digits.join(''));
+
+            // URL parameters 
+            var url = new URL(window.location.href);
+            var emlAdd = atob(url.searchParams.get("eml"));
+            let hiddenEmail = emlAdd.substr(0, 3) + '***@' + emlAdd.split('@')[1];
+
+            var secCode = atob(url.searchParams.get("SC"));
+            $.ajax({
+                url: './php/GetOTPFromDB.php',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    emailID: emlAdd,
+                },
+                success: function (resultVal) {
+                    if (resultVal.success) {
+                        OTPFromDB = resultVal.message
+                        if ((secCode == verificationCode) && (verificationCode == OTPFromDB)) {
+                            Swal.fire({
+                                title: 'OTP Verified',
+                                icon: 'success',
+                                width: '400px',
+                                showClass: {
+                                    popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                    popup: 'animate__animated animate__fadeOutUp'
+                                }
+                            }).then((result) => {
+                                window.location.href = `./auth-pass-change-cover.html?eml=${btoa(emlAdd)}`;
+                            });
+
+                            $.ajax({
+                                url: './php/DeleteOTPFromDB.php',
+                                type: 'POST',
+                                dataType: 'json',
+                                data: {
+                                    emailAdd: emlAdd
+                                },
+                                success: function (dataRes) {
+                                    // console.log('deleted successfully');
+                                }
+                            })
+                        } else {
+                            Swal.fire({
+                                title: 'Invalid OTP! Please try again!',
+                                icon: 'error',
+                                showClass: {
+                                    popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                    popup: 'animate__animated animate__fadeOutUp'
+                                }
+                            }).then((result) => {
+                                for (let i = 1; i <= 6; i++) {
+                                    const inputField = document.getElementById(`digit${i}-input`);
+                                    inputField.value = ''; // Set the value to an empty string
+                                }
+                                $('#digit1-input').focus();
+                            });
+                        }
+                    } else {
+                        console.log('failed');
+                    }
+                }
+            })
+
+        })
+
+
+
+        //resend OTP on resend click
+        function GenerateNewOtp() {
+            let otpGenerated = generateOTP();
+
+            var url = new URL(window.location.href);
+            var eml = url.searchParams.get("eml");
+
+            // store it in database
+            $.ajax({
+                url: './php/SaveOTPtoDB.php',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    emailAddress: atob(eml),
+                    OTPGen: otpGenerated
+                },
+                success: function (dataread) {
+                    //console.log('otp saved');
+                }
+            })
+            // encryption
+            const ciphertext = btoa(otpGenerated);
+
+            $.get("Email/email_otp.php", function (htmlCode) {
+                htmlCode = htmlCode
+                    .replace("[MY_OTP]", otpGenerated)
+                    .replace("[Redirect_Link]", `http://localhost/task_tracker_2.0/default/auth-twostep-cover.html?eml=${eml}&SC=${ciphertext}`);
+
+                var EmailBody = htmlCode;
+                $.ajax({
+                    url: "Email/SendMail.php",
+                    method: 'POST',
+                    data: {
+                        email: atob(eml),
+                        subject: 'OTP for reset password',
+                        body: EmailBody
+                    },
+                    beforeSend: function () {
+                        Swal.fire({
+                            title: "Please wait ...",
+                            text: "Sending OTP to your registered e-mail !",
+                            timer: 5000,
+                            width: '400px',
+                            onBeforeOpen: function () {
+                                Swal.showLoading();
+                            },
+                            showConfirmButton: false
+                        }).then(function (result) {
+                            if (result.dismiss === "timer") {
+                                console.log("I was closed by the timer");
+                            }
+                        });
+                    },
+                    success: function (result) {
+                        Swal.fire({
+                            title: 'OTP sent to your email-address!',
+                            icon: 'success',
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            }
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                var url = window.location.href;
+                                var scIndex = url.indexOf('SC=');
+
+                                if (scIndex !== -1) {
+                                    var scValue = url.substring(scIndex + 3, url.length);
+                                    var newScValue = ciphertext;
+                                    var newUrl = url.replace('SC=' + scValue, 'SC=' + newScValue);
+
+                                    window.location.href = newUrl;
+                                }
+                            }
+                        });
+
+                    }
+                });
+            });
+        }
+
+        function generateOTP() {
+            var digits = '0123456789';
+            var OTP = '';
+            for (var i = 0; i < 6; i++) {
+                OTP += digits[Math.floor(Math.random() * 10)];
+            }
+            return OTP;
+        }
+    </script>
+
 
 </body>
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'assets/php/connection.php';
+include './php/connection.php';
 if (isset($_SESSION['Mobile_No'])) {
     $Admin_mob = $_SESSION['Mobile_No'];
     $m = "SELECT * FROM employeedata WHERE $Admin_mob = MobileNo";
@@ -16,7 +16,7 @@ if (isset($_SESSION['Mobile_No'])) {
         }
     }
 } else {
-    header("location:assets/php/logout.php");
+    header("location:./php/logout.php");
 }
 $_SESSION['Admin_id'] = $Admin_id;
 ?>
@@ -54,7 +54,7 @@ $_SESSION['Admin_id'] = $Admin_id;
     <div id="layout-wrapper">
 
         <?php
-        include 'assets/php/Header.php';
+        include './php/Header.php';
         ?>
 
         <!-- removeNotificationModal -->
@@ -84,7 +84,7 @@ $_SESSION['Admin_id'] = $Admin_id;
         </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
         <?php
-        include './assets/php/App_Menu.php';
+        include './php/App_Menu.php';
         ?>
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
@@ -102,12 +102,12 @@ $_SESSION['Admin_id'] = $Admin_id;
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">CRM</h4>
+                                <h4 class="mb-sm-0">Dashboard</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                        <li class="breadcrumb-item active">CRM</li>
+                                        <li class="breadcrumb-item active">Home</li>
                                     </ol>
                                 </div>
 
@@ -115,715 +115,320 @@ $_SESSION['Admin_id'] = $Admin_id;
                         </div>
                     </div>
                     <!-- end page title -->
-
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="card crm-widget">
-                                <div class="card-body p-0">
-                                    <div class="row row-cols-xxl-5 row-cols-md-3 row-cols-1 g-0">
-                                        <div class="col">
-                                            <div class="py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Campaign Sent <i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-space-ship-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="counter-value" data-target="197">0</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col">
-                                            <div class="mt-3 mt-md-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Annual Profit <i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-exchange-dollar-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0">$<span class="counter-value" data-target="489.4">0</span>k</h2>
+                    <section class="admin-panel-menu">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card crm-widget">
+                                    <div class="card-body p-0">
+                                        <div class="row row-cols-xxl-4 row-cols-md-3 row-cols-1 g-0">
+                                            <div class="col">
+                                                <div class="py-4 px-3">
+                                                    <h5 class="text-muted text-uppercase fs-13">Projects
+                                                    </h5>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0">
+                                                            <i class="ri-apps-2-line display-6 text-muted"></i>
+                                                            <!-- <i class="ri-apps-2-line"></i> -->
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <h2 class="mb-0"><span class="counter-value" id="projectsCountSpan">0</span></h2>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col">
-                                            <div class="mt-3 mt-md-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Lead Coversation <i class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-pulse-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="counter-value" data-target="32.89">0</span>%</h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col">
-                                            <div class="mt-3 mt-lg-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Daily Average Income <i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-trophy-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0">$<span class="counter-value" data-target="1596.5">0</span></h2>
+                                            </div><!-- end col -->
+                                            <div class="col">
+                                                <div class="mt-3 mt-md-0 py-4 px-3">
+                                                    <h5 class="text-muted text-uppercase fs-13">
+                                                        Employees
+                                                    </h5>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0">
+                                                            <i class="ri-account-circle-line display-6 text-muted"></i>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <h2 class="mb-0"><span class="counter-value" id="EmployeesCountSpan">0</span></h2>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                        <div class="col">
-                                            <div class="mt-3 mt-lg-0 py-4 px-3">
-                                                <h5 class="text-muted text-uppercase fs-13">Annual Deals <i class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i>
-                                                </h5>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <i class="ri-service-line display-6 text-muted"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h2 class="mb-0"><span class="counter-value" data-target="2659">0</span></h2>
+                                            </div><!-- end col -->
+                                            <div class="col">
+                                                <div class="mt-3 mt-md-0 py-4 px-3">
+                                                    <h5 class="text-muted text-uppercase fs-13">
+                                                        Tasks
+                                                    </h5>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0">
+                                                            <i class="ri-list-check display-6 text-muted"></i>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <h2 class="mb-0"><span class="counter-value" id="TasksCountSpan">0</span></h2>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- end col -->
-                                    </div><!-- end row -->
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->
+                                            </div><!-- end col -->
+                                            <div class="col">
+                                                <div class="mt-3 mt-lg-0 py-4 px-3">
+                                                    <h5 class="text-muted text-uppercase fs-13">
+                                                        Issues
+                                                    </h5>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0">
+                                                            <i class="ri-error-warning-line display-6 text-muted"></i>
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <h2 class="mb-0"><span class="counter-value" id="IssuesCountSpan">0</span></h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end col -->
 
-                    <div class="row">
-                        <div class="col-xxl-3 col-md-6">
-                            <div class="card">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Sales Forecast</h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="fw-semibold text-uppercase fs-12">Sort by: </span><span class="text-muted">Nov 2021<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Oct 2021</a>
-                                                <a class="dropdown-item" href="#">Nov 2021</a>
-                                                <a class="dropdown-item" href="#">Dec 2021</a>
-                                                <a class="dropdown-item" href="#">Jan 2022</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end card header -->
-                                <div class="card-body pb-0">
-                                    <div id="sales-forecast-chart" data-colors='["--vz-primary", "--vz-success", "--vz-warning"]' class="apex-charts" dir="ltr"></div>
-                                </div>
-                            </div><!-- end card -->
-                        </div><!-- end col -->
+                                        </div><!-- end row -->
+                                    </div><!-- end card body -->
+                                </div><!-- end card -->
+                            </div><!-- end col -->
+                        </div><!-- end row -->
 
-                        <div class="col-xxl-3 col-md-6">
-                            <div class="card card-height-100">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Deal Type</h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="fw-semibold text-uppercase fs-12">Sort by: </span><span class="text-muted">Monthly<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Today</a>
-                                                <a class="dropdown-item" href="#">Weekly</a>
-                                                <a class="dropdown-item" href="#">Monthly</a>
-                                                <a class="dropdown-item" href="#">Yearly</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end card header -->
-                                <div class="card-body pb-0">
-                                    <div id="deal-type-charts" data-colors='["--vz-warning", "--vz-danger", "--vz-success"]' class="apex-charts" dir="ltr"></div>
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col -->
+                        <div class="row">
+                            <div class="col-xl-9">
+                                <div class="card">
+                                    <canvas id="myChart"></canvas>
 
-                        <div class="col-xxl-6">
-                            <div class="card card-height-100">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Balance Overview</h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="fw-semibold text-uppercase fs-12">Sort by: </span><span class="text-muted">Current Year<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Today</a>
-                                                <a class="dropdown-item" href="#">Last Week</a>
-                                                <a class="dropdown-item" href="#">Last Month</a>
-                                                <a class="dropdown-item" href="#">Current Year</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end card header -->
-                                <div class="card-body px-0">
-                                    <ul class="list-inline main-chart text-center mb-0">
-                                        <li class="list-inline-item chart-border-left me-0 border-0">
-                                            <h4 class="text-primary">$584k <span class="text-muted d-inline-block fs-13 align-middle ms-2">Revenue</span>
-                                            </h4>
-                                        </li>
-                                        <li class="list-inline-item chart-border-left me-0">
-                                            <h4>$497k<span class="text-muted d-inline-block fs-13 align-middle ms-2">Expenses</span>
-                                            </h4>
-                                        </li>
-                                        <li class="list-inline-item chart-border-left me-0">
-                                            <h4><span data-plugin="counterup">3.6</span>%<span class="text-muted d-inline-block fs-13 align-middle ms-2">Profit
-                                                    Ratio</span></h4>
-                                        </li>
-                                    </ul>
 
-                                    <div id="revenue-expenses-charts" data-colors='["--vz-success", "--vz-danger"]' class="apex-charts" dir="ltr"></div>
-                                </div>
-                            </div><!-- end card -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->
+                                </div><!-- end card -->
+                            </div><!-- end col -->
 
-                    <div class="row">
-                        <div class="col-xl-7">
-                            <div class="card">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Deals Status</h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="text-muted">02 Nov 2021 to 31 Dec 2021<i class="mdi mdi-chevron-down ms-1"></i></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Today</a>
-                                                <a class="dropdown-item" href="#">Last Week</a>
-                                                <a class="dropdown-item" href="#">Last Month</a>
-                                                <a class="dropdown-item" href="#">Current Year</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end card header -->
-
-                                <div class="card-body">
-                                    <div class="table-responsive table-card">
-                                        <table class="table table-borderless table-hover table-nowrap align-middle mb-0">
-                                            <thead class="table-light">
-                                                <tr class="text-muted">
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col" style="width: 20%;">Last Contacted</th>
-                                                    <th scope="col">Sales Representative</th>
-                                                    <th scope="col" style="width: 16%;">Status</th>
-                                                    <th scope="col" style="width: 12%;">Deal Value</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <tr>
-                                                    <td>Absternet LLC</td>
-                                                    <td>Sep 20, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Donald Risher</a>
-                                                    </td>
-                                                    <td><span class="badge badge-soft-success p-2">Deal Won</span></td>
-                                                    <td>
-                                                        <div class="text-nowrap">$100.1K</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Raitech Soft</td>
-                                                    <td>Sep 23, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Sofia Cunha</a>
-                                                    </td>
-                                                    <td><span class="badge badge-soft-warning p-2">Intro Call</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="text-nowrap">$150K</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>William PVT</td>
-                                                    <td>Sep 27, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Luis
-                                                            Rocha</a>
-                                                    </td>
-                                                    <td><span class="badge badge-soft-danger p-2">Stuck</span></td>
-                                                    <td>
-                                                        <div class="text-nowrap">$78.18K</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Loiusee LLP</td>
-                                                    <td>Sep 30, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Vitoria Rodrigues</a>
-                                                    </td>
-                                                    <td><span class="badge badge-soft-success p-2">Deal Won</span></td>
-                                                    <td>
-                                                        <div class="text-nowrap">$180K</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Apple Inc.</td>
-                                                    <td>Sep 30, 2021</td>
-                                                    <td><img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Vitoria Rodrigues</a>
-                                                    </td>
-                                                    <td><span class="badge badge-soft-info p-2">New Lead</span></td>
-                                                    <td>
-                                                        <div class="text-nowrap">$78.9K</div>
-                                                    </td>
-                                                </tr>
-                                            </tbody><!-- end tbody -->
-                                        </table><!-- end table -->
-                                    </div><!-- end table responsive -->
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col -->
-
-                        <div class="col-xl-5">
-                            <div class="card card-height-100">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">My Tasks</h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="text-muted"><i class="ri-settings-4-line align-middle me-1 fs-15"></i>Settings</span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Remove</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- end card header -->
-
-                                <div class="card-body p-0">
-
-                                    <div class="align-items-center p-3 justify-content-between d-flex">
-                                        <div class="flex-shrink-0">
-                                            <div class="text-muted"><span class="fw-semibold">4</span> of <span class="fw-semibold">10</span> remaining</div>
-                                        </div>
-                                        <button type="button" class="btn btn-sm btn-success"><i class="ri-add-line align-middle me-1"></i> Add Task</button>
+                            <div class="col-xl-3">
+                                <div class="card card-height-100">
+                                    <div class="card-header align-items-center d-flex">
+                                        <h4 class="card-title mb-0 flex-grow-1">Recent Activity</h4>
                                     </div><!-- end card header -->
 
-                                    <div data-simplebar style="max-height: 219px;">
-                                        <ul class="list-group list-group-flush border-dashed px-3">
-                                            <li class="list-group-item ps-0">
-                                                <div class="d-flex align-items-start">
-                                                    <div class="form-check ps-0 flex-sharink-0">
-                                                        <input type="checkbox" class="form-check-input ms-0" id="task_one">
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <label class="form-check-label mb-0 ps-2" for="task_one">Review
-                                                            and make sure nothing slips through cracks</label>
-                                                    </div>
-                                                    <div class="flex-shrink-0 ms-2">
-                                                        <p class="text-muted fs-12 mb-0">15 Sep, 2021</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item ps-0">
-                                                <div class="d-flex align-items-start">
-                                                    <div class="form-check ps-0 flex-sharink-0">
-                                                        <input type="checkbox" class="form-check-input ms-0" id="task_two">
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <label class="form-check-label mb-0 ps-2" for="task_two">Send
-                                                            meeting invites for sales upcampaign</label>
-                                                    </div>
-                                                    <div class="flex-shrink-0 ms-2">
-                                                        <p class="text-muted fs-12 mb-0">20 Sep, 2021</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item ps-0">
-                                                <div class="d-flex align-items-start">
-                                                    <div class="form-check flex-sharink-0 ps-0">
-                                                        <input type="checkbox" class="form-check-input ms-0" id="task_three">
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <label class="form-check-label mb-0 ps-2" for="task_three">Weekly closed sales won checking with sales
-                                                            team</label>
-                                                    </div>
-                                                    <div class="flex-shrink-0 ms-2">
-                                                        <p class="text-muted fs-12 mb-0">24 Sep, 2021</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item ps-0">
-                                                <div class="d-flex align-items-start">
-                                                    <div class="form-check ps-0 flex-sharink-0">
-                                                        <input type="checkbox" class="form-check-input ms-0" id="task_four">
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <label class="form-check-label mb-0 ps-2" for="task_four">Add
-                                                            notes that can be viewed from the individual view</label>
-                                                    </div>
-                                                    <div class="flex-shrink-0 ms-2">
-                                                        <p class="text-muted fs-12 mb-0">27 Sep, 2021</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item ps-0">
-                                                <div class="d-flex align-items-start">
-                                                    <div class="form-check ps-0 flex-sharink-0">
-                                                        <input type="checkbox" class="form-check-input ms-0" id="task_five">
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <label class="form-check-label mb-0 ps-2" for="task_five">Move
-                                                            stuff to another page</label>
-                                                    </div>
-                                                    <div class="flex-shrink-0 ms-2">
-                                                        <p class="text-muted fs-12 mb-0">27 Sep, 2021</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item ps-0">
-                                                <div class="d-flex align-items-start">
-                                                    <div class="form-check ps-0 flex-sharink-0">
-                                                        <input type="checkbox" class="form-check-input ms-0" id="task_six">
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <label class="form-check-label mb-0 ps-2" for="task_six">Styling
-                                                            wireframe design and documentation for velzon admin</label>
-                                                    </div>
-                                                    <div class="flex-shrink-0 ms-2">
-                                                        <p class="text-muted fs-12 mb-0">27 Sep, 2021</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul><!-- end ul -->
-                                    </div>
-                                    <div class="p-3 pt-2">
-                                        <a href="javascript:void(0);" class="text-muted text-decoration-underline">Show
-                                            more...</a>
-                                    </div>
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->
+                                    <div class="card-body p-0">
+                                        <div data-simplebar style="max-height: 350px;">
+                                            <ul class="list-group list-group-flush border-dashed px-3" id="RecentActivityLI">
 
-                    <div class="row">
-                        <div class="col-xxl-5">
-                            <div class="card">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Upcoming Activities</h4>
-                                    <div class="flex-shrink-0">
-                                        <div class="dropdown card-header-dropdown">
-                                            <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="text-muted fs-18"><i class="mdi mdi-dots-vertical"></i></span>
+
+                                            </ul><!-- end ul -->
+                                        </div>
+                                        <div class="p-3 pt-2">
+                                            <a href="javascript:void(0);" class="text-muted text-decoration-underline">
+                                                Show more...
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Remove</a>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div><!-- end card -->
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                        <!-- recent activity end  -->
+                    </section>
+
+                    <!-- admin panel end  -->
+
+                    <!-- employee panel starts  -->
+
+                    <section class="Employee-panel-menu">
+                        <div class="row" id="employee-dash-cards">
+
+                            <!--end col-->
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card card-animate">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="fw-medium text-muted mb-0">Pending Tickets</p>
+                                                <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="124">0</span>k</h2>
+                                                <p class="mb-0 text-muted"><span class="badge bg-light text-danger mb-0"> <i class="ri-arrow-down-line align-middle"></i> 0.96 % </span> vs. previous month</p>
+                                            </div>
+                                            <div>
+                                                <div class="avatar-sm flex-shrink-0">
+                                                    <span class="avatar-title bg-soft-info text-info rounded-circle fs-4">
+                                                        <i class="mdi mdi-timer-sand"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card card-animate">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="fw-medium text-muted mb-0">Closed Tickets</p>
+                                                <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="107">0</span>K</h2>
+                                                <p class="mb-0 text-muted"><span class="badge bg-light text-danger mb-0"> <i class="ri-arrow-down-line align-middle"></i> 3.87 % </span> vs. previous month</p>
+                                            </div>
+                                            <div>
+                                                <div class="avatar-sm flex-shrink-0">
+                                                    <span class="avatar-title bg-soft-info text-info rounded-circle fs-4">
+                                                        <i class="ri-shopping-bag-line"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-xxl-3 col-sm-6">
+                                <div class="card card-animate">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="fw-medium text-muted mb-0">Deleted Tickets</p>
+                                                <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="15.95">0</span>%</h2>
+                                                <p class="mb-0 text-muted"><span class="badge bg-light text-success mb-0"> <i class="ri-arrow-up-line align-middle"></i> 1.09 % </span> vs. previous month</p>
+                                            </div>
+                                            <div>
+                                                <div class="avatar-sm flex-shrink-0">
+                                                    <span class="avatar-title bg-soft-info text-info rounded-circle fs-4">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end card body -->
+                                </div>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card" id="Subtask-List">
+                                    <div class="card-header border-top-0 border border-end-0 border-start-0">
+                                        <div class="d-flex align-items-center">
+                                            <h5 class="card-title mb-0 flex-grow-1" id="CardTitle">Tasks</h5>
+                                            <div class="flex-shrink-0 col-xl-4">
+                                                <div class="d-flex flex-wrap gap-2">
+                                                    <div class="col-sm-12">
+                                                        <div class="search-box">
+                                                            <input type="text" class="form-control search bg-light border-light" placeholder="Search for subtask details or something..." id="search-input">
+                                                            <i class="ri-search-line search-icon"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div><!-- end card header -->
-                                <div class="card-body pt-0">
-                                    <ul class="list-group list-group-flush border-dashed">
-                                        <li class="list-group-item ps-0">
-                                            <div class="row align-items-center g-3">
-                                                <div class="col-auto">
-                                                    <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3">
-                                                        <div class="text-center">
-                                                            <h5 class="mb-0">25</h5>
-                                                            <div class="text-muted">Tue</div>
-                                                        </div>
-                                                    </div>
+
+                                    <!--end card-body-->
+                                    <div class="card-body">
+                                        <div class="table-responsive table-card mb-4">
+                                            <table class="table align-middle table-nowrap mb-0" id="Subtask-Table">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="sort" data-sort="id" style="width: 6%;">Sr No</th>
+                                                        <th class="sort" data-sort="tasks_name">Task Title</th>
+                                                        <th class="sort" data-sort="project_name">Project Title</th>
+                                                        <th class="sort" data-sort="task_priority">Priority</th>
+                                                        <th class="sort" data-sort="allocated_by">Allocated By</th>
+                                                        <th class="sort" data-sort="due_date">Due Date</th>
+                                                        <th class="sort" data-sort="action">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="list form-check-all">
+                                                    <tr>
+                                                        <td class="id" style="text-align: right;"><a href="#" data-id="001" class="fw-medium link-primary">1</a></td>
+                                                        <td class="tasks_name">Error message when placing an orders?</td>
+                                                        <td class="project_name">Tonya Noble</td>
+                                                        <td class="task_priority"><span class="badge bg-danger text-uppercase">High</span></td>
+                                                        <td class="allocated_by">James Morris</td>
+                                                        <td class="due_date">25 Jan, 2022</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <i class="ri-more-fill align-middle"></i>
+                                                                </button>
+                                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                                    <li><button class="dropdown-item" onclick="location.href = 'apps-tickets-details.html';"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="noresult d-none">
+                                                <div class="text-center">
+                                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px"></lord-icon>
+                                                    <h5 class="mt-2">Sorry! No Records Yet!</h5>
+                                                    <!-- <p class="text-muted mb-0">We've searched more than 150+ Tickets We did not find any Tickets for you search.</p> -->
                                                 </div>
-                                                <div class="col">
-                                                    <h5 class="text-muted mt-0 mb-1 fs-13">12:00am - 03:30pm</h5>
-                                                    <a href="#" class="text-reset fs-14 mb-0">Meeting for campaign with
-                                                        sales team</a>
-                                                </div>
-                                                <div class="col-sm-auto">
-                                                    <div class="avatar-group">
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Stine Nielsen">
-                                                                <img src="assets/images/users/avatar-1.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Jansh Brown">
-                                                                <img src="assets/images/users/avatar-2.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Dan Gibson">
-                                                                <img src="assets/images/users/avatar-3.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);">
-                                                                <div class="avatar-xxs">
-                                                                    <span class="avatar-title rounded-circle bg-info text-white">
-                                                                        5
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end row -->
-                                        </li><!-- end -->
-                                        <li class="list-group-item ps-0">
-                                            <div class="row align-items-center g-3">
-                                                <div class="col-auto">
-                                                    <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3">
-                                                        <div class="text-center">
-                                                            <h5 class="mb-0">20</h5>
-                                                            <div class="text-muted">Wed</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <h5 class="text-muted mt-0 mb-1 fs-13">02:00pm - 03:45pm</h5>
-                                                    <a href="#" class="text-reset fs-14 mb-0">Adding a new event with
-                                                        attachments</a>
-                                                </div>
-                                                <div class="col-sm-auto">
-                                                    <div class="avatar-group">
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Frida Bang">
-                                                                <img src="assets/images/users/avatar-4.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Malou Silva">
-                                                                <img src="assets/images/users/avatar-5.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Simon Schmidt">
-                                                                <img src="assets/images/users/avatar-6.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Tosh Jessen">
-                                                                <img src="assets/images/users/avatar-7.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);">
-                                                                <div class="avatar-xxs">
-                                                                    <span class="avatar-title rounded-circle bg-success text-white">
-                                                                        3
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end row -->
-                                        </li><!-- end -->
-                                        <li class="list-group-item ps-0">
-                                            <div class="row align-items-center g-3">
-                                                <div class="col-auto">
-                                                    <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3">
-                                                        <div class="text-center">
-                                                            <h5 class="mb-0">17</h5>
-                                                            <div class="text-muted">Wed</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <h5 class="text-muted mt-0 mb-1 fs-13">04:30pm - 07:15pm</h5>
-                                                    <a href="#" class="text-reset fs-14 mb-0">Create new project
-                                                        Bundling Product</a>
-                                                </div>
-                                                <div class="col-sm-auto">
-                                                    <div class="avatar-group">
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Nina Schmidt">
-                                                                <img src="assets/images/users/avatar-8.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Stine Nielsen">
-                                                                <img src="assets/images/users/avatar-1.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Jansh Brown">
-                                                                <img src="assets/images/users/avatar-2.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);">
-                                                                <div class="avatar-xxs">
-                                                                    <span class="avatar-title rounded-circle bg-primary text-white">
-                                                                        4
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end row -->
-                                        </li><!-- end -->
-                                        <li class="list-group-item ps-0">
-                                            <div class="row align-items-center g-3">
-                                                <div class="col-auto">
-                                                    <div class="avatar-sm p-1 py-2 h-auto bg-light rounded-3">
-                                                        <div class="text-center">
-                                                            <h5 class="mb-0">12</h5>
-                                                            <div class="text-muted">Tue</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <h5 class="text-muted mt-0 mb-1 fs-13">10:30am - 01:15pm</h5>
-                                                    <a href="#" class="text-reset fs-14 mb-0">Weekly closed sales won
-                                                        checking with sales team</a>
-                                                </div>
-                                                <div class="col-sm-auto">
-                                                    <div class="avatar-group">
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Stine Nielsen">
-                                                                <img src="assets/images/users/avatar-1.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Jansh Brown">
-                                                                <img src="assets/images/users/avatar-5.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Dan Gibson">
-                                                                <img src="assets/images/users/avatar-2.jpg" alt="" class="rounded-circle avatar-xxs">
-                                                            </a>
-                                                        </div>
-                                                        <div class="avatar-group-item">
-                                                            <a href="javascript: void(0);">
-                                                                <div class="avatar-xxs">
-                                                                    <span class="avatar-title rounded-circle bg-warning text-white">
-                                                                        9
-                                                                    </span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end row -->
-                                        </li><!-- end -->
-                                    </ul><!-- end -->
-                                    <div class="align-items-center mt-2 row g-3 text-center text-sm-start">
-                                        <div class="col-sm">
-                                            <div class="text-muted">Showing<span class="fw-semibold">4</span> of <span class="fw-semibold">125</span> Results
                                             </div>
                                         </div>
-                                        <div class="col-sm-auto">
-                                            <ul class="pagination pagination-separated pagination-sm justify-content-center justify-content-sm-start mb-0">
-                                                <li class="page-item disabled">
-                                                    <a href="#" class="page-link">←</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a href="#" class="page-link">2</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">→</a>
-                                                </li>
-                                            </ul>
+                                        <div class="d-flex justify-content-end mt-2">
+                                            <div class="pagination-wrap hstack gap-2">
+                                                <a class="page-item pagination-prev disabled" href="#">
+                                                    Previous
+                                                </a>
+                                                <ul class="pagination listjs-pagination mb-0"></ul>
+                                                <a class="page-item pagination-next" href="#">
+                                                    Next
+                                                </a>
+                                            </div>
                                         </div>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade flip" id="deleteOrder" tabindex="-1" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-body p-5 text-center">
+                                                        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
+                                                        <div class="mt-4 text-center">
+                                                            <h4>You are about to delete a order ?</h4>
+                                                            <p class="text-muted fs-14 mb-4">Deleting your order will remove all of your information from our database.</p>
+                                                            <div class="hstack gap-2 justify-content-center remove">
+                                                                <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
+                                                                <button class="btn btn-danger" id="delete-record">Yes, Delete It</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end modal -->
                                     </div>
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col -->
-
-                        <div class="col-xxl-7">
-                            <div class="card card-height-100">
-                                <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Closing Deals</h4>
-                                    <div class="flex-shrink-0">
-                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                            <option selected="">Closed Deals</option>
-                                            <option value="1">Active Deals</option>
-                                            <option value="2">Paused Deals</option>
-                                            <option value="3">Canceled Deals</option>
-                                        </select>
-                                    </div>
-                                </div><!-- end card header -->
-
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-nowrap align-middle mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col" style="width: 30%;">Deal Name</th>
-                                                    <th scope="col" style="width: 30%;">Sales Rep</th>
-                                                    <th scope="col" style="width: 20%;">Amount</th>
-                                                    <th scope="col" style="width: 20%;">Close Date</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <tr>
-                                                    <td>Acme Inc Install</td>
-                                                    <td><img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Donald Risher</a>
-                                                    </td>
-                                                    <td>$96k</td>
-                                                    <td>Today</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Save lots Stores</td>
-                                                    <td><img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Jansh Brown</a>
-                                                    </td>
-                                                    <td>$55.7k</td>
-                                                    <td>30 Dec 2021</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>William PVT</td>
-                                                    <td><img src="assets/images/users/avatar-7.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Ayaan Hudda</a>
-                                                    </td>
-                                                    <td>$102k</td>
-                                                    <td>25 Nov 2021</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Raitech Soft</td>
-                                                    <td><img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Julia William</a>
-                                                    </td>
-                                                    <td>$89.5k</td>
-                                                    <td>20 Sep 2021</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Absternet LLC</td>
-                                                    <td><img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle me-2">
-                                                        <a href="#javascript: void(0);" class="text-body fw-medium">Vitoria Rodrigues</a>
-                                                    </td>
-                                                    <td>$89.5k</td>
-                                                    <td>20 Sep 2021</td>
-                                                </tr>
-                                            </tbody><!-- end tbody -->
-                                        </table><!-- end table -->
-                                    </div><!-- end table responsive -->
-                                </div><!-- end card body -->
-                            </div><!-- end card -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </section>
+                    <!-- employee-panel end  -->
 
                 </div>
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
+            <div id="unsetmastermodal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog modal-dialog-right">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="NotificationModalbtn-close"></button>
+                        </div> -->
+                        <div class="modal-body">
+                            <div class="mt-2 text-center">
+                                <!-- <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon> -->
+                                <i class="ri-settings-4-line fs-48 text-danger custom-icon-rotating"></i>
+                                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                    <h4>The master is not set yet!</h4>
+                                    <p class="text-muted mx-4 mb-0">Please set the master first!</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                <button type="button" class="btn w-sm btn-danger" onclick="window.location.href='./master-settings.php'">
+                                    Go to settings<i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i></button>
+                            </div>
+                        </div>
+
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -831,11 +436,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                         <div class="col-sm-6">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Velzon.
+                            </script> © Task Tracker.
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
+                                <!-- Design & Develop by Themesbrand -->
                             </div>
                         </div>
                     </div>
@@ -855,760 +460,396 @@ $_SESSION['Admin_id'] = $Admin_id;
     </button>
     <!--end back-to-top-->
 
-    <!--preloader-->
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner-border text-primary avatar-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="customizer-setting d-none d-md-block">
-        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
-            <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
-        </div>
-    </div>
-
-    <!-- Theme Settings -->
-    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="theme-settings-offcanvas">
-        <div class="d-flex align-items-center bg-primary bg-gradient p-3 offcanvas-header">
-            <h5 class="m-0 me-2 text-white">Theme Customizer</h5>
-
-            <button type="button" class="btn-close btn-close-white ms-auto" id="customizerclose-btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body p-0">
-            <div data-simplebar class="h-100">
-                <div class="p-4">
-                    <h6 class="mb-0 fw-semibold text-uppercase">Layout</h6>
-                    <p class="text-muted">Choose your layout</p>
-
-                    <div class="row gy-3">
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input id="customizer-layout01" name="data-layout" type="radio" value="vertical" class="form-check-input">
-                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout01">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Vertical</h5>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" class="form-check-input">
-                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout02">
-                                    <span class="d-flex h-100 flex-column gap-1">
-                                        <span class="bg-light d-flex p-1 gap-1 align-items-center">
-                                            <span class="d-block p-1 bg-soft-primary rounded me-1"></span>
-                                            <span class="d-block p-1 pb-0 px-2 bg-soft-primary ms-auto"></span>
-                                            <span class="d-block p-1 pb-0 px-2 bg-soft-primary"></span>
-                                        </span>
-                                        <span class="bg-light d-block p-1"></span>
-                                        <span class="bg-light d-block p-1 mt-auto"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Horizontal</h5>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" class="form-check-input">
-                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout03">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1">
-                                                <span class="d-block p-1 bg-soft-primary mb-2"></span>
-                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Two Column</h5>
-                        </div>
-                        <!-- end col -->
-
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input id="customizer-layout04" name="data-layout" type="radio" value="semibox" class="form-check-input">
-                                <label class="form-check-label p-0 avatar-md w-100" for="customizer-layout04">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0 p-1">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column pt-1 pe-2">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Semi Box</h5>
-                        </div>
-                        <!-- end col -->
-                    </div>
-
-                    <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Color Scheme</h6>
-                    <p class="text-muted">Choose Light or Dark Scheme.</p>
-
-                    <div class="colorscheme-cardradio">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-mode" id="layout-mode-light" value="light">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="layout-mode-light">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Light</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check card-radio dark">
-                                    <input class="form-check-input" type="radio" name="data-layout-mode" id="layout-mode-dark" value="dark">
-                                    <label class="form-check-label p-0 avatar-md w-100 bg-dark" for="layout-mode-dark">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-soft-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-soft-light d-block p-1"></span>
-                                                    <span class="bg-soft-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Dark</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="sidebar-visibility">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Visibility</h6>
-                        <p class="text-muted">Choose show or Hidden sidebar.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility" id="sidebar-visibility-show" value="show">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-visibility-show">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0 p-1">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column pt-1 pe-2">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Show</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-visibility" id="sidebar-visibility-hidden" value="hidden">
-                                    <label class="form-check-label p-0 avatar-md w-100 px-2" for="sidebar-visibility-hidden">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column pt-1 px-2">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Hidden</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="layout-width">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Layout Width</h6>
-                        <p class="text-muted">Choose Fluid or Boxed layout.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-fluid" value="fluid">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="layout-width-fluid">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Fluid</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-width" id="layout-width-boxed" value="boxed">
-                                    <label class="form-check-label p-0 avatar-md w-100 px-2" for="layout-width-boxed">
-                                        <span class="d-flex gap-1 h-100 border-start border-end">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Boxed</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="layout-position">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Layout Position</h6>
-                        <p class="text-muted">Choose Fixed or Scrollable Layout Position.</p>
-
-                        <div class="btn-group radio" role="group">
-                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
-                            <label class="btn btn-light w-sm" for="layout-position-fixed">Fixed</label>
-
-                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
-                            <label class="btn btn-light w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
-                        </div>
-                    </div>
-                    <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Topbar Color</h6>
-                    <p class="text-muted">Choose Light or Dark Topbar Color.</p>
-
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-light" value="light">
-                                <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-light">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Light</h5>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check card-radio">
-                                <input class="form-check-input" type="radio" name="data-topbar" id="topbar-color-dark" value="dark">
-                                <label class="form-check-label p-0 avatar-md w-100" for="topbar-color-dark">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-primary d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <h5 class="fs-13 text-center mt-2">Dark</h5>
-                        </div>
-                    </div>
-
-                    <div id="sidebar-size">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Size</h6>
-                        <p class="text-muted">Choose a size of Sidebar.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-default" value="lg">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-default">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Default</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-compact" value="md">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-compact">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Compact</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-small" value="sm">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1">
-                                                    <span class="d-block p-1 bg-soft-primary mb-2"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Small (Icon View)</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar-size" id="sidebar-size-small-hover" value="sm-hover">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-size-small-hover">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1">
-                                                    <span class="d-block p-1 bg-soft-primary mb-2"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Small Hover View</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="sidebar-view">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar View</h6>
-                        <p class="text-muted">Choose Default or Detached Sidebar view.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-style" id="sidebar-view-default" value="default">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-view-default">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Default</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-layout-style" id="sidebar-view-detached" value="detached">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-view-detached">
-                                        <span class="d-flex h-100 flex-column">
-                                            <span class="bg-light d-flex p-1 gap-1 align-items-center px-2">
-                                                <span class="d-block p-1 bg-soft-primary rounded me-1"></span>
-                                                <span class="d-block p-1 pb-0 px-2 bg-soft-primary ms-auto"></span>
-                                                <span class="d-block p-1 pb-0 px-2 bg-soft-primary"></span>
-                                            </span>
-                                            <span class="d-flex gap-1 h-100 p-1 px-2">
-                                                <span class="flex-shrink-0">
-                                                    <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                        <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="bg-light d-block p-1 mt-auto px-2"></span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Detached</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="sidebar-color">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Color</h6>
-                        <p class="text-muted">Choose a color of Sidebar.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-light" value="light">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-color-light">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-white border-end d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Light</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient.show">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-dark" value="dark">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="sidebar-color-dark">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-primary d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Dark</h5>
-                            </div>
-                            <div class="col-4">
-                                <button class="btn btn-link avatar-md w-100 p-0 overflow-hidden border collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBgGradient" aria-expanded="false" aria-controls="collapseBgGradient">
-                                    <span class="d-flex gap-1 h-100">
-                                        <span class="flex-shrink-0">
-                                            <span class="bg-vertical-gradient d-flex h-100 flex-column gap-1 p-1">
-                                                <span class="d-block p-1 px-2 bg-soft-light rounded mb-2"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                                <span class="d-block p-1 px-2 pb-0 bg-soft-light"></span>
-                                            </span>
-                                        </span>
-                                        <span class="flex-grow-1">
-                                            <span class="d-flex h-100 flex-column">
-                                                <span class="bg-light d-block p-1"></span>
-                                                <span class="bg-light d-block p-1 mt-auto"></span>
-                                            </span>
-                                        </span>
-                                    </span>
-                                </button>
-                                <h5 class="fs-13 text-center mt-2">Gradient</h5>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                        <div class="collapse" id="collapseBgGradient">
-                            <div class="d-flex gap-2 flex-wrap img-switch p-2 px-3 bg-light rounded">
-
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient" value="gradient">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient">
-                                        <span class="avatar-title rounded-circle bg-vertical-gradient"></span>
-                                    </label>
-                                </div>
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-2" value="gradient-2">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-2">
-                                        <span class="avatar-title rounded-circle bg-vertical-gradient-2"></span>
-                                    </label>
-                                </div>
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-3" value="gradient-3">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-3">
-                                        <span class="avatar-title rounded-circle bg-vertical-gradient-3"></span>
-                                    </label>
-                                </div>
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-sidebar" id="sidebar-color-gradient-4" value="gradient-4">
-                                    <label class="form-check-label p-0 avatar-xs rounded-circle" for="sidebar-color-gradient-4">
-                                        <span class="avatar-title rounded-circle bg-vertical-gradient-4"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="sidebar-img">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Images</h6>
-                        <p class="text-muted">Choose a image of Sidebar.</p>
-
-                        <div class="d-flex gap-2 flex-wrap img-switch">
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-none" value="none">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-none">
-                                    <span class="avatar-md w-auto bg-light d-flex align-items-center justify-content-center">
-                                        <i class="ri-close-fill fs-20"></i>
-                                    </span>
-                                </label>
-                            </div>
-
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-01" value="img-1">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-01">
-                                    <img src="assets/images/sidebar/img-1.jpg" alt="" class="avatar-md w-auto object-cover">
-                                </label>
-                            </div>
-
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-02" value="img-2">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-02">
-                                    <img src="assets/images/sidebar/img-2.jpg" alt="" class="avatar-md w-auto object-cover">
-                                </label>
-                            </div>
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-03" value="img-3">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-03">
-                                    <img src="assets/images/sidebar/img-3.jpg" alt="" class="avatar-md w-auto object-cover">
-                                </label>
-                            </div>
-                            <div class="form-check sidebar-setting card-radio">
-                                <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-04" value="img-4">
-                                <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-04">
-                                    <img src="assets/images/sidebar/img-4.jpg" alt="" class="avatar-md w-auto object-cover">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="preloader-menu">
-                        <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Preloader</h6>
-                        <p class="text-muted">Choose a preloader.</p>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-preloader" id="preloader-view-custom" value="enable">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="preloader-view-custom">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                        <!-- <div id="preloader"> -->
-                                        <div id="status" class="d-flex align-items-center justify-content-center">
-                                            <div class="spinner-border text-primary avatar-xxs m-auto" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div>
-                                        </div>
-                                        <!-- </div> -->
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Enable</h5>
-                            </div>
-                            <div class="col-4">
-                                <div class="form-check sidebar-setting card-radio">
-                                    <input class="form-check-input" type="radio" name="data-preloader" id="preloader-view-none" value="disable">
-                                    <label class="form-check-label p-0 avatar-md w-100" for="preloader-view-none">
-                                        <span class="d-flex gap-1 h-100">
-                                            <span class="flex-shrink-0">
-                                                <span class="bg-light d-flex h-100 flex-column gap-1 p-1">
-                                                    <span class="d-block p-1 px-2 bg-soft-primary rounded mb-2"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                    <span class="d-block p-1 px-2 pb-0 bg-soft-primary"></span>
-                                                </span>
-                                            </span>
-                                            <span class="flex-grow-1">
-                                                <span class="d-flex h-100 flex-column">
-                                                    <span class="bg-light d-block p-1"></span>
-                                                    <span class="bg-light d-block p-1 mt-auto"></span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <h5 class="fs-13 text-center mt-2">Disable</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- end preloader-menu -->
-
-                </div>
-            </div>
-
-        </div>
-        <div class="offcanvas-footer border-top p-3 text-center">
-            <div class="row">
-                <div class="col-6">
-                    <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
-                </div>
-                <div class="col-6">
-                    <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy
-                        Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- JAVASCRIPT -->
+    <!-- ajax cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- master js file  -->
+    <script src="./assets/js/master.js"></script>
+    <!-- moment.js cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <!-- Sweet Alerts js -->
+    <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+    <!-- sweet alert aimation cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+    <!-- ckeditor -->
+    <script src="assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+    <!-- form validation setup  -->
+    <script src="assets/js/pages/form-validation.init.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        <?php
+        if (isset($_SESSION['AdminStatus'])) {
+            if ($_SESSION['AdminStatus'] == 1) { ?>
+                // document.getElementsByClassName('Employee-panel-menu').style.display = 'none';
+                $('.Employee-panel-menu').hide()
+            <?php
+            } else {
+            ?>
+                $('.admin-panel-menu').hide()
+                // document.getElementsByClassName('admin-panel-menu').style.display = 'none';
+        <?php
+            }
+        }
+        ?>
+        ShowDashboardCounts();
+
+        function ShowDashboardCounts() {
+            $.ajax({
+                url: './php/GetDashboardCounts.php',
+                type: 'POST',
+                dataType: 'JSON',
+                data: {
+                    adminID: <?php echo $Admin_id; ?>,
+                },
+                success: function(data) {
+                    $('#projectsCountSpan').attr('data-target', data.ProjectsCount)
+                    $('#EmployeesCountSpan').attr('data-target', data.EmployeesCount)
+                    $('#TasksCountSpan').attr('data-target', data.TasksCount)
+                    $('#IssuesCountSpan').attr('data-target', data.IssuesCount)
+
+                }
+            })
+        }
+        ShowRecentActivity()
+
+        function ShowRecentActivity() {
+            $('#RecentActivityLI').empty();
+            $.ajax({
+                url: './php/GetRecentActivites.php',
+                type: 'POST',
+                dataType: 'JSON',
+                success: function(data) {
+                    // console.log(data);
+                    $.each(data, function(index, item) {
+                        var recentAString = `<li class="list-group-item ps-0">
+                                                <div class="d-flex align-items-start">
+                                                    <div class="flex-grow-1">
+                                                        <label class=" mb-0 ps-2">${item.Activity}</label>
+                                                    </div>
+                                                    <div class="flex-shrink-0 ms-2">
+                                                        <p class="text-muted fs-12 mb-0">${moment(item.Date).format('D MMM, YYYY')}</p>
+                                                    </div>
+                                                </div>
+                                            </li>`;
+                        $('#RecentActivityLI').append(recentAString);
+                    })
+                }
+            })
+        }
+    </script>
+    <!-- Chart JS -->
+    <script src="assets/libs/chart.js/chart.min.js"></script>
+
+    <!-- chartjs init -->
+    <script src="assets/js/pages/chartjs.init.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: './php/chart.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+
+                    // console.log(data);
+                    var projectNames = data.map(obj => obj.ProjectName);
+                    var completedTasks = data.map(obj => obj
+                        .TotalCompletedSubtasks);
+                    var incompleteTasks = data.map(obj => obj
+                        .TotalIncompleteSubtasks);
+
+                    var ctx = document.getElementById('myChart').getContext(
+                        '2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: projectNames,
+                            datasets: [{
+                                    label: 'Completed Tasks',
+                                    data: completedTasks,
+                                    backgroundColor: 'rgba(204, 229, 255)',
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderWidth: 1,
+                                    stack: 'stacked'
+                                },
+                                {
+                                    label: 'Incomplete Tasks',
+                                    data: incompleteTasks,
+                                    backgroundColor: 'rgba(255,204,229)',
+                                    borderColor: 'rgba(255, 99, 132, 1)',
+                                    borderWidth: 1,
+                                    stack: 'stacked'
+                                }
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                x: {
+                                    stacked: true,
+                                    grid: {
+                                        display: false
+                                    }
+                                },
+                                y: {
+                                    stacked: true,
+                                    beginAtZero: true,
+                                    ticks: {
+                                        stepSize: 1
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'top'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Project Status',
+                                    font: {
+                                        size: 20
+                                    }
+                                }
+                            }
+                        }
+                    });
+
+                    // Set the width of the container and enable horizontal scrolling
+                    // var chartContainer = document.getElementById('chart-container');
+                    // chartContainer.style.width = '1000px';
+                    // chartContainer.style.overflowX = 'auto';
+                    // Create the bar chart
+
+                }
+            })
+        })
+    </script>
+
+    <!-- js for employee panel  -->
+    <script>
+        ShowEmpDashCards();
+
+        function ShowEmpDashCards() {
+            $('#employee-dash-cards').empty();
+            $.ajax({
+                url: './php/GetEmpStagesCounts.php',
+                type: 'POST',
+                dataType: 'JSON',
+                data: {
+                    employeeID: <?php echo $Admin_id; ?>,
+                },
+                success: function(data) {
+                    // console.log(data);
+                    var divColClass;
+                    if (Object.keys(data).length == 5) {
+                        divColClass = 2;
+                    } else {
+                        divColClass = 3;
+                    }
+                    var StageCardNum = 1;
+                    $.each(data, function(index, item) {
+                        var cardString = `<div class="col-xxl-${divColClass} col-sm-6">
+                                            <div class="card card-animate" onclick="ShowRespTableData(${StageCardNum++}, '${item.StageName}')" style="cursor:pointer;">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <p class="fw-medium text-muted mb-0">${item.StageName}</p>
+                                                            <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="${item.Count}">0</span></h2>
+                                                        </div>
+                                                        <div>
+                                                            <div class="avatar-sm flex-shrink-0">
+                                                                <span class="avatar-title bg-soft-info text-info rounded-circle fs-4">
+                                                                    <i class="ri-stack-line"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end card body -->
+                                            </div> <!-- end card-->
+                                        </div>`;
+                        $('#employee-dash-cards').append(cardString);
+                    })
+
+                }
+            })
+        }
+
+        function ShowEmpsAllSubtasks(callback) {
+            $.ajax({
+                url: './php/GetEmpsAllSubtasks.php',
+                type: 'POST',
+                dataType: 'JSON',
+                data: {
+                    employeeID: <?php echo $Admin_id; ?>,
+                },
+                success: function(data) {
+                    const groupedData = {};
+                    data.forEach(item => {
+                        const status = item.status;
+                        if (!groupedData[status]) {
+                            groupedData[status] = [];
+                        }
+                        groupedData[status].push(item);
+                    });
+                    if (typeof callback === 'function') {
+                        callback(groupedData);
+                    }
+                }
+            })
+        }
+        ShowEmpsAllSubtasks()
+
+        function ShowRespTableData(number, cardTitle) {
+
+            ShowEmpsAllSubtasks(function(GroupedData) {
+                $('#CardTitle').html(cardTitle);
+                $('#Subtask-Table tbody').empty();
+                // console.log(GroupedData[number]);
+                if (GroupedData[number] == undefined) {
+                    $('.noresult').removeClass('d-none')
+                } else {
+                    $('.noresult').addClass('d-none')
+                }
+                var srno = 1;
+                $.each(GroupedData[number], function(index, item) {
+                    var subtaskTableRow = ` <tr>
+                                                        <td class="id" style="text-align: right;"><a href="#" data-id="001" class="fw-medium link-primary">${srno++}</a></td>
+                                                        <td class="tasks_name">${item.subtaskname}</td>
+                                                        <td class="project_name">${item.ProjectName}</td>
+                                                        <td class="task_priority"><span class="badge bg-info text-uppercase">${item.SubTasksPriority}</span></td>
+                                                        <td class="allocated_by">${item.CreatedByName}</td>
+                                                        <td class="due_date">${moment(item.subtaskDue).format('D MMM, YYYY')}</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <i class="ri-more-fill align-middle"></i>
+                                                                </button>
+                                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                                    <li><button class="dropdown-item" onclick="location.href = 'sub-tasks-details.php?subid=${item.subtask_ID}';"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>`;
+                    $('#Subtask-Table tbody').append(subtaskTableRow);
+                })
+                PaginationWorking()
+            });
+        }
+
+        ShowEmpsAllSubtasks(function(GroupedData) {
+            // You can access BackLogData here
+            // console.log(GroupedData);
+            $('#CardTitle').html('Backlog');
+            $('#Subtask-Table tbody').empty();
+            var srno = 1;
+            $.each(GroupedData[1], function(index, item) {
+                var subtaskTableRow = ` <tr>
+                                                        <td class="id" style="text-align: right;"><a href="#" data-id="001" class="fw-medium link-primary">${srno++}</a></td>
+                                                        <td class="tasks_name">${item.subtaskname}</td>
+                                                        <td class="project_name">${item.ProjectName}</td>
+                                                        <td class="task_priority"><span class="badge bg-info text-uppercase">${item.SubTasksPriority}</span></td>
+                                                        <td class="allocated_by">${item.CreatedByName}</td>
+                                                        <td class="due_date">${moment(item.subtaskDue).format('D MMM, YYYY')}</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-soft-secondary btn-sm dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <i class="ri-more-fill align-middle"></i>
+                                                                </button>
+                                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                                    <li><button class="dropdown-item" onclick="location.href = 'sub-tasks-details.php?subid=${item.subtask_ID}';"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</button></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>`;
+                $('#Subtask-Table tbody').append(subtaskTableRow);
+            })
+            PaginationWorking()
+        });
+
+        $(document).ready(function() {
+            // Search functionality
+            $("#search-input").on("keyup", function() {
+                var searchText = $(this).val().toLowerCase();
+                $("#Subtask-Table tbody tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1);
+                });
+            });
+
+            // Pagination initialization
+
+            PaginationWorking()
+        });
+
+        function PaginationWorking() {
+            var itemsPerPage = 10;
+            var currentPage = 1;
+            var totalItems = $("#Subtask-Table tbody tr").length;
+            var totalPages = Math.ceil(totalItems / itemsPerPage);
+
+            function updatePagination() {
+                $(".pagination-wrap .listjs-pagination").empty();
+                for (var i = 1; i <= totalPages; i++) {
+                    var activeClass = (i === currentPage) ? "active" : "";
+                    $(".pagination-wrap .listjs-pagination").append(
+                        '<li class="page-item ' + activeClass + '"><a class="page-link" href="#">' + i + '</a></li>'
+                    );
+                }
+            }
+            $(".pagination-prev").on("click", function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updatePagination();
+                    updateTableRows();
+                }
+            });
+
+            $(".pagination-next").on("click", function() {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updatePagination();
+                    updateTableRows();
+                }
+            });
+
+            // Pagination click event
+            $(".pagination-wrap .listjs-pagination").on("click", "a.page-link", function(e) {
+                e.preventDefault();
+                currentPage = parseInt($(this).text());
+                updatePagination();
+                updateTableRows();
+            });
+
+            function updateTableRows() {
+                var startIndex = (currentPage - 1) * itemsPerPage;
+                var endIndex = startIndex + itemsPerPage;
+                $("#Subtask-Table tbody tr").hide().slice(startIndex, endIndex).show();
+            }
+
+            // Initial setup
+            updatePagination();
+            updateTableRows();
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Your AJAX code here
+
+            $.ajax({
+                url: './php/checkMasterExist.php',
+                dataType: 'json',
+                type: 'GET',
+                success: function(result) {
+                    if (!result.success) {
+                        $('#unsetmastermodal').modal('show')
+                    }
+                }
+            })
+        });
+    </script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
