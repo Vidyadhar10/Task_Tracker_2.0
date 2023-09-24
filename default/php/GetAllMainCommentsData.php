@@ -27,9 +27,7 @@ if (mysqli_num_rows($query) > 0) {
         $response[] = $row;
     }
 } else {
-    $response = array(
-        "No record found",
-    );
+    $response = array();
 }
 mysqli_close($con);
 header('Content-Type: application/json');

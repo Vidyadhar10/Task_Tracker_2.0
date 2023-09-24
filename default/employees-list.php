@@ -27,7 +27,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
     <meta charset="utf-8" />
     <title>Employees | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -241,31 +241,28 @@ $_SESSION['Admin_id'] = $Admin_id;
                                     </div>
                                     <!--end modal-->
 
-                                    <!-- Modal -->
-                                    <div class="modal fade zoomIn" id="deleteRecordModal" tabindex="-1" aria-labelledby="deleteRecordLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
-                                                </div>
-                                                <div class="modal-body p-5 text-center">
-                                                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#405189,secondary:#f06548" style="width:90px;height:90px"></lord-icon>
-                                                    <div class="mt-4 text-center">
-                                                        <h4 class="fs-semibold">You are about to delete a lead ?</h4>
-                                                        <p class="text-muted fs-14 mb-4 pt-1">Deleting your lead will remove all of your information from our database.</p>
-                                                        <div class="hstack gap-2 justify-content-center remove">
 
-                                                            <button class="btn btn-link link-success fw-medium text-decoration-none" id="deleteRecord-close" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</button>
-                                                            <button class="btn btn-danger" id="delete-record">Yes, Delete It!!</button>
+
+                                    <!-- employee successfully added Modal -->
+                                    <div class="modal fade" id="EmployeeAddedSuccessfullyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body text-center p-5">
+                                                    <lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:120px;height:120px">
+                                                    </lord-icon>
+
+                                                    <div class="mt-4">
+                                                        <h4 class="mb-3">Employee added auccessfully!</h4>
+                                                        <p class="text-muted mb-4"> Username and password sent to this employees email address!</p>
+                                                        <div class="hstack gap-2 justify-content-center">
+                                                            <a href="javascript:void(0);" class="btn btn-primary fw-medium" id="addAnotherBtn" data-bs-dismiss="modal"><i class="ri-add-line me-1 align-middle"></i> Add Another</a>
+                                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" id="closeModal" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end modal -->
-
-
 
 
                                 </div>
@@ -571,18 +568,6 @@ $_SESSION['Admin_id'] = $Admin_id;
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // var formData = {};
-                    // $('input.leaveCount').each(function() {
-                    //     var inputName = $(this).attr('name');
-                    //     var inputValue = $(this).val();
-                    //     formData[inputName] = inputValue;
-                    // });
-
-                    // // console.log(JSON.stringify(formData, null, 2));
-                    // for (let i in formData) {
-                    //     console.log(formData[i]);
-
-                    // }
                     let generatedPass = generateRandomPassword();
 
                     var postData = {
@@ -592,76 +577,48 @@ $_SESSION['Admin_id'] = $Admin_id;
                         inputEmpPosition: $('#designation-field').val(),
                         inputEmpAddress: $('#location-field').val(),
                         PasswordForEmp: generatedPass,
-                        // formData: formData
                     };
 
+                    var newemailAddress = $("#email-field").val();
+                    var employeenm = $("#Empname-field").val();
+                    var employeePhone = $("#phone-field").val();
                     $.ajax({
                         url: './php/empAdd.php',
                         type: 'POST',
                         dataType: 'json',
                         data: postData,
-                        beforeSend: function() {
-                            Swal.fire({
-                                title: "Please wait ...",
-                                text: "Employee is being added to database !",
-                                timer: 5000,
-                                width: '400px',
-                                showConfirmButton: false,
-                                onBeforeOpen: function() {
-                                    Swal.showLoading();
-                                }
-                            }).then(function(result) {
-                                if (result.dismiss === "timer") {
-                                    console.log("I was closed by the timer");
-                                }
-                            });
-                        },
                         success: function(resultData) {
 
                             if (resultData.success) {
                                 // email sending to employee
+                                $('#EmployeeAddedSuccessfullyModal').modal('show')
+                                $('#showModal').modal('hide')
+                                $('#EmployeeAddForm').removeClass('was-validated');
+                                ShowAllEmployees()
+
                                 $.get("./Email/email_emp_credentials.php", function(htmlCode) {
-                                    htmlCode = htmlCode.replace("[Employee_Name]", $("#Empname-field").val())
-                                        .replace("[Your Username]", $("#phone-field").val())
+                                    htmlCode = htmlCode.replace("[Employee_Name]", employeenm)
+                                        .replace("[Your Username]", employeePhone)
                                         .replace("[Your Temporary Password]", generatedPass)
                                         .replace("[Redirect_Link]", "http://134.209.156.101/Task-Manager/users-profile.php");
                                     var EmailBody = htmlCode;
                                     $.ajax({
                                         url: "./Email/SendMail.php",
                                         method: 'POST',
+                                        // async: false,
                                         data: {
-                                            email: $("#email-field").val(),
+                                            email: newemailAddress,
                                             subject: 'You are added to system',
                                             body: EmailBody
                                         },
                                         success: function(result) {
-                                            console.log('mail sent');
-                                            ShowAllEmployees()
-                                            $('#showModal').modal('hide')
-                                            $('#EmployeeAddForm')[0].reset();
-                                            $('#EmployeeAddForm').removeClass('was-validated');
+                                            console.log(result);
                                         }
                                     })
                                 })
-
+                                $('#EmployeeAddForm')[0].reset();
                             } else {
-                                toastr.options = {
-                                    "toastClass": "sentMailToaster",
-                                    "closeButton": true,
-                                    "debug": false,
-                                    "newestOnTop": false,
-                                    "progressBar": false,
-                                    "positionClass": "toast-top-right",
-                                    "preventDuplicates": false,
-                                    "onclick": null,
-                                    "timeOut": "3000",
-                                    "showEasing": "swing",
-                                    "hideEasing": "linear",
-                                    "showMethod": "fadeIn",
-                                    "hideMethod": "fadeOut"
-                                };
-                                toastr.options.toastClass = "sentMailToaster";
-                                toastr.success("failed to send e-mail !");
+                                console.log('error while adding the employee');
                             }
                         }
                     })
@@ -671,6 +628,9 @@ $_SESSION['Admin_id'] = $Admin_id;
                 }
             });
         }
+        $('#addAnotherBtn').on('click', function() {
+            $('#showModal').modal('show')
+        })
     </script>
 
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>

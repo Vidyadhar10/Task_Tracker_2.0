@@ -59,9 +59,9 @@ $current_page = basename($current_page_path);
                                 <li class="nav-item">
                                     <a href="projects-list.php" class="nav-link" data-key="t-list">List</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a href="projects-create-project.php" class="nav-link" data-key="t-create-project">Create Project</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </li>
@@ -153,7 +153,7 @@ $current_page = basename($current_page_path);
                     </li>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="./php/logout.php">
+                    <a class="nav-link menu-link" href="./php/logout.php?logout=true">
                         <i class="ri-logout-box-line"></i> <span data-key="t-Logout">Logout</span>
                     </a>
                 </li>

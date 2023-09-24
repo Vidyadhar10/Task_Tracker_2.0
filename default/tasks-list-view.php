@@ -28,7 +28,7 @@ $_SESSION['Uname'] = $Uname;
 
     <meta charset="utf-8" />
     <title>Task Details | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -179,7 +179,7 @@ $_SESSION['Uname'] = $Uname;
                                         <h5 class="card-title mb-0 flex-grow-1">All Sub Tasks</h5>
                                         <div class="flex-shrink-0">
                                             <div class="d-flex flex-wrap gap-2">
-                                                <button class="btn btn-danger add-btn" data-bs-toggle="modal" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> Add New</button>
+                                                <button class="btn btn-danger add-btn" data-bs-toggle="modal" data-bs-target="#showModal" id="Addnewsubtaskbtn"><i class="ri-add-line align-bottom me-1"></i> Add New</button>
                                                 <button class="btn btn-soft-danger" id="remove-actions" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
                                             </div>
                                         </div>
@@ -261,8 +261,7 @@ $_SESSION['Uname'] = $Uname;
                                         <div class="noresult" style="display: none">
                                             <div class="text-center">
                                                 <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px"></lord-icon>
-                                                <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                <p class="text-muted mb-0">We've searched more than 200k+ tasks We did not find any tasks for you search.</p>
+                                                <h5 class="mt-2">Sorry! No Records Found</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -358,7 +357,7 @@ $_SESSION['Uname'] = $Uname;
                                             <div class="col-lg-6">
                                                 <div class="position-relative">
                                                     <label for="duedate-field" class="form-label requiredField">Due Date</label>
-                                                    <input type="text" id="duedate-field" class="form-control" onchange="removeInvSnack(this)" data-provider="flatpickr" data-date-format="d-m-y" data-enable-time required placeholder="Due date" required />
+                                                    <input type="text" id="duedate-field" class="form-control" onchange="removeInvSnack(this)" data-provider="flatpickr" data-date-format="Y-m-d" data-enable-time required placeholder="Due date" required />
                                                     <div class="invalid-tooltip" id="subtask-duedate-InvField">Sub task due date should not be empty!</div>
                                                 </div>
                                             </div>
@@ -419,7 +418,9 @@ $_SESSION['Uname'] = $Uname;
                                                 </div>
                                             </div>
                                             <!--end col-->
-                                            <div class="col-lg-6">
+
+
+                                            <div class="col-lg-6 assigneeReporterDD">
                                                 <div class="position-relative">
                                                     <label for="assignee-field" class="form-label requiredField">Assign To</label>
                                                     <select class="form-control" onchange="removeInvSnack(this)" data-choices data-choices-search-true id="assignee-field" required>
@@ -446,7 +447,7 @@ $_SESSION['Uname'] = $Uname;
                                                 </div>
                                             </div>
                                             <!--end col-->
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-6 assigneeReporterDD">
                                                 <div class="position-relative">
                                                     <label for="reporter-field" class="form-label requiredField">Report To</label>
                                                     <select class="form-control" onchange="removeInvSnack(this)" data-choices data-choices-search-true id="reporter-field" onchange="toggleSelectedOption()" required>
@@ -473,6 +474,8 @@ $_SESSION['Uname'] = $Uname;
                                                 </div>
                                             </div>
                                             <!--end col-->
+
+
                                         </div>
                                         <!--end row-->
                                     </div>
@@ -500,13 +503,9 @@ $_SESSION['Uname'] = $Uname;
                         <div class="col-sm-6">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Velzon.
+                            </script> © Task Tracker.
                         </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </footer>
@@ -674,6 +673,7 @@ $_SESSION['Uname'] = $Uname;
                         },
                         success: function(result) {
                             if (result.success) {
+
                                 var subtaskName = $("#SubtaskName-field").val();
                                 var subtaskduedate = moment($("#duedate-field").val()).format('D MMM, YYYY hh:mm A');
                                 var adminName = '<?php echo $Uname; ?>';
@@ -681,10 +681,6 @@ $_SESSION['Uname'] = $Uname;
                                 var assigneeID = $("#assignee-field").val();
                                 var reporterName = $('#reporter-field').text();
                                 var reporterID = $("#reporter-field").val();
-
-
-
-
 
                                 $.get("./Email/email_subtaskadd.html", function(htmlCode) {
                                     htmlCode = htmlCode.replace("[Task Name]", subtaskName)
@@ -706,22 +702,6 @@ $_SESSION['Uname'] = $Uname;
                                             body: EmailBody,
                                             assigneeID: assigneeID
                                         },
-                                        beforeSend: function() {
-                                            Swal.fire({
-                                                title: "Please wait ...",
-                                                text: "Subtask is being added to database !",
-                                                timer: 20000,
-                                                width: '400px',
-                                                onBeforeOpen: function() {
-                                                    Swal.showLoading();
-                                                },
-                                                showConfirmButton: false
-                                            }).then(function(result) {
-                                                if (result.dismiss === "timer") {
-                                                    // console.log("I was closed by the timer");
-                                                }
-                                            });
-                                        },
                                         success: function(result) {
                                             $.get("./Email/email_reporter_mail.html", function(htmlCode) {
                                                 htmlCode = htmlCode.replace("[Task Name]", subtaskName)
@@ -731,10 +711,7 @@ $_SESSION['Uname'] = $Uname;
                                                     .replace("[Assigned Person Name]", assigneeName)
                                                     .replace("[Admin Name]", '<?php echo $Uname; ?>')
                                                     .replace("[Redirect_Link]", "http://134.209.156.101/Task-Manager/pages-login.html");
-
                                                 var EmailBody = htmlCode;
-
-
                                                 $.ajax({
                                                     url: "./Email/SendMail.php",
                                                     method: 'POST',
@@ -746,7 +723,6 @@ $_SESSION['Uname'] = $Uname;
                                                         assigneeID: reporterID
                                                     },
                                                     success: function(result) {
-
                                                         $.get("./Email/email_admin_subtaskadded.html", function(htmlCode) {
                                                             htmlCode = htmlCode
                                                                 .replace("[Admin Name]", '<?php echo $Uname; ?>')
@@ -769,8 +745,7 @@ $_SESSION['Uname'] = $Uname;
                                                                     assigneeID: '<?php echo $Admin_id; ?>'
                                                                 },
                                                                 success: function(result) {
-                                                                    ShowSubtasks();
-                                                                    $('#showModal').modal('hide')
+                                                                    // mail sent
                                                                 }
                                                             })
                                                         })
@@ -780,6 +755,13 @@ $_SESSION['Uname'] = $Uname;
                                         }
                                     })
                                 })
+                                ShowSubtasks();
+                                $('#showModal').modal('hide')
+                                Swal.fire(
+                                    "Added",
+                                    "Sub-Task added successfully!",
+                                    "success");
+
                             }
                         }
                     })
@@ -880,7 +862,6 @@ $_SESSION['Uname'] = $Uname;
                 },
                 success: function(data) {
                     // console.log(data);
-                    $('#AllSubtasksCount').html('ALL (' + data.length + ')')
                     var backlogCount = 0;
                     var InprogressCount = 0;
                     var testingCount = 0;
@@ -890,13 +871,12 @@ $_SESSION['Uname'] = $Uname;
                     var tbody = $('#SubTaskTable');
                     // console.log(data.success);
                     if (data.success == "no records found") {
-                        var row = `<tr style="text-align:center;">
-                                        <td colspan="9">
-                                            No records found!
-                                        </td>
-                                    </tr>`;
-                        tbody.append(row);
+                        $('#AllSubtasksCount').html('ALL (' + 0 + ')')
+                        $('.noresult').css('display', 'block');
+
                     } else {
+                        $('.noresult').css('display', 'none');
+                        $('#AllSubtasksCount').html('ALL (' + data.length + ')')
 
                         var srno = 1;
                         $.each(data, function(ind, item) {
@@ -1009,8 +989,21 @@ $_SESSION['Uname'] = $Uname;
             $('#SubTaskTable tr').hide();
             $('#SubTaskTable tr').slice(startIndex, endIndex + 1).show();
         }
+        $('#Addnewsubtaskbtn').on('click', function() {
+            $('.assigneeReporterDD').removeClass('d-none')
+            $('#SubtaskName-field').val('')
+            $('#duedate-field').val('')
+            $('#subtask-category').val('')
+            DescriptionEditor.setData('');
+            $('#assignee-field').val('')
+            $('#reporter-field').val('')
+            $('#add-btn').removeClass('d-none')
+            $('#subtask-edit-btn').addClass('d-none')
+            $('#subtaskaddform').removeClass('was-validated')
+        })
 
         function EditSubtaskData(subtasksid) {
+            $('.assigneeReporterDD').addClass('d-none')
             $.ajax({
                 url: './php/GetRespectiveSubtaskDetails.php',
                 dataType: 'JSON',

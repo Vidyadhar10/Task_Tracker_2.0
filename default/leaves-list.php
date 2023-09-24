@@ -27,7 +27,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
     <meta charset="utf-8" />
     <title>Leave Applications | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -212,8 +212,8 @@ $_SESSION['Admin_id'] = $Admin_id;
                                             <div class="noresult" style="display: none">
                                                 <div class="text-center">
                                                     <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c" style="width:75px;height:75px"></lord-icon>
-                                                    <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                    <p class="text-muted">We've searched more than 150+ result We did not find jobs for you search.</p>
+                                                    <h5 class="mt-2">Sorry! No Records Found</h5>
+                                                    <!-- <p class="text-muted">We've searched more than 150+ result We did not find jobs for you search.</p> -->
                                                 </div>
                                             </div>
                                         </div>

@@ -18,6 +18,7 @@ if ($status == '') {
     // If status is not blank, include records with the specified status
     $query .= " AND ul.ApproveStatus = '$status'";
 }
+$query .= " ORDER BY ul.id DESC";
 // print_r($query);c:\xampp\htdocs\Optimal\Task-Manager\leaveformdata.php
 
 // Execute the SQL query

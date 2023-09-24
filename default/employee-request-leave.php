@@ -27,7 +27,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
     <meta charset="utf-8" />
     <title>Attendance | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -411,6 +411,16 @@ $_SESSION['Admin_id'] = $Admin_id;
                 isFormValid = false;
                 $('#end-dt-inv-field').css('display', 'block');
             }
+            var startDate = new Date($('#start-date-field').val());
+            var endDate = new Date($('#end-date-field').val());
+
+            if (startDate >= endDate) {
+                isFormValid = false;
+                $('#end-dt-inv-field').css('display', 'block');
+                $('#end-dt-inv-field').html('End date should be greater than start date');
+            } else {
+                $('#end-dt-inv-field').css('display', 'none'); // Hide the validation message
+            }
 
             if ($('#leave-type-category').val() == '') {
                 isFormValid = false;
@@ -446,7 +456,6 @@ $_SESSION['Admin_id'] = $Admin_id;
                     }
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        // var form = $(this);
 
                         // Get form data
                         var formData = {
@@ -462,10 +471,15 @@ $_SESSION['Admin_id'] = $Admin_id;
                             type: 'POST',
                             data: formData,
                             success: function(response) {
-                                // Handle the success response
-                                // console.log('Leave saved successfully');
-                                // var mailSentToAll = false;
+
                                 $('#leaveModal').modal('hide');
+                                Swal.fire(
+                                    'Submitted!',
+                                    'Your request has been submitted.',
+                                    'success'
+                                )
+                                ShowLeaveData('')
+
                                 $.get("Email/email_for_leave_request.html", function(htmlCode) {
                                     htmlCode = htmlCode
                                         .replace("[Employee Name]", '<?php echo $Uname; ?>')
@@ -486,49 +500,15 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                 body: EmailBody,
                                                 assigneeID: '<?php echo $AID; ?>' // Pass the admin IDs as an array to PHP
                                             },
-                                            beforeSend: function() {
-                                                Swal.fire({
-                                                    title: "Please wait ...",
-                                                    text: "Sending Leave Request e-mail to admin !",
-                                                    timer: 10000,
-                                                    width: '400px',
-                                                    showConfirmButton: false,
-                                                    onBeforeOpen: function() {
-                                                        Swal.showLoading();
-                                                    }
-                                                }).then(function(result) {
-                                                    if (result.dismiss === "timer") {
-                                                        console.log("I was closed by the timer");
-                                                    }
-                                                });
-                                            },
                                             success: function(result) {
                                                 console.log('Emails sent successfully');
-                                                mailSentToAll = true;
-                                                Swal.fire(
-                                                    'Submitted!',
-                                                    'Your request has been submitted.',
-                                                    'success'
-                                                )
                                                 LeaveFormReset()
-                                                ShowLeaveData('')
                                             }
                                         });
                                     <?php
                                     }
                                     ?>
                                 });
-                                // if (mailSentToAll) {
-                                //     Swal.fire(
-                                //         'Submitted!',
-                                //         'Your request has been submitted.',
-                                //         'success'
-                                //     )
-                                //     LeaveFormReset()
-                                //     ShowLeaveData('')
-
-                                // }
-
                             }
                         });
 

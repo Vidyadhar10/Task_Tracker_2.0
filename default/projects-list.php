@@ -27,7 +27,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
     <meta charset="utf-8" />
     <title>Project List | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -127,15 +127,14 @@ $_SESSION['Admin_id'] = $Admin_id;
                                     <input type="text" class="form-control" placeholder="Search..." id="search-input">
                                     <i class="ri-search-line search-icon"></i>
                                 </div>
-
-                                <select class="form-control w-md" data-choices data-choices-search-false>
-                                    <option value="All">All</option>
+                                <select class="form-control w-md" id="filter-projects-dropdown" data-choices data-choices-search-false>
+                                    <option value="All" selected>All</option>
                                     <option value="Today">Today</option>
-                                    <option value="Yesterday" selected>Yesterday</option>
-                                    <option value="Last 7 Days">Last 7 Days</option>
-                                    <option value="Last 30 Days">Last 30 Days</option>
-                                    <option value="This Month">This Month</option>
-                                    <option value="Last Year">Last Year</option>
+                                    <option value="Yesterday">Yesterday</option>
+                                    <option value="Last7Days">Last 7 Days</option>
+                                    <option value="Last30Days">Last 30 Days</option>
+                                    <option value="ThisMonth">This Month</option>
+                                    <option value="LastYear">Last Year</option>
                                 </select>
                             </div>
                         </div>
@@ -149,38 +148,21 @@ $_SESSION['Admin_id'] = $Admin_id;
                     </div>
                     <!-- end row -->
 
-                    <!-- <div class="row g-0 text-center text-sm-start align-items-center mb-4">
-                        <div class="col-sm-6">
-                            <div>
-                                <p class="mb-sm-0 text-muted">Showing <span class="fw-semibold">1</span> to <span class="fw-semibold">10</span> of <span class="fw-semibold text-decoration-underline">12</span> entries</p>
+                    <div class="row g-0 col-xxl-12 text-center text-sm-start align-items-center mb-4">
+                        <div class="col-sm-12">
+                            <div class="d-flex justify-content-end">
+                                <div class="pagination-wrap hstack grid-pg-wrap gap-2">
+                                    <a class="page-item pagination-prev grid-prev-pg" href="#">
+                                        Previous
+                                    </a>
+                                    <ul class="pagination listjs-pagination grid-listjs-pgn mb-0"></ul>
+                                    <a class="page-item pagination-next grid-next-pg" href="#">
+                                        Next
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <ul class="pagination pagination-separated justify-content-center justify-content-sm-end mb-sm-0">
-                                <li class="page-item disabled">
-                                    <a href="#" class="page-link">Previous</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item ">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">4</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">5</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">Next</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> -->
+                    </div>
                     <!-- end row -->
                 </div>
                 <!-- container-fluid -->
@@ -282,14 +264,10 @@ $_SESSION['Admin_id'] = $Admin_id;
             });
 
             // Dropdown event listener
-            $('#time-frame').on('change', function() {
-                var selectedValue = $(this).val();
-                filterProjectsByTime(selectedValue);
-            });
 
             // Initial filtering on page load (optional)
             filterProjects('');
-            filterProjectsByTime($('#time-frame').val());
+
         });
 
         function filterProjects(searchText) {
@@ -302,16 +280,130 @@ $_SESSION['Admin_id'] = $Admin_id;
                 }
             });
         }
+        $(document).ready(function() {
+            $('#filter-projects-dropdown').on('change', function() {
+                var selectedValue = $(this).val();
 
-        function filterProjectsByTime(timeFrame) {
-            $('#project-list-cards .project-card').each(function() {
-                var projectTime = $(this).find('.project-time').text().toLowerCase();
-                if (timeFrame === 'All' || projectTime.includes(timeFrame.toLowerCase())) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
+                $('#project-list-cards .project-card').each(function() {
+                    debugger
+                    var createdDate = $(this).find('.CreatedDT').text();
+                    var currentDate = new Date(); // Get the current date
+
+                    // Calculate the date difference in milliseconds
+                    var dateDifference = Number(currentDate - new Date(createdDate));
+
+
+                    switch (selectedValue) {
+                        case 'All':
+                            $(this).show();
+                            break;
+                        case 'Today':
+                            if (dateDifference < 86400000) { // Less than 24 hours
+                                $(this).show();
+                            } else {
+                                $(this).hide();
+                            }
+                            break;
+                        case 'Yesterday':
+                            if (dateDifference >= 86400000 && dateDifference < 172800000) { // Between 24 and 48 hours
+                                $(this).show();
+                            } else {
+                                $(this).hide();
+                            }
+                            break;
+                        case 'Last7Days':
+                            if (dateDifference < 604800000) { // Less than 7 days
+                                $(this).show();
+                            } else {
+                                $(this).hide();
+                            }
+                            break;
+                        case 'Last30Days':
+                            if (dateDifference < 2592000000) { // Less than 30 days
+                                $(this).show();
+                            } else {
+                                $(this).hide();
+                            }
+                            break;
+                        case 'ThisMonth':
+                            var currentMonth = currentDate.getMonth();
+                            var cardMonth = new Date(createdDate).getMonth();
+
+                            if (currentMonth === cardMonth) {
+                                $(this).show();
+                            } else {
+                                $(this).hide();
+                            }
+                            break;
+                        case 'LastYear':
+                            var currentYear = currentDate.getFullYear();
+                            var cardYear = new Date(createdDate).getFullYear();
+
+                            if (currentYear === cardYear) {
+                                $(this).show();
+                            } else {
+                                $(this).hide();
+                            }
+                            break;
+                        default:
+                            $(this).hide();
+                            break;
+                    }
+                });
+            });
+        });
+
+
+        function GridPagination() {
+            const tableRows = $(".project-card");
+            // Pagination initialization
+            var itemsPerPage = 4;
+            var currentPage = 1;
+            var totalItems = $(".project-card").length;
+            var totalPages = Math.ceil(totalItems / itemsPerPage);
+
+            function updateGridPagination() {
+                $(".grid-pg-wrap .grid-listjs-pgn").empty();
+                for (var i = 1; i <= totalPages; i++) {
+                    var activeClass = (i === currentPage) ? "active" : "";
+                    $(".grid-pg-wrap .grid-listjs-pgn").append(
+                        '<li class="page-item ' + activeClass + '"><a class="page-link" href="#">' + i + '</a></li>'
+                    );
+                }
+            }
+
+            // Pagination click event
+            $(".grid-pg-wrap .grid-listjs-pgn").on("click", "a.page-link", function(e) {
+                e.preventDefault();
+                currentPage = parseInt($(this).text());
+                updateGridPagination();
+                updateGridRows();
+            });
+            $(".pagination-prev").on("click", function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updateGridPagination();
+                    updateGridRows();
                 }
             });
+
+            $(".pagination-next").on("click", function() {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updateGridPagination();
+                    updateGridRows();
+                }
+            });
+
+            function updateGridRows() {
+                var startIndex = (currentPage - 1) * itemsPerPage;
+                var endIndex = startIndex + itemsPerPage;
+                $(".project-card").hide().slice(startIndex, endIndex).show();
+            }
+
+            // Initial setup
+            updateGridPagination();
+            updateGridRows();
         }
     </script>
 
@@ -324,101 +416,90 @@ $_SESSION['Admin_id'] = $Admin_id;
                 dataType: 'json',
                 success: function(data) {
                     $.each(data, function(index, item) {
+                        // console.log(item);
                         let cardString = `<div class="col-xxl-3 col-sm-6 project-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="p-3 mt-n3 mx-n3 bg-soft-secondary rounded-top">
-                                        <div class="d-flex gap-1 align-items-center justify-content-end my-n2">
-                                            <button type="button" class="btn avatar-xs p-0 favourite-btn active">
-                                                <span class="avatar-title bg-transparent fs-15">
-                                                    <i class="ri-star-fill"></i>
-                                                </span>
-                                            </button>
-                                            <div class="dropdown">
-                                                <button class="btn btn-link text-muted p-1 mt-n1 py-0 text-decoration-none fs-15" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    <i data-feather="more-horizontal" class="icon-sm"></i>
-                                                </button>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="p-3 mt-n3 mx-n3 bg-soft-secondary rounded-top">
+                                                        <div class="text-center pb-3">
+                                                            <img src="${item.ProjectLogo == null ? 'assets/images/brands/slack.png' :item.ProjectLogo}" alt="" height="100">
+                                                        </div>
+                                                    </div>
 
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <a class="dropdown-item" href="apps-projects-overview.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                        View</a>
-                                                    <a class="dropdown-item" href="apps-projects-create.html"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                                        Edit</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#removeProjectModal"><i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                                        Remove</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center pb-3">
-                                            <img src="${item.ProjectLogo}" alt="" height="32">
-                                        </div>
-                                    </div>
+                                                    <div class="py-3">
+                                                    <div class="d-flex mb-2">
+                                                        <h5 class="fs-14 mb-3 flex-grow-1 text-truncate"><a href="projects-overview.php?pid=${item.SrNo}" class="text-dark project-title">${item.ProjectName}</a></h5>
+                                                        <div class="dropdown">
+                                                                <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></a>
+                                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                                                    <li><a class="dropdown-item" href="projects-overview.php?pid=${item.SrNo}"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
 
-                                    <div class="py-3">
-                                        <h5 class="fs-14 mb-3"><a href="projects-overview.php?pid=${item.SrNo}" class="text-dark project-title">${item.ProjectName}</a></h5>
-                                        <div class="row gy-3">
-                                            <div class="col-12">
-                                                <div>
-                                                    <p class="text-muted mb-1">Created By</p>
-                                                    <h5 class="fs-14 mb-1"><a href="apps-projects-overview.html" class="text-soft-dark">${item.EmpName}</a></h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div>
-                                                    <p class="text-muted mb-1">Priority</p>
-                                                    <div class="badge badge-soft-primary fs-12">${item.ProjectPriority}</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div>
-                                                    <p class="text-muted mb-1">Start Date</p>
-                                                    <h5 class="fs-14">${moment(item.Start_Date).format('DD-MM-YYYY')}</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row gy-3">
-                                            <div class="col-6">
-                                                <div>
-                                                    <p class="text-muted mb-1">Created Date</p>
-                                                    <h5 class="fs-14">${moment(item.Created_Date).format('DD-MM-YYYY hh:mm A')}</h5>
-                                                    <!-- <div class="badge badge-soft-warning fs-12">Inprogess</div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div>
-                                                    <p class="text-muted mb-1">End Date</p>
-                                                    <h5 class="fs-14">${moment(item.End_Date).format('DD-MM-YYYY')}</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                        <div class="row gy-3">
+                                                            <div class="col-12">
+                                                                <div>
+                                                                    <p class="text-muted mb-1">Created By</p>
+                                                                    <h5 class="fs-14 mb-1"><a href="pages-profile.php?id=${btoa(item.Admin_emp_id)}" class="text-soft-dark">${item.EmpName}</a></h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div>
+                                                                    <p class="text-muted mb-1">Priority</p>
+                                                                    <div class="badge badge-soft-${item.Priority_Color} fs-12">${item.ProjectPriority}</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div>
+                                                                    <p class="text-muted mb-1">Start Date</p>
+                                                                    <h5 class="fs-14">${moment(item.Start_Date).format('DD-MM-YYYY')}</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row gy-3">
+                                                            <div class="col-6">
+                                                                <div>
+                                                                    <p class="text-muted mb-1">Created Date</p>
+                                                                    <h5 class="fs-14 ">${moment(item.Created_Date).format('DD-MM-YYYY hh:mm A')}</h5>
+                                                                    <div class="badge badge-soft-warning fs-12 CreatedDT d-none">${item.Created_Date}</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div>
+                                                                    <p class="text-muted mb-1">End Date</p>
+                                                                    <h5 class="fs-14">${moment(item.End_Date).format('DD-MM-YYYY')}</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                    </div>
+                                                    </div>
 
-                                    <div>
-                                        <div class="d-flex mb-2">
-                                            <div class="flex-grow-1">
-                                                <div>Sub-Tasks</div>
-                                            </div>
-                                            <div class="flex-shrink-0">
-                                                <div><i class="ri-list-check align-bottom me-1 text-muted"></i> ${item.subtaskCompletedCount}/${item.subtaskCount}
+                                                    <div>
+                                                        <div class="d-flex mb-2">
+                                                            <div class="flex-grow-1">
+                                                                <div>Sub-Tasks</div>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <div><i class="ri-list-check align-bottom me-1 text-muted"></i> ${item.subtaskCompletedCount}/${item.subtaskCount}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress progress-sm animated-progress">
+                                                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="${item.subtaskCompletedCount/item.subtaskCount * 100}" aria-valuemin="0" aria-valuemax="100" style="width: ${item.subtaskCompletedCount/item.subtaskCount * 100}%;"></div>
+                                                            <!-- /.progress-bar -->
+                                                        </div><!-- /.progress -->
+                                                    </div>
+
                                                 </div>
+                                                <!-- end card body -->
                                             </div>
-                                        </div>
-                                        <div class="progress progress-sm animated-progress">
-                                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="${item.subtaskCompletedCount/item.subtaskCount * 100}" aria-valuemin="0" aria-valuemax="100" style="width: ${item.subtaskCompletedCount/item.subtaskCount * 100}%;"></div>
-                                            <!-- /.progress-bar -->
-                                        </div><!-- /.progress -->
-                                    </div>
-
-                                </div>
-                                <!-- end card body -->
-                            </div>
-                            <!-- end card -->
-                        </div>`;
+                                            <!-- end card -->
+                                        </div>`;
 
                         $('#project-list-cards').append(cardString);
                     })
+                    GridPagination()
                 }
             })
         })

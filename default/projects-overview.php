@@ -27,7 +27,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
     <meta charset="utf-8" />
     <title>Project Overview | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -257,7 +257,6 @@ $_SESSION['Admin_id'] = $Admin_id;
 
 
                                                         </div>
-
                                                     </div>
                                                 </div>
 
@@ -352,6 +351,12 @@ $_SESSION['Admin_id'] = $Admin_id;
 
                                                             </tbody>
                                                         </table>
+                                                        <div class="noresult" style="display: none">
+                                                            <div class="text-center">
+                                                                <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c" style="width:75px;height:75px"></lord-icon>
+                                                                <h5 class="mt-2">Sorry! No Records Found</h5>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <!-- <div class="text-center mt-3">
                                                         <a href="javascript:void(0);" class="text-success "><i class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load more </a>
@@ -1514,7 +1519,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                         <div class="col-sm-6">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Velzon.
+                            </script> © Task Tracker.
                         </div>
 
                     </div>
@@ -1840,6 +1845,7 @@ $_SESSION['Admin_id'] = $Admin_id;
     <script>
         var filterData;
         var empIDArray = [];
+        var previousEmpIDArray = [];
         var projectID;
         var FileTypeArray = {
             'zip': '<i class="ri-folder-zip-line"></i>',
@@ -1956,6 +1962,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                                 </div>
                                                             </div>`;
                     $('#membersDiv').append(EmpStr);
+                    previousEmpIDArray.push(dataItem.ID);
                 })
                 // var DefaultString = `<div class="mt-2 text-center">
                 //                         <button type="button" class="btn btn-sm btn-success">View All</button>
@@ -2043,6 +2050,7 @@ $_SESSION['Admin_id'] = $Admin_id;
         });
 
         function showSelectedEmp() {
+
             $.ajax({
                 url: './php/updateemponproj.php',
                 dataType: 'json',
@@ -2053,7 +2061,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                 },
                 success: function(data) {
                     if (data.success) {
-                        empIDArray.length = 0;
+                        SendMailToNewlyAssignedAndRemovedEmployees()
                         $('#membersDiv').html('');
                         $('#inviteMembersModal').modal('hide');
                         $.ajax({
@@ -2081,6 +2089,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                             </div>`;
                                     $('#membersDiv').append(EmpStr);
                                 })
+                                //
+                                Swal.fire(
+                                    "Updated",
+                                    "Project employees are updated successfully!",
+                                    "success");
                             }
                         })
                     }
@@ -2088,6 +2101,84 @@ $_SESSION['Admin_id'] = $Admin_id;
             })
         }
         ShowTasks()
+
+        function SendMailToNewlyAssignedAndRemovedEmployees() {
+            var resultArray = compareArrays(previousEmpIDArray, empIDArray);
+
+            console.log(resultArray);
+            var addedElements = resultArray[0];
+            var removedElements = resultArray[1];
+
+            $.get("Email/email_added_to_project.html", function(htmlCode) {
+                var inputStartDate = $('.project-startdate').html();
+                htmlCode = htmlCode
+                    .replace("[Project Name]", $('#projectName-field').val())
+                    .replace("[Project Name]", $('#projectName-field').val())
+                    .replace("[Start Date]", inputStartDate)
+                    .replace("[Admin Name]", '<?php echo $Uname; ?>')
+                    .replace("[Your Name]", '<?php echo $Uname; ?>')
+                    .replace("[Redirect_Link]", "http://134.209.156.101/Task_Manager/projects-list.php");
+                var EmailBody = htmlCode;
+                var empsChecked = addedElements;
+                $.ajax({
+                    url: "Email/SendMail.php",
+                    method: 'POST',
+                    type: 'JSON',
+                    data: {
+                        email: 'abc@gmail.com',
+                        subject: `You have been added to ${$('#projectName-field').val()} project`,
+                        body: EmailBody,
+                        SelectedEmps: JSON.stringify(empsChecked)
+                    },
+                    success: function(result) {
+                        //Mail to removed Employees
+                        $.get("Email/email_removed_from_project.html",
+                            function(htmlCode) {
+                                var inputStartDate = $('.project-startdate').html();
+                                htmlCode = htmlCode
+                                    .replace("[Project Name]", $('#projectName-field').val())
+                                    .replace("[Project Name]", $('#projectName-field').val())
+                                    .replace("[Start Date]", inputStartDate)
+                                    .replace("[Admin Name]", '<?php echo $Uname; ?>')
+                                    .replace("[Your Name]", '<?php echo $Uname; ?>')
+                                    .replace("[Redirect_Link]", "http://134.209.156.101/Task-Manager/pages-login.html");
+                                var EmailBody = htmlCode;
+                                var empsChecked = removedElements;
+                                $.ajax({
+                                    url: "Email/SendMail.php",
+                                    method: 'POST',
+                                    type: 'JSON',
+                                    data: {
+                                        email: 'abc@gmail.com',
+                                        subject: `You have been removed from the ${$('#projectName-field').val()} project`,
+                                        body: EmailBody,
+                                        SelectedEmps: JSON.stringify(empsChecked)
+                                    },
+                                    success: function(result) {
+                                        // document.getElementById("UpdateEmpOnProj").reset();
+                                        // location.reload();
+                                        empIDArray.length = 0;
+
+                                    }
+                                })
+                            })
+                        //mail to removed emplyees ends here
+                    }
+                })
+            })
+        }
+
+        function compareArrays(previousArray, newArray) {
+            var addedElements = newArray.filter(function(element) {
+                return !previousArray.includes(element);
+            });
+
+            var removedElements = previousArray.filter(function(element) {
+                return !newArray.includes(element);
+            });
+
+            return [addedElements, removedElements];
+        }
 
         function ShowTasks() {
             $.ajax({
@@ -2100,14 +2191,9 @@ $_SESSION['Admin_id'] = $Admin_id;
                     // console.log(data);
                     $('#AllTasksTableBody').html('');
                     if (data[0] == "No Tasks Yet!") {
-                        var tableRowString = ` <tr style="text-align:center;">
-                                                    <td colspan="6">
-                                                        ${data[0]}
-                                                    </td>
-                                                <tr>`;
-                        $('#AllTasksTableBody').append(tableRowString);
-
+                        $('.noresult').css('display', 'block');
                     } else {
+                        $('.noresult').css('display', 'none');
                         $.each(data, function(index, itemid) {
                             var tableRowString = ` <tr>
                                                     <td>
@@ -2235,12 +2321,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                         },
                         success: function(result) {
                             $('#showModal').modal('hide');
+                            $('#TaskAddForm')[0].reset();
                             ShowTasks();
                             Swal.fire(
                                 "Added",
                                 "Task added successfully!",
-                                // height = '200px',
-                                // width = '200px',
                                 "success");
 
                         }

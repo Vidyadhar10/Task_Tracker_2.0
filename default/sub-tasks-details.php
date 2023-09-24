@@ -27,7 +27,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
     <meta charset="utf-8" />
     <title>SubTask Details | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -509,6 +509,16 @@ $_SESSION['Admin_id'] = $Admin_id;
                             </div>
                             <!--end card-->
                             <div class="card mb-3">
+                                <?php
+                                if ($_SESSION['AdminStatus']) {
+                                ?>
+                                    <div class="card-header align-items-center d-flex border-bottom-dashed">
+                                        <h4 class="card-title mb-0 flex-grow-1">Members</h4>
+                                        <div class="flex-shrink-0">
+                                            <button type="button" class="btn btn-soft-danger btn-sm" data-bs-toggle="modal" data-bs-target="#updateMembersModal"><i class="ri-repeat-2-line me-1 align-bottom"></i> Re-assign</button>
+                                        </div>
+                                    </div>
+                                <?php } ?>
                                 <div class="card-body">
                                     <div class="d-flex mb-3">
                                         <h6 class="mb-0 flex-grow-1 fw-semibold text-uppercase">Assigned To</h6>
@@ -686,6 +696,37 @@ $_SESSION['Admin_id'] = $Admin_id;
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
+            <!-- Modal -->
+            <div class="modal fade" id="updateMembersModal" tabindex="-1" aria-labelledby="updateMembersModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header p-3 ps-4 bg-soft-success">
+                            <h5 class="modal-title" id="updateMembersModalLabel">Employees</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <div class="search-box mb-3">
+                                <input type="text" class="form-control bg-light border-light" placeholder="Search here..." id="EmployeeSearch">
+                                <i class="ri-search-line search-icon"></i>
+                            </div>
+                            <div class="mx-n4 px-4" data-simplebar style="max-height: 225px;">
+                                <div class="vstack gap-3" id="EmployeeListToAdd">
+
+
+                                </div>
+                                <!-- end list -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light w-xs" data-bs-dismiss="modal">Cancel</button>
+                            <!-- <button type="button" class="btn btn-success w-xs" onclick="showSelectedEmp()">Save</button> -->
+                        </div>
+                    </div>
+                    <!-- end modal-content -->
+                </div>
+                <!-- modal-dialog -->
+            </div>
+            <!-- end modal -->
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -693,13 +734,9 @@ $_SESSION['Admin_id'] = $Admin_id;
                         <div class="col-sm-6">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Velzon.
+                            </script> © Task Tracker.
                         </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </footer>
@@ -741,6 +778,7 @@ $_SESSION['Admin_id'] = $Admin_id;
     <script>
         //your js starts here
         GetSubTaskData()
+        var assigneeReporterArray = [];
 
         function GetSubTaskData() {
             $.ajax({
@@ -769,16 +807,198 @@ $_SESSION['Admin_id'] = $Admin_id;
                         $('#AssigneeNm').html(it.AssigneeName)
                         $('#AssigneeNm').attr('href', `pages-profile.php?id=${btoa(it.AssigneeID)}`)
                         $('#AssigneeDesignation').html(it.AssigneeDesignation)
+                        assigneeReporterArray.push({
+                            value: 'assignee',
+                            key: it.AssigneeID
+                        });
 
                         $('#ReporterPhoto').attr('src', it.ProfileImageOfReporter == null ? 'assets/images/users/avatar-blank.jpg' : it.ProfileImageOfReporter);
                         $('#ReporterNm').html(it.ReporterName)
                         $('#ReporterNm').attr('href', `pages-profile.php?id=${btoa(it.ReporterID)}`)
                         $('#ReporterDesignation').html(it.ReporterDesignation)
+                        assigneeReporterArray.push({
+                            key: it.ReporterID,
+                            value: 'reporter'
+                        });
 
                         $('#CreatedDate').html(moment(it.Created_Date).format('D MMM, YYYY hh:mm A'));
                         $('#DueDate').html(moment(it.subtaskDue).format('D MMM, YYYY hh:mm A'));
                     })
                 }
+            })
+        }
+        ShowEmployeeList()
+
+        function ShowEmployeeList() {
+            $.ajax({
+                url: './php/GetAllEmployees.php',
+                type: 'POST',
+                dataType: 'json',
+                success: function(data) {
+                    $('#EmployeeListToAdd').html('');
+
+                    $.each(data, function(index, item) {
+                        var foundItem = assigneeReporterArray.find(obj => obj.key === item.ID);
+                        if (foundItem) {
+                            if (foundItem.value === 'assignee') {
+                                var showingword = `<div class='text-danger'>Current Assignee</div>`;
+                            } else if (foundItem.value === 'reporter') {
+                                var showingword = `<div class='text-danger'>Current Reporter</div>`;
+                            }
+                        } else {
+                            var showingword = `<button type="button" onclick="UpdateAssignee('${item.ID}', '${item.EmpName}')" class="btn btn-light btn-sm">Assign</button>`;
+
+                        }
+                        var employeeString = ` <div class="d-flex align-items-center EmpRowDiv">
+                                                    <div class="avatar-xs flex-shrink-0 me-3">
+                                                        <img src="${item.ProfilePhoto==null ? 'assets/images/users/avatar-blank.jpg' : item.ProfilePhoto}" alt="" class="img-fluid rounded-circle">
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                    <h5 class="fs-13 mb-0 d-flex"><a href="#" class="text-body d-block fw-bold">${item.EmpName}</a> &nbsp;<span style="font-style:italic;">(${item.Position})</span></h5>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        ${showingword}
+                                                    </div>
+                                                </div>`;
+                        $('#EmployeeListToAdd').append(employeeString);
+                    })
+                }
+            })
+        }
+
+        function UpdateAssignee(id, newlyAssigneName) {
+            Swal.fire({
+                icon: "question",
+                title: "Are you sure?",
+                text: 'Would you like to update the assignee?',
+                confirmButtonText: 'Yes',
+                confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
+                showDenyButton: true,
+                denyButtonText: `No`,
+                denyButtonClass: "btn btn-danger w-xs mt-2",
+                buttonsStyling: !1,
+                focusConfirm: true,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: './php/UpdateEmployeeOnSubtask.php',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            subtaskID: '<?php echo $_GET['subid']; ?>',
+                            empID: id
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                Swal.fire(
+                                    'Updated !',
+                                    'Assignee has been updated Successfully !.',
+                                    'success'
+                                );
+                                $('#updateMembersModal').modal('hide')
+                                assigneeReporterArray.length = 0;
+                                SendMailToNewAssignee(id, newlyAssigneName);
+                                GetSubTaskData()
+                                ShowEmployeeList()
+                            }
+                        }
+                    })
+                }
+            })
+        }
+
+        function SendMailToNewAssignee(id, newlyAssigneName) {
+            var subtaskName = $("#SubtaskTitle").html();
+            var subtaskduedate = $("#DueDate").html();
+            var assigneeName = newlyAssigneName;
+            var assigneeID = id;
+            var reporterName = $('#ReporterNm').text();
+
+            $.get("./Email/email_subtaskadd.html", function(htmlCode) {
+                htmlCode = htmlCode.replace("[Task Name]", subtaskName)
+                    .replace("[Task Due]", subtaskduedate)
+                    .replace("[Employee Name]", assigneeName)
+                    .replace("[Report Person Name]", reporterName)
+                    .replace("[Name of Report Person/Team Leader]", reporterName)
+                    .replace("[Admin Name]", '<?php echo $Uname; ?>')
+                    .replace("[Redirect_Link]", "http://134.209.156.101/Task_Manager/default/sub-tasks-details.php");
+                var EmailBody = htmlCode;
+
+                $.ajax({
+                    url: "./Email/SendMail.php",
+                    method: 'POST',
+                    type: 'JSON',
+                    data: {
+                        email: 'abc@20gmail.com',
+                        subject: 'An Existing task has been re-assigned to you !',
+                        body: EmailBody,
+                        assigneeID: assigneeID
+                    },
+                    success: function(result) {
+                        // mail sent
+
+                        // $.get("./Email/email_reporter_mail.html", function(htmlCode) {
+                        //     htmlCode = htmlCode.replace("[Task Name]", subtaskName)
+                        //         .replace("[Task Due]", subtaskduedate)
+                        //         .replace("[Employee Name]", reporterName)
+                        //         .replace("[assigned person Name]", assigneeName)
+                        //         .replace("[Assigned Person Name]", assigneeName)
+                        //         .replace("[Admin Name]", '<?php //echo $Uname; 
+                                                                ?>')
+                        //         .replace("[Redirect_Link]", "http://134.209.156.101/Task-Manager/pages-login.html");
+                        //     var EmailBody = htmlCode;
+                        //     $.ajax({
+                        //         url: "./Email/SendMail.php",
+                        //         method: 'POST',
+                        //         type: 'JSON',
+                        //         data: {
+                        //             email: 'abc@20gmail.com',
+                        //             subject: 'You have been assigned as a reporter !',
+                        //             body: EmailBody,
+                        //             assigneeID: reporterID
+                        //         },
+                        //         success: function(result) {
+                        //             $.get("./Email/email_admin_subtaskadded.html", function(htmlCode) {
+                        //                 htmlCode = htmlCode
+                        //                     .replace("[Admin Name]", '<?php //echo $Uname; 
+                                                                            ?>')
+                        //                     .replace("[reporter name]", reporterName)
+                        //                     .replace("[Reporter Person Name]", reporterName)
+                        //                     .replace("[Task Name]", subtaskName)
+                        //                     .replace("[Task Due]", subtaskduedate)
+                        //                     .replace("[assign person name]", assigneeName)
+                        //                     .replace("[Assigned Person Name]", assigneeName)
+                        //                     .replace("[Redirect_Link]", "http://134.209.156.101/Task-Manager/pages-login.html");
+                        //                 var EmailBody = htmlCode;
+                        //                 $.ajax({
+                        //                     url: "./Email/SendMail.php",
+                        //                     method: 'POST',
+                        //                     type: 'JSON',
+                        //                     data: {
+                        //                         email: 'abc@20gmail.com',
+                        //                         subject: 'New subtask is created !',
+                        //                         body: EmailBody,
+                        //                         assigneeID: '<?php //echo $Admin_id; 
+                                                                ?>'
+                        //                     },
+                        //                     success: function(result) {
+                        //                         // mail sent
+                        //                     }
+                        //                 })
+                        //             })
+                        //         }
+                        //     })
+                        // })
+                    }
+                })
             })
         }
     </script>
@@ -799,8 +1019,9 @@ $_SESSION['Admin_id'] = $Admin_id;
                 success: function(data) {
                     $('#CommentMsgBox').empty();
                     $.each(data, function(index, it) {
+                        if (data.length != 0) {
 
-                        var commentHtml = `<div class="d-flex mb-4">
+                            var commentHtml = `<div class="d-flex mb-4">
                                             <div class="flex-shrink-0">
                                                 <img src="${it.main_comment_author_profile_photo == null ? 'assets/images/users/avatar-blank.jpg' : it.main_comment_author_profile_photo}" alt="" class="avatar-xs rounded-circle" />
                                             </div>
@@ -809,51 +1030,51 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                 <p class="text-muted">${it.main_comment_text}</p>
                                                 <div class="attachedWithComment">`;
 
-                        if (it.FilePath != null && it.FilePath != '') {
-                            var pathArr = it.FilePath.split('--');
-                            commentHtml += `<div class="row g-2 mb-3">`;
-                            pathArr.forEach(function(filePath) {
-                                if (filePath.split('.').pop().toLowerCase() == 'jpg' || filePath.split('.').pop().toLowerCase() == 'jpeg') {
-                                    commentHtml += `<div class="col-lg-1 col-sm-2 col-6">
+                            if (it.FilePath != null && it.FilePath != '') {
+                                var pathArr = it.FilePath.split('--');
+                                commentHtml += `<div class="row g-2 mb-3">`;
+                                pathArr.forEach(function(filePath) {
+                                    if (filePath.split('.').pop().toLowerCase() == 'jpg' || filePath.split('.').pop().toLowerCase() == 'jpeg') {
+                                        commentHtml += `<div class="col-lg-1 col-sm-2 col-6">
                                                         <a href="${filePath}" target="_blank">
                                                             <img src="${filePath}" alt="" class="img-fluid rounded" style="cursor: pointer;">
                                                         </a>
                                                     </div>
                                                     `;
-                                } else {
-                                    var pathParts = filePath.split('/');
-                                    var fileName = pathParts.pop();
-                                    if (fileName != '') {
+                                    } else {
+                                        var pathParts = filePath.split('/');
+                                        var fileName = pathParts.pop();
+                                        if (fileName != '') {
 
-                                        commentHtml += `<div class="col-lg-2 col-sm-2 col-12 text-center">
+                                            commentHtml += `<div class="col-lg-2 col-sm-2 col-12 text-center">
                                                             <div class="container bg-light d-flex flex-row justify-content-between align-items-center rounded">
                                                                 <span class="fs-14"><a href="${filePath}" target="blank" class="text-body">${fileName}</a></span>
                                                                 <i class="ri-download-2-line fs-14" style="cursor:pointer;" onclick="window.location.href ='assets/php/download.php?=FPath=${filePath}&FName=${fileName}'"></i>
                                                             </div>
                                                         </div>`;
-                                    }
+                                        }
 
-                                }
-                            });
-                            commentHtml += ` </div>`;
-                        }
-                        commentHtml += `
+                                    }
+                                });
+                                commentHtml += ` </div>`;
+                            }
+                            commentHtml += `
                                                 </div>
                                                 <a href="javascript: void(0);" class="badge text-muted bg-light" onclick="ReplyToComment('${it.main_comment_author_name}', '${it.main_comment_id}')"><i class="mdi mdi-reply"></i> Reply</a>
                                                 <div class=" mt-4" id="RepliedCommentMsg${it.main_comment_id}">`;
 
-                        $.ajax({
-                            url: './php/GetAllReplyCommentsData.php',
-                            type: 'POST',
-                            dataType: 'json',
-                            async: false,
-                            data: {
-                                commentID: it.main_comment_id,
-                            },
-                            success: function(dataResult) {
-                                if (dataResult.length != 0) {
-                                    $.each(dataResult, function(ind, itm) {
-                                        commentHtml += `<div class="d-flex">
+                            $.ajax({
+                                url: './php/GetAllReplyCommentsData.php',
+                                type: 'POST',
+                                dataType: 'json',
+                                async: false,
+                                data: {
+                                    commentID: it.main_comment_id,
+                                },
+                                success: function(dataResult) {
+                                    if (dataResult.length != 0) {
+                                        $.each(dataResult, function(ind, itm) {
+                                            commentHtml += `<div class="d-flex">
                                                 <div class="flex-shrink-0">
                                                     <img src="${itm.reply_comment_author_profile_photo == null ? 'assets/images/users/avatar-blank.jpg' : itm.reply_comment_author_profile_photo}" alt="" class="avatar-xs rounded-circle" />
                                                 </div>
@@ -862,16 +1083,17 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                     <p class="text-muted">${itm.reply_comment_text}</p>
                                                 </div>
                                             </div>`;
-                                    })
-                                }
+                                        })
+                                    }
 
-                                commentHtml += `</div>
+                                    commentHtml += `</div>
                                                 </div>
                                             </div>`;
-                                $('#CommentMsgBox').append(commentHtml);
+                                    $('#CommentMsgBox').append(commentHtml);
 
-                            }
-                        })
+                                }
+                            })
+                        }
                     })
                 }
             })
@@ -1133,7 +1355,9 @@ $_SESSION['Admin_id'] = $Admin_id;
                             currentStageNM: CurrStageTitle
                         },
                         success: function(response) {
+                            // console.log(response);
                             if (response.success) {
+
                                 $.get("./Email/email_stage_changed.html", function(htmlCode) {
                                     htmlCode = htmlCode.replace("[Last Stage]", CurrStageTitle)
                                         .replace("[Next-Stage]", selectedStageTitle)
@@ -1156,37 +1380,17 @@ $_SESSION['Admin_id'] = $Admin_id;
                                             SelectedEmps: JSON.stringify([$('#created_By_ID').html()])
 
                                         },
-                                        beforeSend: function() {
-                                            Swal.fire({
-                                                title: "Please wait ...",
-                                                text: "Sending email to admin... !",
-                                                timer: 15000,
-                                                width: '400px',
-                                                onBeforeOpen: function() {
-                                                    Swal.showLoading();
-                                                },
-                                                showConfirmButton: false
-                                            }).then(function(result) {
-                                                if (result.dismiss === "timer") {
-                                                    console.log("I was closed by the timer");
-                                                }
-                                            });
-                                        },
                                         success: function(results) {
-                                            console.log(
-                                                'Stage Changed Successfully !.'
-                                            );
-                                            Swal.fire(
-                                                'Changed !',
-                                                'Stage Changed Successfully !.',
-                                                'success'
-                                            );
-                                            GetSubTaskData()
-
+                                            //mail sent
                                         }
                                     })
                                 })
-
+                                Swal.fire(
+                                    'Changed !',
+                                    'Stage Changed Successfully !.',
+                                    'success'
+                                );
+                                GetSubTaskData()
 
                             } else {
                                 console.log('There was a problem updating the stage.');
@@ -1196,16 +1400,6 @@ $_SESSION['Admin_id'] = $Admin_id;
                                     'error'
                                 );
                             }
-                        },
-                        error: function(xhr, status, error) {
-                            console.log(
-                                'An error occurred while updating the stage: ' +
-                                error);
-                            Swal.fire(
-                                'Error!',
-                                'An error occurred while updating the stage.',
-                                'error'
-                            );
                         }
                     });
 

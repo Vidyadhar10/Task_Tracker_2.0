@@ -27,7 +27,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
     <meta charset="utf-8" />
     <title>Create Project | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -170,14 +170,14 @@ $_SESSION['Admin_id'] = $Admin_id;
                                             <div class="col-lg-4">
                                                 <div class="position-relative">
                                                     <label for="datepicker-startDate-input" class="form-label requiredField">Start Date</label>
-                                                    <input type="text" class="form-control" id="datepicker-startDate-input" onchange="makeValid()" placeholder="Enter project start date" data-provider="flatpickr" data-date-format="d-m-y" data-enable-time required>
+                                                    <input type="text" class="form-control" id="datepicker-startDate-input" onchange="makeValid()" placeholder="Enter project start date" data-provider="flatpickr" data-date-format="Y-m-d" data-enable-time required>
                                                     <div class="invalid-tooltip" id="StartDateInvalidDiv">Project start date should not be empty!</div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <div class="position-relative">
                                                     <label for="datepicker-enddate-input" class="form-label requiredField">End Date</label>
-                                                    <input type="text" class="form-control" id="datepicker-enddate-input" onchange="makeValid()" placeholder="Enter project end date" required data-provider="flatpickr" data-date-format="d-m-y" data-enable-time>
+                                                    <input type="text" class="form-control" id="datepicker-enddate-input" onchange="makeValid()" placeholder="Enter project end date" required data-provider="flatpickr" data-date-format="Y-m-d" data-enable-time>
                                                     <div class="invalid-tooltip" id="EndDateInvalidDiv">Project end date should not be empty!</div>
                                                 </div>
                                             </div>
@@ -194,7 +194,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                                             <div id="ckeditor-classic-mission">
 
                                             </div>
-                                            <div class="invalid-tooltip Project-description-tooltip">Project description should not be empty!</div>
+                                            <div class="invalid-tooltip Project-description-tooltip" id="ProjectMissionInvDiv">Project description should not be empty!</div>
                                         </div>
 
 
@@ -206,9 +206,11 @@ $_SESSION['Admin_id'] = $Admin_id;
 
                                 <!-- end card -->
                                 <div class="text-end mb-4">
-                                    <button type="button" class="btn btn-danger w-sm">Cancel</button>
-                                    <button type="button" class="btn btn-secondary w-sm">Reset</button>
-                                    <button type="submit" class="btn btn-success w-sm">Create</button>
+                                    <!-- <button type="button" class="btn btn-danger w-sm">Cancel</button> -->
+                                    <button type="button" class="btn btn-secondary w-sm" onclick="resetProjectForm()">Reset</button>
+                                    <button type="submit" class="btn btn-success w-sm">
+                                        Create
+                                    </button>
                                 </div>
                             </div>
 
@@ -331,13 +333,9 @@ $_SESSION['Admin_id'] = $Admin_id;
                         <div class="col-sm-6">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Velzon.
+                            </script> © Task Tracker.
                         </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </footer>
@@ -381,18 +379,43 @@ $_SESSION['Admin_id'] = $Admin_id;
     <!-- end modal -->
 
 
+    <!-- project successfully added Modal -->
+    <div class="modal fade" id="ProjectAddedSuccessfullyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:120px;height:120px">
+                    </lord-icon>
+
+                    <div class="mt-4">
+                        <h4 class="mb-3">Project added auccessfully!</h4>
+                        <!-- <p class="text-muted mb-4"> The transfer was not successfully received by us. the email of the recipient wasn't correct.</p> -->
+                        <div class="hstack gap-2 justify-content-center">
+                            <a href="javascript:void(0);" class="btn btn-primary fw-medium" onclick="resetProjectForm(),topFunction()" data-bs-dismiss="modal"><i class="ri-add-line me-1 align-middle"></i> Add New</a>
+                            <a href="#" class="btn btn-success" onclick="window.location.href=`projects-list.php`">Go to the project list <i class="ri-arrow-right-line me-1 align-end"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!--start back-to-top-->
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
         <i class="ri-arrow-up-line"></i>
     </button>
     <!--end back-to-top-->
-
+    <!-- screen loader  -->
+    <div class="loader-container d-none" id="loader-on-proj-add">
+        <span class="loader"></span>
+    </div>
     <!--preloader-->
     <div id="preloader">
         <div id="status">
             <div class="spinner-border text-primary avatar-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
+
             </div>
         </div>
     </div>
@@ -430,6 +453,10 @@ $_SESSION['Admin_id'] = $Admin_id;
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 
     <script>
+        function resetProjectForm() {
+            location.reload()
+        }
+
         var filterData;
         ShowEmployeeList();
         var defaultString = `<a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Add Members">
@@ -599,8 +626,8 @@ $_SESSION['Admin_id'] = $Admin_id;
             if ($('#choices-priority-input').val() == '' ? ($('#PriorityInvalidDiv').css('display', 'block'), false) : true) {
                 if ($('#datepicker-startDate-input').val() == '' ? ($('#StartDateInvalidDiv').css('display', 'block'), false) : true) {
                     if ($('#datepicker-enddate-input').val() == '' ? ($('#EndDateInvalidDiv').css('display', 'block'), false) : true) {
-                        if (MissionEditor.getData() == '' ? false : true) {
-                            if (DescriptionEditor.getData() == '' ? false : true) {
+                        if (MissionEditor.getData() == '' ? ($('#ProjectMissionInvDiv').css('display', 'block'), false) : true) {
+                            if (DescriptionEditor.getData() == '' ? ($('#ProjDescriptionInvDiv').css('display', 'block'), false) : true) {
                                 if (empIDArray.length <= 0 ? NoEmpSelected() : true) {
                                     return true;
                                 }
@@ -621,12 +648,14 @@ $_SESSION['Admin_id'] = $Admin_id;
                 width: '400px',
                 allowOutsideClick: false,
                 allowEscapeKey: false,
-                // showClass: {
-                //     popup: 'animate__animated animate__fadeInDown'
-                // },
-                // hideClass: {
-                //     popup: 'animate__animated animate__fadeOutUp'
-                // }
+                confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
+                buttonsStyling: !1,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
             })
         }
         $('#ProjAddForm').on("submit", function(event) {
@@ -636,6 +665,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
             if (!CheckValidityFun()) {
                 event.preventDefault()
+                topFunction()
                 return false;
             }
 
@@ -699,57 +729,13 @@ $_SESSION['Admin_id'] = $Admin_id;
                         type: "POST",
                         dataType: 'JSON',
                         data: formData,
-                        processData: false, // Prevent jQuery from processing data
+                        processData: false,
                         contentType: false,
                         success: function(data) {
                             if (data.success) {
-                                $.get("./Email/email_assigned_project.php", function(htmlCode) {
-                                    var inputStartDate = moment($("#datepicker-startDate-input").val()).format('D MMM, YYYY hh:mm A');
+                                $('#ProjectAddedSuccessfullyModal').modal('show')
 
-                                    htmlCode = htmlCode.replace("[Project Name]", $("#project-title-input").val())
-                                        .replace("[Project Name]", $("#project-title-input").val())
-                                        .replace("[Start Date]", inputStartDate)
-                                        .replace("[Admin Name]", '<?php echo $Uname; ?>')
-                                        .replace("[Admin Name]", '<?php echo $Uname; ?>')
-                                        .replace("[Admin Name]", '<?php echo $Uname; ?>')
-                                        .replace("[Redirect_Link]", "http://134.209.156.101/Task-Manager/pages-login.html");
-                                    var EmailBody = htmlCode;
-                                    var empsChecked = empIDArray;
-                                    $.ajax({
-                                        url: "./Email/SendMail.php",
-                                        method: 'POST',
-                                        type: 'JSON',
-                                        data: {
-                                            email: 'abc@gmail.com',
-                                            subject: 'You are assigned to a Project',
-                                            body: EmailBody,
-                                            SelectedEmps: JSON.stringify(empsChecked)
-                                        },
-                                        beforeSend: function() {
-                                            Swal.fire({
-                                                title: "Please wait ...",
-                                                text: "Project is being added to database !",
-                                                timer: 15000,
-                                                width: '400px',
-                                                onBeforeOpen: function() {
-                                                    Swal.showLoading();
-                                                },
-                                                showConfirmButton: false
-                                            }).then(function(result) {
-                                                if (result.dismiss === "timer") {
-                                                    console.log("I was closed by the timer");
-                                                }
-                                            });
-                                        },
-                                        // complete: function() {
-                                        //     window.location.href = "projects-list.php";
-                                        // },
-                                        success: function(result) {
-                                            console.log(result);
-                                        }
-                                    })
-                                })
-                                // form submit
+                                sendEmailinBG()
                             }
                         }
                     })
@@ -757,6 +743,37 @@ $_SESSION['Admin_id'] = $Admin_id;
 
                 }
             });
+        }
+
+        function sendEmailinBG() {
+            $.get("./Email/email_assigned_project.php", function(htmlCode) {
+                var inputStartDate = moment($("#datepicker-startDate-input").val()).format('D MMM, YYYY hh:mm A');
+
+                htmlCode = htmlCode.replace("[Project Name]", $("#project-title-input").val())
+                    .replace("[Project Name]", $("#project-title-input").val())
+                    .replace("[Start Date]", inputStartDate)
+                    .replace("[Admin Name]", '<?php echo $Uname; ?>')
+                    .replace("[Admin Name]", '<?php echo $Uname; ?>')
+                    .replace("[Admin Name]", '<?php echo $Uname; ?>')
+                    .replace("[Redirect_Link]", "http://134.209.156.101/Task-Manager/pages-login.html");
+                var EmailBody = htmlCode;
+                var empsChecked = empIDArray;
+                $.ajax({
+                    url: "./Email/SendMail.php",
+                    method: 'POST',
+                    type: 'JSON',
+                    async: false,
+                    data: {
+                        email: 'abc@gmail.com',
+                        subject: 'You are assigned to a Project',
+                        body: EmailBody,
+                        SelectedEmps: JSON.stringify(empsChecked)
+                    },
+                    success: function(result) {
+                        // console.log(result);
+                    }
+                })
+            })
         }
 
         function makeValid() {

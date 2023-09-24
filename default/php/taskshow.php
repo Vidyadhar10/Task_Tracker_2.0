@@ -10,7 +10,8 @@ INNER JOIN `tasks_priority` AS `tp`
 ON `td`.`Task_priority` = `tp`.`ID`
 INNER JOIN `employeedata` AS `epd`
 ON `epd`.`ID` = `td`.`CreatedBy`
-WHERE `Project_id`='$p_id'";
+WHERE `Project_id`='$p_id'
+ORDER BY td.id DESC";
 $result = $con->query($sql);
 if (mysqli_num_rows($result) > 0) {
   while ($row = $result->fetch_assoc()) {

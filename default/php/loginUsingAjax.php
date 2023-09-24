@@ -1,5 +1,9 @@
 <?php
 session_start();
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 include "connection.php";
 
 if (isset($_POST['mobnumber']) && isset($_POST['PasswordText'])) {
@@ -9,7 +13,9 @@ if (isset($_POST['mobnumber']) && isset($_POST['PasswordText'])) {
     $pass = md5($pas);
 
 
-    $result = mysqli_query($con, "SELECT * FROM `employeedata` WHERE `MobileNo` = '$uname' AND `Password`='$pass'");
+    $result = mysqli_query($con, "SELECT * FROM `employeedata`
+    WHERE `MobileNo` = '$uname'
+    AND `Password`='$pass'");
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
 

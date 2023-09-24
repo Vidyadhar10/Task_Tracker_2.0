@@ -16,21 +16,22 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['body']))
         $subject = $_POST['subject'];
         $body = $_POST['body'];
 
-        $response = array();
-
         require './PHPMailer/src/Exception.php';
         require './PHPMailer/src/PHPMailer.php';
         require './PHPMailer/src/SMTP.php';
 
 
         $mail = new PHPMailer;
-        $mail->isSMTP();
+
         $mail->SMTPDebug = 4;
+        $mail->isSMTP();
+
         $mail->Host = 'smtp.gmail.com';
         $mail->Port = 587;
         $mail->SMTPAuth = true;
         $mail->Username = 'tasktracker2023@gmail.com';
         $mail->Password = 'lkilidhacfpwgyis';
+
         $mail->setFrom('tasktracker2023@gmail.com', 'Task Tracker');
         $mail->addReplyTo('tasktracker2023@gmail.com', 'Task Tracker');
 
@@ -44,19 +45,22 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['body']))
                 $mail->addAddress($email, $empnm);
             }
         }
-        //$mail->addAddress($email, $empnm);
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        //$mail->msgHTML(file_get_contents('message.html'), __DIR__);
         $mail->Body = $body;
-        //$mail->addAttachment('attachment.txt');
 
         if (!$mail->send()) {
-            $response[1] = 'Fail';
+            $response = array(
+                "success" => false,
+                "message" => 'Email could not be sent. Error: ' . $mail->ErrorInfo,
+            );
         } else {
-            $response[2] = 'Sent';
+            $response = array(
+                "success" => true,
+                "message" => 'Email sent successfully',
+            );
         }
-        //echo json_encode($response);
+        echo json_encode($response);
 
         // echo json_encode($mail->send());
 
@@ -93,16 +97,17 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['body']))
         $mail->setFrom('tasktracker2023@gmail.com', 'Task Tracker');
         $mail->addReplyTo('tasktracker2023@gmail.com', 'Task Tracker');
         $mail->addAddress($email, $empName);
+
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        //$mail->msgHTML(file_get_contents('message.html'), __DIR__);
         $mail->Body = $body;
-        //$mail->addAttachment('attachment.txt');
 
         if (!$mail->send()) {
-            $response[1] = 'Fail';
+            $response['success'] = false;
+            $response['message'] = 'Email could not be sent. Error: ' . $mail->ErrorInfo;
         } else {
-            $response[2] = 'Sent';
+            $response['success'] = true;
+            $response['message'] = 'Email sent successfully';
         }
         echo json_encode($response);
     } else {
@@ -128,21 +133,18 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['body']))
         $mail->setFrom('tasktracker2023@gmail.com', 'Task Tracker');
         $mail->addReplyTo('tasktracker2023@gmail.com', 'Task Tracker');
         $mail->addAddress($email, 'Name of employee');
+
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        //$mail->msgHTML(file_get_contents('message.html'), __DIR__);
         $mail->Body = $body;
-        //$mail->addAttachment('attachment.txt');
 
         if (!$mail->send()) {
-            $response[1] = 'Fail';
+            $response['success'] = false;
+            $response['message'] = 'Email could not be sent. Error: ' . $mail->ErrorInfo;
         } else {
-            $response[2] = 'Sent';
+            $response['success'] = true;
+            $response['message'] = 'Email sent successfully';
         }
         echo json_encode($response);
-
-        // echo json_encode($mail->send());
-
-        //echo $response;
     }
 }

@@ -65,7 +65,7 @@ if (mysqli_query($con, $sql)) {
 
     $Activity_Title = "Sub-task Added";
     $Activity_Text = "A new sub-task <span class=`text-info`>$subtaskNm</span> has been added to  task <span class=`text-info`>$Task_name</span> by <span class=`text-info`>$createrName</span>";
-    $Activity_Icon = mysqli_real_escape_string($con, "<i class='bi bi-subtract text-info'></i>");
+    $Activity_Icon = mysqli_real_escape_string($con, "bx bx-list-check");
     $Activity_By = $createrID;
     $InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By')");
     if ($InsertInNotifi) {

@@ -6,7 +6,7 @@
 
     <meta charset="utf-8" />
     <title>Sign In | Task Tracker - Admin & Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -89,7 +89,8 @@
                                     </div>
                                 </div>
                                 <!-- end col -->
-
+                                <!-- <div class="col-lg-1">
+                                </div> -->
                                 <div class="col-lg-6">
                                     <div class="p-lg-5 p-4">
                                         <div>
@@ -97,12 +98,12 @@
                                             <p class="text-muted">Sign in to continue to Task Tracker.</p>
                                         </div>
 
-                                        <div class="mt-4">
+                                        <div class="mt-4 w-75">
                                             <form id="form-login">
 
                                                 <div class="mb-3">
                                                     <label for="MobileNumber" class="form-label">Mobile Number</label>
-                                                    <input type="text" class="form-control" id="MobileNumber"
+                                                    <input type="text" class="form-control " id="MobileNumber"
                                                         placeholder="Enter Mobile Number" maxlength="10"
                                                         oninput="InputNumberOnly(this.id)" required>
                                                 </div>
@@ -115,7 +116,8 @@
                                                     <label class="form-label" for="password-input">Password</label>
                                                     <div class="position-relative auth-pass-inputgroup mb-3">
                                                         <input type="password" class="form-control pe-5 password-input"
-                                                            placeholder="Enter password" id="password-input" required>
+                                                            placeholder="Enter password" id="password-input"
+                                                            maxlength="8" required>
                                                         <button
                                                             class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                             type="button" id="password-addon"><i
@@ -144,6 +146,15 @@
                                                     class="fw-semibold text-primary text-decoration-underline">
                                                     Signup</a> </p>
                                         </div> -->
+                                        <!-- Danger Alert -->
+                                        <div class="alert alert-danger  mt-2 mb-n4 alert-dismissible fade hide"
+                                            role="alert" id="invalidCredentialsAlert">
+                                            <strong> Invalid Credentials! </strong><br> The <b> username</b> or
+                                            <b>password</b> you provided is incorrect. —
+                                            Try again.
+                                            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button> -->
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- end col -->
@@ -153,7 +164,6 @@
                         <!-- end card -->
                     </div>
                     <!-- end col -->
-
                 </div>
                 <!-- end row -->
             </div>
@@ -161,36 +171,14 @@
         </div>
         <!-- end auth page content -->
 
-        <!-- footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="text-center">
-                            <p class="mb-0">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Task Tracker. Crafted with <i
-                                    class="mdi mdi-heart text-danger"></i>
-                                <!-- by Themesbrand -->
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- end Footer -->
     </div>
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/node-waves/waves.min.js"></script>
-    <script src="assets/libs/feather-icons/feather.min.js"></script>
-    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="assets/js/plugins.js"></script>
+    <!-- moment.js cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
-    <!-- password-addon init -->
-    <script src="assets/js/pages/password-addon.init.js"></script>
+
     <!-- jquery cdn  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
@@ -214,7 +202,15 @@
                 var mobileNum = $('#MobileNumber').val();
                 var PassText = $('#password-input').val();
                 var remember = $("#auth-remember-check").prop("checked");
-                if (mobileNum != "" && PassText != "") {
+
+                if (mobileNum == '') {
+                    $('#form-login').addClass('was-validated');
+                    $('#MobileNumber').addClass('is-invalid')
+                } else if (PassText == '') {
+                    $('#form-login').addClass('was-validated');
+                    $('#password-input').addClass('is-invalid')
+                } else {
+
 
                     if (remember) {
                         // Save username and password to localStorage if 'Remember Me' is checked
@@ -228,57 +224,46 @@
                     $.ajax({
                         url: './php/loginUsingAjax.php',
                         type: 'POST',
+                        dataType: 'JSON',
                         data: {
                             mobnumber: mobileNum,
                             PasswordText: PassText
                         },
-                        dataType: 'json',
                         success: function (data) {
                             if (data.success) {
                                 // redirect to dashboard or other authorized page
                                 window.location.href = "index.php";
                             } else {
-                                $('#form-login').addClass('was-validated');
+                                $('#form-login').removeClass('was-validated');
 
-                                toastr.options = {
-                                    "closeButton": true,
-                                    "toastClass": "RedColor",
-                                    "debug": false,
-                                    "newestOnTop": false,
-                                    "progressBar": false,
-                                    "positionClass": "toast-top-right",
-                                    "preventDuplicates": false,
-                                    "onclick": null,
-                                    "timeOut": "3000",
-                                    "showEasing": "swing",
-                                    "hideEasing": "linear",
-                                    "showMethod": "fadeIn",
-                                    "hideMethod": "fadeOut"
-                                };
-                                toastr.success("Invalid credentials !");
-
-                                // $('#form-login')[0].reset();
-                                $('#form-login').addClass('was-validated');
-                                $('#yourmobnum').addClass('is-invalid');
-                                $('#yourPassword').addClass('is-invalid');
-                                setTimeout(function () {
-                                    $('#form-login').removeClass('was-validated');
-
+                                $('#invalidCredentialsAlert').removeClass('hide').addClass('show')
+                                setTimeout(() => {
+                                    $('#invalidCredentialsAlert').addClass('hide').removeClass('show');
                                 }, 3000);
 
-
                             }
+                        },
+                        error: function (xhr, status, error) {
+                            console.log("AJAX Error: " + error);
+                            // Handle the error appropriately
                         }
-                    });
-                } else {
-                    $('#form-login').addClass('was-validated');
-                    $('#passwordHelp').css('display', 'block');
+                    })
+
                 }
 
 
             });
         })
     </script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <!-- password-addon init -->
+    <script src="assets/js/pages/password-addon.init.js"></script>
 </body>
 
 </html>

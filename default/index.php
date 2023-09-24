@@ -504,7 +504,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                 type: 'POST',
                 dataType: 'JSON',
                 data: {
-                    adminID: <?php echo $Admin_id; ?>,
+                    adminID: '<?php echo $Admin_id; ?>',
                 },
                 success: function(data) {
                     $('#projectsCountSpan').attr('data-target', data.ProjectsCount)

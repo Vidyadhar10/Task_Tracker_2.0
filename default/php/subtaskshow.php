@@ -95,7 +95,8 @@ include 'connection.php';
   INNER JOIN subtask_stages AS subStage ON subStage.id = sub.status
   WHERE pdt.SrNo = '$pid'
   AND tdt.id = '$tid'
-  GROUP BY sub.subtask_ID;");
+  GROUP BY sub.subtask_ID
+  ORDER BY sub.subtask_ID DESC;");
   if (mysqli_num_rows($result) > 0) {
     while ($row = $result->fetch_assoc()) {
       $response[] = $row;

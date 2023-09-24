@@ -27,7 +27,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
     <meta charset="utf-8" />
     <title>Profile | Task Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, , maximum-scale=1.0, user-scalable=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
@@ -153,7 +153,7 @@ $_SESSION['Admin_id'] = $Admin_id;
 
                                     </ul>
                                     <?php
-                                    if ($Admin_id == $_GET['id']) {
+                                    if (base64_encode($Admin_id) == $_GET['id']) {
                                     ?>
                                         <div class="flex-shrink-0">
                                             <a href="pages-profile-settings.php?eid=<?php echo $_GET['id']; ?>" class="btn btn-success"><i class="ri-edit-box-line align-bottom"></i> Edit Profile</a>

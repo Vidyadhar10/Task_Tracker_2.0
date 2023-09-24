@@ -7,7 +7,7 @@ $EMPID = $_SESSION['UserID'];
 
 
 $getProjects = mysqli_query($con, "SELECT
-pd.ProjectName, pd.SrNo, pd.Start_Date, pd.End_Date,
+pd.ProjectName, pd.SrNo, pd.Start_Date, pd.End_Date, pd.ProjectLogo, pd.Admin_emp_id, pd.Created_Date,
 emid.EmpName,
 pp.*,
 (
@@ -34,7 +34,8 @@ INNER JOIN
 INNER JOIN
 `project_priority` AS pp ON pp.`ID` = pd.`Priority`
 WHERE
-pd.`Admin_emp_id` = '$EMPID'");
+pd.`Admin_emp_id` = '$EMPID'
+ORDER BY SrNo DESC");
 while ($row = $getProjects->fetch_assoc()) {
 
     $response[] = $row;
