@@ -1452,7 +1452,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                                 </div>
 
                                 <!-- goal create modal  -->
-                                <div class="modal fade zoomIn" id="GoalCreateModal" tabindex="-1" aria-labelledby="GoalCreateModal" aria-hidden="true">
+                                <div class="modal fade" id="GoalCreateModal" tabindex="-1" aria-labelledby="GoalCreateModal" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal">
                                         <div class="modal-content border-0">
                                             <div class="modal-header p-3 bg-soft-info">
@@ -1711,7 +1711,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                 success: function(data) {
                     $.each(data, function(i, item) {
                         $('#Goal-title-field').val(item.goal_head)
-                        $('#goal-date-field').val(moment(item.goalDate).format('D-MM-YYYY'))
+                        $('#goal-date-field').val(item.goalDate)
                         GoalDescriptionEditor.setData(item.goal_description)
 
                     })

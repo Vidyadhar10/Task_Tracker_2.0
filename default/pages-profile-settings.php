@@ -286,34 +286,39 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                 <div class="row g-2">
                                                     <div class="col-lg-4">
                                                         <div>
-                                                            <label for="oldpasswordInput" class="form-label">Old Password*</label>
-                                                            <input type="password" class="form-control" id="oldpasswordInput" placeholder="Enter current password">
+                                                            <label for="oldpasswordInput" class="form-label">Old Password<span class="text-danger">*</span></label>
+                                                            <input type="password" class="form-control" maxlength="8" minlength="8" id="oldpasswordInput" placeholder="Enter current password">
+                                                            <div class="invalid-feedback" id="old-pass-inv">Password should be minimum 8 characters!</div>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-lg-4">
                                                         <div>
-                                                            <label for="newpasswordInput" class="form-label">New Password*</label>
-                                                            <input type="password" class="form-control" id="newpasswordInput" placeholder="Enter new password">
+                                                            <label for="newpasswordInput" class="form-label">New Password<span class="text-danger">*</span></label>
+                                                            <input type="password" class="form-control" maxlength="8" minlength="8" id="newpasswordInput" placeholder="Enter new password">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-lg-4">
                                                         <div>
-                                                            <label for="confirmpasswordInput" class="form-label">Confirm Password*</label>
-                                                            <input type="password" class="form-control" id="confirmpasswordInput" placeholder="Confirm password">
+                                                            <label for="confirmpasswordInput" class="form-label">Confirm Password<span class="text-danger">*</span></label>
+                                                            <input type="password" class="form-control" maxlength="8" minlength="8" id="confirmpasswordInput" placeholder="Confirm password">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-lg-12">
+                                                    <!-- <div class="col-lg-12">
                                                         <div class="mb-3">
                                                             <a href="javascript:void(0);" class="link-primary text-decoration-underline">Forgot Password ?</a>
                                                         </div>
+                                                    </div> -->
+                                                    <div class="alert alert-danger  mt-2  alert-dismissible fade hide" role="alert" id="PasswordValidityAlert">
+                                                        <p id="alert-message"></p>
+                                                        <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-lg-12">
                                                         <div class="text-end">
-                                                            <button type="submit" class="btn btn-success">Change Password</button>
+                                                            <button type="submit" id="change-password-btn" class="btn btn-success">Change Password</button>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -481,6 +486,113 @@ $_SESSION['Admin_id'] = $Admin_id;
                 })
             }
         })
+
+        $('#change-password-btn').on('click', function() {
+            var oldpass = $('#oldpasswordInput').val();
+            var newPass = $('#newpasswordInput').val();
+            var ConfirmPass = $('#confirmpasswordInput').val();
+
+            if (oldpass.length >= 8) {
+                // $('#old-pass-inv').css('display', 'none')
+
+                $.ajax({
+                    url: './php/checkPassExist.php',
+                    type: 'POST',
+                    dataType: "json",
+                    data: {
+                        enteredPass: oldpass,
+                        loggedinUser: '<?php echo $_SESSION['Mobile_No']; ?>'
+                    },
+                    success: function(data) {
+                        if (data.success) {
+                            // $('#old-pass-inv').css('display', 'none');
+                            // $('#old-pass-inv').html('Password should be minimum 8 characters!');
+                            $('#PasswordValidityAlert').removeClass('show').addClass('hide')
+                            $('#alert-message').html('Password should be minimum 8 characters!')
+                            HideAlert()
+
+                            if (newPass != ConfirmPass) {
+                                $('#PasswordValidityAlert').removeClass('hide').addClass('show')
+                                $('#alert-message').html('Password don\'t match!<br> Please check your new password and re-entered password is correct or not!')
+                                HideAlert()
+                            } else {
+                                $('#PasswordValidityAlert').removeClass('show').addClass('hide')
+                                $('#alert-message').html('Password should be minimum 8 characters!')
+                                if (newPass.length >= 8) {
+                                    $.ajax({
+                                        url: './php/checkPassExist.php',
+                                        type: 'POST',
+                                        data: {
+                                            enteredPass: newPass,
+                                            loggedinUser: '<?php echo $_SESSION['Mobile_No']; ?>'
+                                        },
+                                        dataType: "json",
+                                        success: function(data) {
+                                            if (data.success) {
+                                                //new password can not be old password
+                                                $('#PasswordValidityAlert').removeClass('hide').addClass('show')
+                                                $('#alert-message').html('New password cannot be old password!')
+                                                HideAlert()
+
+                                            } else {
+                                                $('#PasswordValidityAlert').removeClass('show').addClass('hide')
+                                                $('#alert-message').html('Password should be minimum 8 characters!')
+                                                $.ajax({
+                                                    url: './php/updatePassword.php',
+                                                    type: 'POST',
+                                                    data: {
+                                                        enteredPass: newPass,
+                                                        loggedinUser: '<?php echo $_SESSION['Mobile_No']; ?>'
+                                                    },
+                                                    dataType: "json",
+                                                    success: function(result) {
+                                                        if (result.success) {
+                                                            Swal.fire(
+                                                                'Updated!',
+                                                                'Password has been updated successfully!',
+                                                                'success'
+                                                            )
+                                                            $('#oldpasswordInput').val('');
+                                                            $('#newpasswordInput').val('');
+                                                            $('#confirmpasswordInput').val('');
+                                                        }
+                                                    }
+                                                })
+                                            }
+                                        }
+                                    })
+                                } else {
+                                    $('#PasswordValidityAlert').removeClass('hide').addClass('show')
+                                    $('#alert-message').html('Password should be minimum 8 characters!')
+                                    HideAlert()
+                                }
+                            }
+
+                        } else {
+                            // $('#old-pass-inv').css('display', 'block');
+                            $('#PasswordValidityAlert').removeClass('hide').addClass('show')
+                            $('#alert-message').html('Old password incorrect. <br>Please double-check your current password and try again.')
+                            HideAlert()
+
+                            // $('#old-pass-inv').html('Old password incorrect. <br>Please double-check your current password and try again.');
+                        }
+                    }
+                })
+            } else {
+                // $('#old-pass-inv').css('display', 'block')
+                $('#PasswordValidityAlert').removeClass('hide').addClass('show')
+                $('#alert-message').html('Password should be minimum 8 characters!')
+                HideAlert()
+
+
+            }
+        })
+
+        function HideAlert() {
+            setTimeout(() => {
+                $('#PasswordValidityAlert').removeClass('show').addClass('hide')
+            }, 3000);
+        }
     </script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>

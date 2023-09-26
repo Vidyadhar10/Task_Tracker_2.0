@@ -1020,15 +1020,14 @@ $_SESSION['Admin_id'] = $Admin_id;
                     $('#CommentMsgBox').empty();
                     $.each(data, function(index, it) {
                         if (data.length != 0) {
-
                             var commentHtml = `<div class="d-flex mb-4">
-                                            <div class="flex-shrink-0">
-                                                <img src="${it.main_comment_author_profile_photo == null ? 'assets/images/users/avatar-blank.jpg' : it.main_comment_author_profile_photo}" alt="" class="avatar-xs rounded-circle" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h5 class="fs-13"><a href="pages-profile.html" class="CommenterName">${it.main_comment_author_name}</a> <small class="text-muted">${GetTimeNow(it.main_comment_datetime)}</small></h5>
-                                                <p class="text-muted">${it.main_comment_text}</p>
-                                                <div class="attachedWithComment">`;
+                                                    <div class="flex-shrink-0">
+                                                        <img src="${it.main_comment_author_profile_photo == null ? 'assets/images/users/avatar-blank.jpg' : it.main_comment_author_profile_photo}" alt="" class="avatar-xs rounded-circle" />
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-3">
+                                                        <h5 class="fs-13"><a href="pages-profile.html" class="CommenterName">${it.main_comment_author_name}</a> <small class="text-muted">${GetTimeNow(it.main_comment_datetime)}</small></h5>
+                                                        <p class="text-muted">${it.main_comment_text}</p>
+                                                        <div class="attachedWithComment">`;
 
                             if (it.FilePath != null && it.FilePath != '') {
                                 var pathArr = it.FilePath.split('--');

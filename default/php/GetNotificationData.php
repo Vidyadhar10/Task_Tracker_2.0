@@ -6,7 +6,7 @@ $checkPassQueryCount = mysqli_query($con, "SELECT count(*) AS `NotificationsCoun
 $row = mysqli_fetch_array($checkPassQueryCount);
 $CalcCount = $row['NotificationsCount'];
 
-$checkPassQuery = mysqli_query($con, "SELECT * FROM `notifications` ORDER BY Activity_Time DESC limit 5");
+$checkPassQuery = mysqli_query($con, "SELECT * FROM `notifications` ORDER BY Activity_Time DESC");
 if (mysqli_num_rows($checkPassQuery) <= 0) {
     $FinalResponse = array(
         "message" => "No Entries In Table",

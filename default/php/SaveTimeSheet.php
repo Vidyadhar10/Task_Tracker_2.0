@@ -31,6 +31,7 @@ $sql = "INSERT INTO `time_sheet`
 `SubtaskStartDate`,`SubtaskEndDate`,`Deadline`,`RecordOfDate`,`EmployeeID`)
 VALUES ('$selectedProjectID','$SubtaskID','$starttime','$endtime','$TotalHours','$SubtaskAssignedDate',
 '$SubtaskStartDate','$subtaskEndDate','$subtaskdue','$selectedDT','$employeeID')";
+
 if (mysqli_query($con, $sql)) {
     $response = array(
         "success" => true

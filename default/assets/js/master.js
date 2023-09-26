@@ -65,9 +65,11 @@ function ShowNotifications() {
     success: function (data) {
       $('.NotifCount').html(data.NotificationCount);
       $('#noti_count').attr('data-target', data.NotificationCount);
-      // console.log(data.NotiTableData);
       $('#AllNotificationsTabDiv').empty()
       $.each(data.NotiTableData, function (index, item) {
+        if (index > 5) {
+          return false;
+        }
         var notificationString = `<div class="text-reset notification-item d-block dropdown-item position-relative">
                                       <div class="d-flex">
                                         <div class="avatar-xs me-3">
@@ -91,10 +93,11 @@ function ShowNotifications() {
         $('#AllNotificationsTabDiv').append(notificationString);
       })
       var BtnString = `<div class="my-3 text-center view-all">
-                            <button type="button" class="btn btn-soft-success waves-effect waves-light">View
-                              All Notifications <i class="ri-arrow-right-line align-middle"></i>
-                            </button>
-                          </div>`;
+                          <button type="button" class="btn btn-soft-success waves-effect waves-light" onclick="window.location.href='./notifications-list.php'">
+                            View All Notifications
+                            <i class="ri-arrow-right-line align-middle"></i>
+                          </button>
+                        </div>`;
       $('#AllNotificationsTabDiv').append(BtnString);
     }
   })

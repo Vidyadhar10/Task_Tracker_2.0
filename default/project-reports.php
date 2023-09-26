@@ -430,7 +430,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                             projEnd: item.End_Date
                         },
                         success: function(data) {
-                            // console.log(data);
+                            console.log(data);
                             $('#top-hign-btn').on('click', function() {
                                 if ($('#project-dropdown-field').val() == '') {
                                     $("#proj-dd-inv-field").css('display', 'block');
@@ -445,6 +445,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                                     } else {
                                         $('.noresult').css('display', 'none')
                                         $('#report-table tbody').empty();
+                                        var srno = 1;
                                         $.each(topHighArray, function(index, dataItem) {
                                             var tablerow = `<tr>
                                                                 <td class="id text-end"><a href="#" class="fw-medium link-primary">${srno++}</a></td>

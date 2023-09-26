@@ -207,30 +207,30 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                         <h5 class="card-title mb-4">Portfolio</h5>
                                                         <div class="d-flex flex-wrap gap-2">
                                                             <div>
-                                                                <a href="javascript:void(0);" class="avatar-xs d-block">
+                                                                <a href="javascript:void(0);" id="twitter-link" target="blank" class="avatar-xs d-block">
                                                                     <span class="avatar-title rounded-circle fs-16 bg-dark text-light">
-                                                                        <i class="ri-github-fill"></i>
+                                                                        <i class="ri-twitter-fill"></i>
                                                                     </span>
                                                                 </a>
                                                             </div>
                                                             <div>
-                                                                <a href="javascript:void(0);" class="avatar-xs d-block">
+                                                                <a href="javascript:void(0);" id="facebook-link" target="blank" class="avatar-xs d-block">
                                                                     <span class="avatar-title rounded-circle fs-16 bg-primary">
-                                                                        <i class="ri-global-fill"></i>
+                                                                        <i class="ri-facebook-fill"></i>
                                                                     </span>
                                                                 </a>
                                                             </div>
                                                             <div>
-                                                                <a href="javascript:void(0);" class="avatar-xs d-block">
-                                                                    <span class="avatar-title rounded-circle fs-16 bg-success">
-                                                                        <i class="ri-dribbble-fill"></i>
-                                                                    </span>
-                                                                </a>
-                                                            </div>
-                                                            <div>
-                                                                <a href="javascript:void(0);" class="avatar-xs d-block">
+                                                                <a href="javascript:void(0);" id="instagram-link" target="blank" class="avatar-xs d-block">
                                                                     <span class="avatar-title rounded-circle fs-16 bg-danger">
-                                                                        <i class="ri-pinterest-fill"></i>
+                                                                        <i class="ri-instagram-fill"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div>
+                                                                <a href="javascript:void(0);" id="linkedin-link" target="blank" class="avatar-xs d-block">
+                                                                    <span class="avatar-title rounded-circle fs-16 bg-primary">
+                                                                        <i class="ri-linkedin-box-fill"></i>
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -608,6 +608,23 @@ $_SESSION['Admin_id'] = $Admin_id;
                         $('.MobileNum').html(item.MobileNo)
                         $('.empEmail').html(item.Email)
                         $('.AboutEmployee').html(item.About)
+
+                        //links
+                        var twitterUnm;
+                        var fbUnm;
+                        var instaUnm;
+                        var linkedinUnm;
+
+                        item.Twitter != '' ? twitterUnm = item.Twitter : twitterUnm = '#';
+                        item.Facebook != '' ? fbUnm = item.Facebook : fbUnm = '#';
+                        item.Instagram != '' ? instaUnm = item.Instagram : instaUnm = '#';
+                        item.Linkedin != '' ? linkedinUnm = item.Linkedin : linkedinUnm = '#';
+
+
+                        $('#twitter-link').attr('href', twitterUnm)
+                        $('#facebook-link').attr('href', fbUnm)
+                        $('#instagram-link').attr('href', instaUnm)
+                        $('#linkedin-link').attr('href', linkedinUnm)
                     })
                 }
             })

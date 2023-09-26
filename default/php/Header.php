@@ -424,6 +424,7 @@
                     <button type="button" class="btn btn-soft-success waves-effect waves-light">View
                       All Messages <i class="ri-arrow-right-line align-middle"></i></button>
                   </div>
+
                 </div>
               </div>
               <!-- <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel" aria-labelledby="alerts-tab"></div> -->

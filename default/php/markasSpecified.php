@@ -14,7 +14,9 @@ $subtaskID = $_POST['subtask_ID'];
 $target_stage = $_POST['NextStageID'];
 $NextStageNM = $_POST['NextStageNM'];
 $currentStage = $_POST['currentStageNM'];
-$currentDateTime = date("Y-m-d h:i A");
+// $currentDateTime = date("Y-m-d h:i:s A");
+$currentDateTime = date("Y-m-d H:i:s");
+
 // if it's in progress
 if ($target_stage == 2) {
     $q = "UPDATE `subtask`
