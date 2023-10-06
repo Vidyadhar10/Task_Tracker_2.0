@@ -156,8 +156,8 @@ $_SESSION['Admin_id'] = $Admin_id;
                                             <div class="noresult" style="display: none">
                                                 <div class="text-center">
                                                     <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px"></lord-icon>
-                                                    <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                    <p class="text-muted mb-0">We've searched more than 150+ leads We did not find any leads for you search.</p>
+                                                    <h5 class="mt-2">Sorry! No Issues Have Been Created Yet!</h5>
+                                                    <!-- <p class="text-muted mb-0">We've searched more than 150+ leads We did not find any leads for you search.</p> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -289,6 +289,12 @@ $_SESSION['Admin_id'] = $Admin_id;
                 type: 'POST',
                 dataType: 'JSON',
                 success: function(data) {
+                    if (data.length <= 0) {
+                        $('.noresult').css('display', 'block')
+                    } else {
+                        $('.noresult').css('display', 'none')
+
+                    }
                     $('#IssueTable tbody').empty();
                     var srno = 1;
                     $.each(data, function(ind, item) {

@@ -60,12 +60,14 @@ if (mysqli_query($con, $sql)) {
 	mysqli_query($con, $sql2);
 
 	$Activity_Title = "Comment Added";
-	$Activity_Text = mysqli_real_escape_string($con, "A new comment has been added to sub-task <span class='text-primary'>$subtaskname</span> by <span class='text-primary'>$CommenterName</span>");
+	$Activity_Text = mysqli_real_escape_string($con, "A new comment has been added to sub-task
+					<span class='text-primary'>$subtaskname</span> by
+					<span class='text-primary'>$CommenterName</span>");
 	$Activity_Icon = mysqli_real_escape_string($con, "ri-message-2-line");
 	$Activity_By = $commenter_id;
 	$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications`
-	(`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`, `sutaskID`)
-	VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By', '$subtaskid')");
+	(`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`, `sutaskID`,`activity_type`)
+	VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By', '$subtaskid',4)");
 
 	$response = array(
 		"success" => true,

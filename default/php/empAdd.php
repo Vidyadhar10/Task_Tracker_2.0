@@ -62,7 +62,7 @@ if (mysqli_query($con, $sql)) {
 	$Activity_Text = mysqli_real_escape_string($con, "A new employee <span class='text-success'>$EmpNm</span> has been added to the system by <span class='text-success'>$admin</span>");
 	$Activity_Icon = mysqli_real_escape_string($con, "bx bx-user-check");
 	$Activity_By = $Admin_id;
-	$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By')");
+	$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`,`activity_type`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By',1)");
 
 
 

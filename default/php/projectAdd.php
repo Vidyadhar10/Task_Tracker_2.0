@@ -33,8 +33,13 @@ while ($getAdminId = $re5->fetch_assoc()) {
 }
 $nextProjID = "SELECT * FROM `projectdata`";
 $IdRes = $con->query($nextProjID);
-while ($rowVal = $IdRes->fetch_assoc()) {
-    $LastProjId = $rowVal['SrNo'];
+if (mysqli_num_rows($IdRes) <= 0) {
+    $LastProjId = 1;
+} else {
+
+    while ($rowVal = $IdRes->fetch_assoc()) {
+        $LastProjId = $rowVal['SrNo'];
+    }
 }
 $LastProjId += 1;
 $checkbox1 = $_POST['SelectedEmps'];
@@ -75,7 +80,6 @@ if (mysqli_query($con, $sql)) {
         $swq = "INSERT INTO `empwork` (`Emp_ID`,`Project_ID`,`Subtask_ID`) VALUES ('$ytc[$i]','$te','0')";
         mysqli_query($con, $swq);
     }
-    // header("location:../../projects.php");
 } else {
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
 }
@@ -90,9 +94,8 @@ $Activity_Title = "Project Added";
 $Activity_Text = mysqli_real_escape_string($con, "A new project <span class='text-info'>$ProjNm</span> has been added to system by <span class='text-info'>$ProjCreator</span>");
 $Activity_Icon = mysqli_real_escape_string($con, "ri-file-mark-line");
 $Activity_By = $Admin_id;
-$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`, `ProjectName`, `ProjectID`,`ProjectKey`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By', '$ProjNm', '$LastProjId', '$acronym')");
+$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`, `ProjectID`,`activity_type`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By', '$LastProjId', 2)");
 if ($InsertInNotifi) {
-
     $response = array(
         "success" => true,
     );

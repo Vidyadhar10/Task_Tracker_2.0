@@ -761,6 +761,11 @@ $_SESSION['Uname'] = $Uname;
                                     "Added",
                                     "Sub-Task added successfully!",
                                     "success");
+                                ShowNotifications()
+                                $('#noti_count').addClass('flicker-element')
+                                setTimeout(() => {
+                                    $('#noti_count').removeClass('flicker-element')
+                                }, 6000);
 
                             }
                         }

@@ -1188,6 +1188,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                             }, 'slow');
                             fileJsonData.splice(0, fileJsonData.length);
                             $('#attachedFiles').empty();
+                            ShowNotifications()
+                            $('#noti_count').addClass('flicker-element')
+                            setTimeout(() => {
+                                $('#noti_count').removeClass('flicker-element')
+                            }, 6000);
 
                         }
                     })
@@ -1237,6 +1242,12 @@ $_SESSION['Admin_id'] = $Admin_id;
                                 $('#ReplingCommenter').html('');
                                 $('#ReplingCommenter').addClass('d-none');
                                 $('#ReplyCommentTextarea').removeAttr('id').attr('id', 'CommentPostBtn')
+
+                                ShowNotifications()
+                                $('#noti_count').addClass('flicker-element')
+                                setTimeout(() => {
+                                    $('#noti_count').removeClass('flicker-element')
+                                }, 6000);
                             }
                         })
 
@@ -1390,6 +1401,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                                     'success'
                                 );
                                 GetSubTaskData()
+                                // ShowNotifications()
+                                // $('#noti_count').addClass('flicker-element')
+                                // setTimeout(() => {
+                                //     $('#noti_count').removeClass('flicker-element')
+                                // }, 6000);
 
                             } else {
                                 console.log('There was a problem updating the stage.');

@@ -734,7 +734,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                         success: function(data) {
                             if (data.success) {
                                 $('#ProjectAddedSuccessfullyModal').modal('show')
-
+                                ShowNotifications()
+                                $('#noti_count').addClass('flicker-element')
+                                setTimeout(() => {
+                                    $('#noti_count').removeClass('flicker-element')
+                                }, 6000);
                                 sendEmailinBG()
                             }
                         }

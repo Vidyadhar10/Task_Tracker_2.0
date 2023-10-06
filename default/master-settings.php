@@ -725,7 +725,7 @@ $_SESSION['Admin_id'] = $Admin_id;
                 } else if (inputBoxID.includes('task')) {
                     var inputData = {
                         TaskPriEntered: inputValue,
-                        TaskPriorityColor: bg - danger
+                        TaskPriorityColor: 'bg-danger'
                     }
                 } else if (inputBoxID.includes('leaves')) {
                     var inputData = {

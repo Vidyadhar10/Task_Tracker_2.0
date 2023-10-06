@@ -54,10 +54,10 @@ if (mysqli_num_rows($resultQ) > 0) {
 		);
 
 		$Activity_Title = "Sub-task Added";
-		$Activity_Text = "A new sub-task <span class=`text-info`>$subtaskNm</span> has been added to  task <span class=`text-info`>$t_name</span> by <span class=`text-info`>$createrNames</span>";
+		$Activity_Text = "A new sub-task <span class='text-info'>$subtaskNm</span> has been added to  task <span class='text-info'>$t_name</span> by <span class='text-info'>$createrNames</span>";
 		$Activity_Icon = mysqli_real_escape_string($con, "bx bx-list-check");
 		$Activity_By = $createrID;
-		$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By')");
+		$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`,`sutaskID`,`activity_type`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By','$subtaskkey',4)");
 		if ($InsertInNotifi) {
 
 			$response = array(
@@ -95,7 +95,7 @@ if (mysqli_num_rows($resultQ) > 0) {
 		$Activity_Text = mysqli_real_escape_string($con, "A new sub-task <span class='text-info'>$subtaskNm</span> has been added to  task <span class='text-info'>$t_name</span> by <span class='text-info'>$createrNames</span>");
 		$Activity_Icon = mysqli_real_escape_string($con, "bx bx-list-check");
 		$Activity_By = $createrID;
-		$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By')");
+		$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`,`sutaskID`,`activity_type`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By','$subtaskkey',4)");
 		if ($InsertInNotifi) {
 
 			$response = array(

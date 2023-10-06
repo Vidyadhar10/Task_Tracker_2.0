@@ -23,12 +23,14 @@ if (mysqli_query($con, $sql)) {
         $createdby = $results['Created_By']; //subtask created by id
     }
     $Activity_Title = "Replied to comment";
-    $Activity_Text = mysqli_real_escape_string($con, "<span class='text-primary'>$ResEmpName</span> has replied to comment of sub-task <span class='text-primary'>$subtaskname</span>");
+    $Activity_Text = mysqli_real_escape_string($con, "<span class='text-primary'>$ResEmpName</span>
+                                        has replied to comment of sub-task
+                                        <span class='text-primary'>$subtaskname</span>");
     $Activity_Icon = mysqli_real_escape_string($con, "ri-question-answer-line");
     $Activity_By = $reply_commenter_id;
     $InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications`
-    (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`, `sutaskID`)
-    VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By', '$subtaskid')");
+    (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`, `sutaskID`,`activity_type`)
+    VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By', '$subtaskid',4)");
     if ($InsertInNotifi) {
         $response = array(
             "success" => true,

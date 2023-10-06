@@ -8,27 +8,7 @@ function InputNumberOnly(paraID) {
     $('#' + paraID).val(Numbers);
   }
 }
-// document.getElementById("sa-warning").addEventListener("click", function () {
-//     Swal.fire({
-//         title: "Are you sure?",
-//         text: "You won't be able to revert this!",
-//         icon: "warning",
-//         showCancelButton: !0,
-//         confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
-//         cancelButtonClass: "btn btn-danger w-xs mt-2",
-//         confirmButtonText: "Yes, delete it!",
-//         buttonsStyling: !1,
-//         showCloseButton: !0
-//     }).then(function (t) {
-//         t.value && Swal.fire({
-//             title: "Deleted!",
-//             text: "Your file has been deleted.",
-//             icon: "success",
-//             confirmButtonClass: "btn btn-primary w-xs mt-2",
-//             buttonsStyling: !1
-//         })
-//     })
-// })
+
 function GetTimeNow(Timestring) {
   var dateString = Timestring;
   var timestamp = moment(dateString).unix();
@@ -66,11 +46,38 @@ function ShowNotifications() {
       $('.NotifCount').html(data.NotificationCount);
       $('#noti_count').attr('data-target', data.NotificationCount);
       $('#AllNotificationsTabDiv').empty()
+
+      console.log(data.NotiTableData);
       $.each(data.NotiTableData, function (index, item) {
         if (index > 5) {
           return false;
         }
-        var notificationString = `<div class="text-reset notification-item d-block dropdown-item position-relative">
+        if (item.IsAdmin) {
+          switch (item.activity_type) {
+            case '1':
+              var NavigateToPage = './employees-list.php';
+              break;
+            case '2':
+              var NavigateToPage = `./projects-overview.php?pid=${item.ProjectID}`;
+              break;
+            case '3':
+              var NavigateToPage = `./tasks-list-view.php?pid=${item.ProjectID}&tid=${item.Task_ID}`;
+              break;
+            case '4':
+              var NavigateToPage = `./sub-tasks-details.php?subid=${item.subtaskId}`;
+              break;
+            default:
+              var NavigateToPage = '#';
+              var funString = ``;
+              break;
+          }
+          var funString = `MarkAsReadTheNotification(${item.ActivityID})`;
+        } else {
+          var NavigateToPage = '#';
+          var funString = ``;
+        }
+
+        var notificationString = `<div class="text-reset notification-item d-block dropdown-item position-relative" onclick="window.location.href='${NavigateToPage}', ${funString}">
                                       <div class="d-flex">
                                         <div class="avatar-xs me-3">
                                           <span class="avatar-title bg-soft-danger text-danger rounded-circle fs-16">
@@ -102,4 +109,23 @@ function ShowNotifications() {
     }
   })
 
+}
+
+function MarkAsReadTheNotification(id) {
+  $.ajax({
+    url: `./php/ChangeToSeen.php`,
+    type: 'POST',
+    dataType: 'JSON',
+    data: {
+      NotifID: id
+    },
+    success: function (res) {
+      if (res.success) {
+        // ShowNotifications()
+        // console.log('changed');
+      } else {
+        // console.log("uptodate");
+      }
+    }
+  })
 }

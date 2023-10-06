@@ -57,24 +57,27 @@ if (mysqli_query($con, $sql)) {
     date_default_timezone_set('Asia/Kolkata');
     $time = date('h:i A', time());
     $date = date("Y-m-d");
-    $sql2 = "INSERT INTO `recent_activity`(`Time`, `Activity`, `Date`) VALUES ('$time','$ActivitySent', '$date')";
+    $sql2 = "INSERT INTO `recent_activity`(`Time`, `Activity`, `Date`)
+    VALUES ('$time','$ActivitySent', '$date')";
     mysqli_query($con, $sql2);
     $response = array(
         "success" => true,
     );
 
     $Activity_Title = "Sub-task Added";
-    $Activity_Text = "A new sub-task <span class=`text-info`>$subtaskNm</span> has been added to  task <span class=`text-info`>$Task_name</span> by <span class=`text-info`>$createrName</span>";
+    $Activity_Text = "A new sub-task <span class='text-info'>$subtaskNm</span>
+     has been added to  task <span class='text-info'>$Task_name</span> 
+     by <span class='text-info'>$createrName</span>";
     $Activity_Icon = mysqli_real_escape_string($con, "bx bx-list-check");
     $Activity_By = $createrID;
-    $InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By')");
+    $InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications`
+    (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`,`sutaskID`,`activity_type`)
+    VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By','$subtaskkey',4)");
     if ($InsertInNotifi) {
-
         $response = array(
             "success" => true,
         );
     }
-    // header("location:../../task.php?task=$t_name&id=$t_id");
 }
 mysqli_close($con);
 header('Content-Type: application/json');

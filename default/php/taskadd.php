@@ -63,7 +63,7 @@ if (mysqli_num_rows($resultQ) > 0) {
 	$Activity_Text = mysqli_real_escape_string($con, "A new task <span class='text-warning'>$taskNm</span> has been added to <span class='text-warning'>$p_name</span> by <span class='text-warning'>$createrNames</span>");
 	$Activity_Icon = mysqli_real_escape_string($con, "ri-file-list-line");
 	$Activity_By = $createrID;
-	$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By')");
+	$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`,`ProjectID`,`Task_ID`,`activity_type`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By','$p_id','$T_Key',3)");
 	if ($InsertInNotifi) {
 
 		$response = array(
@@ -98,7 +98,7 @@ if (mysqli_num_rows($resultQ) > 0) {
 	$Activity_Text = mysqli_real_escape_string($con, "A new task <span class='text-warning'>$taskNm</span> has been added to <span class='text-warning'>$p_name</span> by <span class='text-warning'>$createrNames</span>");
 	$Activity_Icon = mysqli_real_escape_string($con, "ri-file-list-line");
 	$Activity_By = $createrID;
-	$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By')");
+	$InsertInNotifi = mysqli_query($con, "INSERT INTO `notifications` (`Activity_Title`, `Activity_Text`,`Activity_Icon`,`Activity_By`,`ProjectID`,`Task_ID`,`activity_type`)VALUES('$Activity_Title', '$Activity_Text', '$Activity_Icon', '$Activity_By','$p_id','$T_Key',3)");
 	if ($InsertInNotifi) {
 
 		$response = array(

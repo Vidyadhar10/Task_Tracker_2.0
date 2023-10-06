@@ -29,7 +29,7 @@ if ($target_stage == 2) {
     `SubtaskEndDate`='$currentDateTime'
     WHERE `subtask_ID` = '$subtaskID'";
 } else {
-    $q = "UPDATE `subtask` SET `status` = '$target_stage' WHERE `subtask_ID` = '$subtaskID' ";
+    $q = "UPDATE `subtask` SET `status` = '$target_stage' WHERE `subtask_ID` = '$subtaskID'";
 }
 if (mysqli_query($con, $q)) {
     $queryToGetSubTaskName = mysqli_query($con, "SELECT * FROM `subtask` WHERE `subtask_ID` = '$subtaskID'");

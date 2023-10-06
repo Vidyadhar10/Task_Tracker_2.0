@@ -591,6 +591,12 @@ $_SESSION['Admin_id'] = $Admin_id;
 
                             if (resultData.success) {
                                 // email sending to employee
+                                ShowNotifications()
+                                $('#noti_count').addClass('flicker-element')
+                                setTimeout(() => {
+                                    $('#noti_count').removeClass('flicker-element')
+                                }, 6000);
+
                                 $('#EmployeeAddedSuccessfullyModal').modal('show')
                                 $('#showModal').modal('hide')
                                 $('#EmployeeAddForm').removeClass('was-validated');

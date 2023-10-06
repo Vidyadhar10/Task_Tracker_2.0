@@ -2094,6 +2094,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                                     "Updated",
                                     "Project employees are updated successfully!",
                                     "success");
+                                ShowNotifications()
+                                $('#noti_count').addClass('flicker-element')
+                                setTimeout(() => {
+                                    $('#noti_count').removeClass('flicker-element')
+                                }, 6000);
                             }
                         })
                     }
@@ -2327,7 +2332,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                                 "Added",
                                 "Task added successfully!",
                                 "success");
-
+                            ShowNotifications()
+                            $('#noti_count').addClass('flicker-element')
+                            setTimeout(() => {
+                                $('#noti_count').removeClass('flicker-element')
+                            }, 6000);
                         }
                     });
                 }

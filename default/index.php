@@ -210,11 +210,11 @@ $_SESSION['Admin_id'] = $Admin_id;
 
                                             </ul><!-- end ul -->
                                         </div>
-                                        <div class="p-3 pt-2">
+                                        <!-- <div class="p-3 pt-2">
                                             <a href="javascript:void(0);" class="text-muted text-decoration-underline">
                                                 Show more...
                                             </a>
-                                        </div>
+                                        </div> -->
                                     </div><!-- end card body -->
                                 </div><!-- end card -->
                             </div><!-- end col -->
@@ -525,8 +525,9 @@ $_SESSION['Admin_id'] = $Admin_id;
                 dataType: 'JSON',
                 success: function(data) {
                     // console.log(data);
-                    $.each(data, function(index, item) {
-                        var recentAString = `<li class="list-group-item ps-0">
+                    if (data.length != 0) {
+                        $.each(data, function(index, item) {
+                            var recentAString = `<li class="list-group-item ps-0">
                                                 <div class="d-flex align-items-start">
                                                     <div class="flex-grow-1">
                                                         <label class=" mb-0 ps-2">${item.Activity}</label>
@@ -536,8 +537,11 @@ $_SESSION['Admin_id'] = $Admin_id;
                                                     </div>
                                                 </div>
                                             </li>`;
-                        $('#RecentActivityLI').append(recentAString);
-                    })
+                            $('#RecentActivityLI').append(recentAString);
+                        })
+                    } else {
+                        $('#RecentActivityLI').append("No Recent Activity Yet!");
+                    }
                 }
             })
         }
